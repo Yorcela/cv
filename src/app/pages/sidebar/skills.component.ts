@@ -1,38 +1,46 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { SkillChipComponent } from '../components/skill-chip.component';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, TranslateModule, SkillChipComponent],
+  imports: [CommonModule, TranslateModule],
   template: `
     <div class="sidebar-skills">
       <h3 class="sidebar-title"><i class="fad fa-cogs"></i> {{ 'sections.skills' | translate }}</h3>
       <div class="skills-chips-container">
-        <ng-container *ngFor="let category of getSkillCategories()">
-          <app-skill-chip 
-            *ngFor="let skill of skills?.[category]" 
-            [label]="skill" 
-            [type]="category">
-          </app-skill-chip>
-        </ng-container>
+        <div class="skill-category" *ngFor="let skillCategory of getSkillCategories()">
+          <div class="category-header">
+            <span class="icon-chip" [attr.data-tooltip]="getCategoryTitle(skillCategory)">
+              <i class="fas {{ skillCategory.icon }}"></i>
+            </span>
+          </div>
+          <div class="skills-list" *ngIf="skillCategory.skills?.length > 0">
+            <span class="skill-item">
+              {{ skillCategory.skills.join(', ') }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   `,
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
-  skills: any = {};
+  skills: any[] = [];
 
   constructor(private translate: TranslateService) {
     this.translate.get('skills').subscribe((data: any) => {
-      this.skills = data || {};
+      this.skills = data || [];
     });
   }
 
-  getSkillCategories(): string[] {
-    return ['agile', 'coaching', 'leadership', 'delivery', 'communication', 'tech', 'languages'];
+  getSkillCategories(): any[] {
+    return this.skills;
+  }
+
+  getCategoryTitle(skillCategory: any): string {
+    return skillCategory.name;
   }
 }

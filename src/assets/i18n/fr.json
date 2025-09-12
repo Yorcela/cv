@@ -58,7 +58,13 @@
       "position": "Engineering Manager",
       "period": "2023 - Présent",
       "description": "Management d'un domaine technique de 25+ développeurs. Architecture et développement de la plateforme SaaS leader en comptabilité digitale.",
-      "technologies": ["Node.js", "TypeScript", "ShapeUp", "OKRs", "Docker"],
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "ShapeUp",
+        "OKRs",
+        "Docker"
+      ],
       "logo": "https://img.logo.dev/dougs.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
     },
     {
@@ -66,7 +72,13 @@
       "position": "Lead Scrum Master",
       "period": "2023",
       "description": "Transformation agile à l'échelle pour 12 équipes. Mise en place de frameworks agiles et coaching d'équipes.",
-      "technologies": ["SAFe", "Scrum", "Kanban", "OKRs", "Coaching"],
+      "technologies": [
+        "SAFe",
+        "Scrum",
+        "Kanban",
+        "OKRs",
+        "Coaching"
+      ],
       "logo": "https://img.logo.dev/santevet.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
     },
     {
@@ -74,7 +86,12 @@
       "position": "Senior Scrum Master",
       "period": "2021 - 2023",
       "description": "Accompagnement de l'hyper-croissance et passage à l'agilité à l'échelle. Coaching d'équipes et framework MACS.",
-      "technologies": ["MACS", "Scrum", "Coaching", "Facilitation"],
+      "technologies": [
+        "MACS",
+        "Scrum",
+        "Coaching",
+        "Facilitation"
+      ],
       "logo": "https://img.logo.dev/manomano.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
     }
   ],
@@ -216,7 +233,13 @@
           ]
         }
       ],
-      "technologies": ["Node.js", "TypeScript", "ShapeUp", "OKRs", "Docker"]
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "ShapeUp",
+        "OKRs",
+        "Docker"
+      ]
     },
     {
       "company": "SantéVet",
@@ -247,7 +270,13 @@
           ]
         }
       ],
-      "technologies": ["SAFe", "Scrum", "Kanban", "OKRs", "Coaching"]
+      "technologies": [
+        "SAFe",
+        "Scrum",
+        "Kanban",
+        "OKRs",
+        "Coaching"
+      ]
     },
     {
       "company": "ManoMano",
@@ -268,7 +297,12 @@
           ]
         }
       ],
-      "technologies": ["MACS", "Scrum", "Coaching", "Facilitation"]
+      "technologies": [
+        "MACS",
+        "Scrum",
+        "Coaching",
+        "Facilitation"
+      ]
     },
     {
       "company": "onepoint",
@@ -302,7 +336,13 @@
           ]
         }
       ],
-      "technologies": ["TypeScript", "Node.js", "LeSS", "Scrum", "Coaching"]
+      "technologies": [
+        "TypeScript",
+        "Node.js",
+        "LeSS",
+        "Scrum",
+        "Coaching"
+      ]
     },
     {
       "company": "Capgemini",
@@ -322,7 +362,11 @@
           ]
         }
       ],
-      "technologies": ["Gestion de projet", "Risk Management", "Budget Management"]
+      "technologies": [
+        "Gestion de projet",
+        "Risk Management",
+        "Budget Management"
+      ]
     },
     {
       "company": "Galilée",
@@ -351,7 +395,15 @@
           ]
         }
       ],
-      "technologies": ["PHP", "Zend Framework", "JavaScript", "jQuery", "MSSQL", "xHTML", "CSS"]
+      "technologies": [
+        "PHP",
+        "Zend Framework",
+        "JavaScript",
+        "jQuery",
+        "MSSQL",
+        "xHTML",
+        "CSS"
+      ]
     }
   ],
   "education": [
@@ -366,15 +418,68 @@
       "year": "2007"
     }
   ],
-  "skills": {
-    "delivery": ["OKRs", "Stratégie", "Multi‑équipes", "Suivi et optimisationation de production"],
-    "coaching": ["Coaching", "Autonomisation"],
-    "leadership": ["Servant leader", "Mentor", "Développement de carrière", "Management 3.0"],
-    "communication": ["Écoute active", "Animation d'événements", "Formateur"],
-    "agile": ["Scrum", "SAFe", "LeSS", "Nexus", "unFIX", "Lean", "ShapeUp"],
-    "tech": ["Node.js", "TypeScript", "Nest.js", "PostgreSQL", "Docker"],
-    "languages": ["Français", "Anglais"]
-  },
+  "skills": [
+    {
+      "name": "Agilité",
+      "icon": "fa-sync-alt",
+      "skills": [
+        "Lean",
+        "SAFe",
+        "LeSS",
+        "Nexus",
+        "unFIX",
+        "ShapeUp"
+      ]
+    },
+    {
+      "name": "Delivery",
+      "icon": "fa-shipping-fast",
+      "skills": [
+        "Stratégie",
+        "Roadmap",
+        "OKRs",
+        "Optimisation des flux"
+      ]
+    },
+    {
+      "name": "Management",
+      "icon": "fa-user-tie",
+      "skills": [
+        "Autonomisation",
+        "Management 3.0",
+        "Délégation",
+        "Multi‑équipes"
+      ]
+    },
+    {
+      "name": "Communication",
+      "icon": "fa-comments",
+      "skills": [
+        "Écoute active",
+        "Animation d'événements",
+        "Formateur"
+      ]
+    },
+    {
+      "name": "Technos",
+      "icon": "fa-code",
+      "skills": [
+        "Node.js",
+        "TypeScript",
+        "Nest.js",
+        "PostgreSQL",
+        "Docker"
+      ]
+    },
+    {
+      "name": "Langues",
+      "icon": "fa-language",
+      "skills": [
+        "Français",
+        "Anglais"
+      ]
+    }
+  ],
   "certifications": [
     {
       "name": "PSM II",
@@ -394,12 +499,33 @@
     }
   ],
   "hobbies": [
-    { "name": "Kaamelott", "icon": "fa-tv" },
-    { "name": "Bricolage", "icon": "fa-hammer" },
-    { "name": "Jardinage", "icon": "fa-seedling" },
-    { "name": "TFT", "icon": "fa-gamepad" },
-    { "name": "Tatouage", "icon": "fa-palette" },
-    { "name": "Cinéma", "icon": "fa-film" },
-    { "name": "Séries", "icon": "fa-desktop" }
+    {
+      "name": "Kaamelott",
+      "icon": "fa-tv"
+    },
+    {
+      "name": "Bricolage",
+      "icon": "fa-hammer"
+    },
+    {
+      "name": "Jardinage",
+      "icon": "fa-seedling"
+    },
+    {
+      "name": "TFT",
+      "icon": "fa-gamepad"
+    },
+    {
+      "name": "Tatouage",
+      "icon": "fa-palette"
+    },
+    {
+      "name": "Cinéma",
+      "icon": "fa-film"
+    },
+    {
+      "name": "Séries",
+      "icon": "fa-desktop"
+    }
   ]
 }
