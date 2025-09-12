@@ -2,6 +2,8 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { MarkdownPipe } from '../pipes/markdown.pipe';
 
 interface Recommendation {
   name: string;
@@ -20,7 +22,7 @@ interface CVData {
 @Component({
   selector: 'app-recommendations',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule, MarkdownPipe],
   template: `
     <div class="recommendations-container">
       <!-- Loading State -->
@@ -40,15 +42,16 @@ interface CVData {
 
       <!-- Content -->
       <div *ngIf="!loading && !error && data" class="recommendations-content">
+        <div class="recommendations-content-inner">
         <!-- Header -->
         <header class="page-header">
           <div class="header-navigation">
             <button class="back-button" (click)="navigateHome()">
-              <i class="fas fa-arrow-left"></i>
+              <i class="fal fa-arrow-left"></i>
               Retour au CV
             </button>
           </div>
-          <h1 class="page-title">Recommandations</h1>
+          <h1 class="page-title">{{ 'sections.recommendations' | translate }}</h1>
           <p class="page-subtitle">Témoignages de managers et collègues</p>
         </header>
 
@@ -65,7 +68,7 @@ interface CVData {
                 <div class="author-photo">
                   <img *ngIf="rec.photo" [src]="rec.photo" [alt]="rec.name" class="photo">
                   <div *ngIf="!rec.photo" class="photo-placeholder">
-                    <i class="fas fa-user"></i>
+                    <i class="fal fa-user"></i>
                   </div>
                 </div>
                 <div class="author-details">
@@ -95,7 +98,7 @@ interface CVData {
 
             <!-- Quote Icon -->
             <div class="quote-icon">
-              <i class="fas fa-quote-right"></i>
+              <i class="fal fa-quote-right"></i>
             </div>
           </div>
         </div>
@@ -104,6 +107,7 @@ interface CVData {
         <footer class="humor-footer">
           <p>Wow, vous êtes encore là ? 👏</p>
         </footer>
+        </div>
       </div>
     </div>
   `,
@@ -141,16 +145,17 @@ export class RecommendationsComponent implements OnChanges {
   }
 
   formatTestimonial(testimonial: string, highlights?: string[]): string {
-    if (!highlights || highlights.length === 0) {
-      return testimonial;
-    }
-
-    let formattedText = testimonial;
+    // Use markdown pipe for basic formatting
+    const markdownPipe = new MarkdownPipe();
+    let formattedText = markdownPipe.transform(testimonial);
     
-    highlights.forEach(highlight => {
-      const regex = new RegExp(`(${highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      formattedText = formattedText.replace(regex, '<strong>$1</strong>');
-    });
+    // Apply highlights if provided
+    if (highlights && highlights.length > 0) {
+      highlights.forEach(highlight => {
+        const regex = new RegExp(`(${highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        formattedText = formattedText.replace(regex, '<strong>$1</strong>');
+      });
+    }
 
     // Add emphasis to certain phrases
     const emphasisPhrases = [

@@ -3,7 +3,36 @@
     "tagline": "Engineering Manager • Agile Leader",
     "variant_full": "Full version",
     "variant_short": "Short version",
-    "download_pdf": "Download PDF",
+    "download_pdf": "Download CV",
+  "download_options": {
+    "long_fr": "French long version",
+    "long_en": "English long version",
+    "short_bilingual": "Short version (bilingual)"
+  },
+  "sections": {
+    "about_me": "About me",
+    "accomplishments": "Key accomplishments",
+    "skills": "Skills",
+    "hobbies": "Hobbies",
+    "education": "Education",
+    "certifications": "Certifications",
+    "recommendations": "Recommendations",
+    "detailed_experiences": "Detailed experiences",
+    "key_achievements": "Key achievements:",
+    "languages": "Languages",
+    "leadership": "Leadership",
+    "tech": "Tech",
+    "technologies": "Technologies:",
+    "transformation": "Transformation",
+    "innovation": "Innovation",
+    "performance": "Performance",
+    "loading": "Loading CV...",
+    "error_loading": "Loading error",
+    "back": "Back",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "reading_humor": "That's quite a read! 😉"
+  },
     "footer": "Static Angular CV site • Hash routing ready for OVH"
   },
   "personalInfo": {
@@ -28,7 +57,8 @@
       "position": "Technical Director & Co-founder",
       "period": "2018 - Present",
       "description": "Technical direction of a team of 25+ developers. Architecture and development of the leading SaaS platform in digital accounting.",
-      "technologies": ["Node.js", "React", "TypeScript", "AWS", "Docker"]
+      "technologies": ["Node.js", "React", "TypeScript", "AWS", "Docker"],
+      "logo": "https://img.logo.dev/dougs.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
     },
     {
       "company": "Previous Startup",
@@ -118,6 +148,36 @@
       "degree": "Bachelor's in Computer Science",
       "school": "University of Technology",
       "year": "2013"
+    }
+  ],
+  "education": [
+    {
+      "degree": "IT Project Manager (Level II)",
+      "year": "2011",
+      "institution": "Esarc Évolution"
+    },
+    {
+      "degree": "Bachelor in Communication and HR Management",
+      "year": "2007",
+      "institution": "Lycée Jean Monnet"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Professional Scrum Master II",
+      "year": "2021"
+    },
+    {
+      "name": "SAFe Agilist",
+      "year": "2020"
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "year": "2020"
+    },
+    {
+      "name": "Professional Scrum Product Owner I",
+      "year": "2020"
     }
   ],
   "languages": [

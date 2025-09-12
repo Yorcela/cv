@@ -111,7 +111,13 @@
 
 /* Recommendations Content */
 .recommendations-content {
-  max-width: 1200px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.recommendations-content-inner {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }

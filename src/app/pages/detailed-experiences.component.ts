@@ -2,6 +2,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface Experience {
   company: string;
@@ -35,7 +36,7 @@ interface CVData {
 @Component({
   selector: 'app-detailed-experiences',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     <div class="detailed-experiences-container">
       <!-- Loading State -->
@@ -59,16 +60,17 @@ interface CVData {
         <header class="page-header">
           <div class="header-navigation">
             <button class="back-button" (click)="navigateHome()">
-              <i class="fas fa-arrow-left"></i>
+              <i class="fal fa-arrow-left"></i>
               Retour au CV
             </button>
           </div>
-          <h1 class="page-title">Expériences détaillées</h1>
+          <h1 class="page-title">{{ 'sections.detailed_experiences' | translate }}</h1>
           <p class="page-subtitle">Parcours professionnel complet et réalisations marquantes</p>
         </header>
 
-        <!-- Two Column Layout -->
-        <div class="experiences-layout">
+        <div class="experiences-content-inner">
+          <!-- Two Column Layout -->
+          <div class="experiences-layout">
           <div class="column-separator"></div>
           
           <!-- Left Column -->
@@ -85,7 +87,7 @@ interface CVData {
                 </div>
                 <p class="experience-description">{{ exp.description }}</p>
                 <div *ngIf="exp.achievements && exp.achievements.length > 0" class="achievements">
-                  <h5>Réalisations clés :</h5>
+                  <h5>{{ 'sections.key_achievements' | translate }}</h5>
                   <ul>
                     <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
                   </ul>
@@ -111,7 +113,7 @@ interface CVData {
                 </div>
                 <p class="experience-description">{{ exp.description }}</p>
                 <div *ngIf="exp.achievements && exp.achievements.length > 0" class="achievements">
-                  <h5>Réalisations clés :</h5>
+                  <h5>{{ 'sections.key_achievements' | translate }}</h5>
                   <ul>
                     <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
                   </ul>
@@ -122,48 +124,11 @@ interface CVData {
               </div>
             </div>
           </div>
+          <!-- Humor Footer -->
+          <footer class="humor-footer">
+            <p>{{ 'ui.reading_humor' | translate }}</p>
+          </footer>
         </div>
-
-        <!-- Bottom Section: Education & Certifications -->
-        <div class="bottom-section">
-          <div class="education-certifications-row">
-            <!-- Education -->
-            <div class="education-block">
-              <h2 class="section-title">
-                <i class="fas fa-graduation-cap"></i>
-                Formation
-              </h2>
-              <div class="education-items">
-                <div *ngFor="let edu of data.education" class="education-item">
-                  <h4 class="degree">{{ edu.degree }}</h4>
-                  <div class="school">{{ edu.school }}</div>
-                  <div class="year">{{ edu.year }}</div>
-                  <div *ngIf="edu.specialization" class="specialization">{{ edu.specialization }}</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="certifications-block">
-              <h2 class="section-title">
-                <i class="fas fa-certificate"></i>
-                Certifications
-              </h2>
-              <div class="certification-items">
-                <div *ngFor="let cert of data.certifications" class="certification-item">
-                  <h4 class="certification-name">{{ cert.name }}</h4>
-                  <div class="certification-issuer">{{ cert.issuer }}</div>
-                  <div class="certification-year">{{ cert.year }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Humor Footer -->
-        <footer class="humor-footer">
-          <p>Ça en fait de la lecture ! 😉</p>
-        </footer>
       </div>
     </div>
   `,

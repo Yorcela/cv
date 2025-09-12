@@ -2,6 +2,14 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { MarkdownPipe } from '../pipes/markdown.pipe';
+
+interface ExperienceDetailed {
+  title: string;
+  details?: string[];
+  isSubheading?: boolean;
+}
 
 interface CVData {
   personalInfo: {
@@ -17,6 +25,10 @@ interface CVData {
   aboutLong?: { description: string };
   experiencesShort?: Experience[];
   experiencesLong?: Experience[];
+  experiencesDetailed?: {
+    title: string;
+    content: ExperienceDetailed[];
+  };
   skills: {
     technical: string[];
     leadership: string[];
@@ -26,6 +38,7 @@ interface CVData {
   recommendations: Recommendation[];
   education: Education[];
   languages: Language[];
+  hobbies?: string[];
 }
 
 interface Experience {
@@ -75,221 +88,219 @@ interface SkillCategory {
 @Component({
   selector: 'app-cv-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule, MarkdownPipe],
   template: `
-    <div class="cv-container">
+    <div class="page-background">
+      <div class="cv-container">
       <div *ngIf="loading" class="loading-state">
         <div class="loading-card">
           <i class="fas fa-spinner fa-spin"></i>
-          <span>Chargement du CV...</span>
+          <span>{{ 'sections.loading' | translate }}</span>
         </div>
       </div>
       
       <div *ngIf="error" class="error-state">
         <div class="error-card">
           <i class="fas fa-exclamation-triangle"></i>
-          <h3>Erreur de chargement</h3>
+          <h3>{{ 'sections.error_loading' | translate }}</h3>
           <p>{{ error }}</p>
         </div>
       </div>
       
       <div *ngIf="!loading && !error && data" class="cv-content">
-        <!-- Header Full-Width -->
-        <header class="cv-header">
-          <div class="header-container">
-            <div class="profile-section">
-              <div class="profile-photo-container">
-                <img src="assets/images/profile-photo.png" alt="{{ data.personalInfo.name }}" class="profile-photo">
-              </div>
-              <div class="profile-info">
-                <h1 class="name">{{ data.personalInfo.name }}</h1>
-                <h2 class="title">Agile & Lean Leader</h2>
+        <!-- Left Sidebar -->
+        <div class="cv-sidebar">
+          <!-- Profile Section -->
+          <div class="profile-section">
+            <div class="profile-photo-container">
+              <img src="assets/images/profile-photo.png" alt="{{ data.personalInfo.name }}" class="profile-photo">
+            </div>
+            <h1 class="name">{{ data.personalInfo.name }}</h1>
+            <h2 class="title">{{ data.personalInfo.title }}</h2>
+          </div>
+          
+          <!-- Contact Info -->
+          <div class="contact-section">
+            <div class="contact-item">
+              <i class="fal fa-phone"></i>
+              <span>{{ data.personalInfo.phone }}</span>
+            </div>
+            <div class="contact-item">
+              <i class="fal fa-envelope"></i>
+              <a href="mailto:{{ data.personalInfo.email }}">{{ data.personalInfo.email }}</a>
+            </div>
+            <div class="contact-item">
+              <i class="fal fa-map-marker-alt"></i>
+              <span>{{ data.personalInfo.location }}</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="{{ data.personalInfo.linkedin }}" target="_blank">{{ 'sections.linkedin' | translate }}</a>
+            </div>
+            <div class="contact-item" *ngIf="data.personalInfo.github">
+              <i class="fab fa-github"></i>
+              <a href="{{ data.personalInfo.github }}" target="_blank">{{ 'sections.github' | translate }}</a>
+            </div>
+          </div>
+          
+          <!-- Skills Section -->
+          <div class="sidebar-skills">
+            <h3 class="sidebar-title"><i class="fal fa-cogs"></i> {{ 'sections.skills' | translate }}</h3>
+            <div class="skill-category">
+              <h4>{{ 'sections.leadership' | translate }}</h4>
+              <div class="skills-list">
+                <span class="skill-tag" *ngFor="let skill of data.skills.leadership">{{ skill }}</span>
               </div>
             </div>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a [href]="'mailto:' + data.personalInfo.email">{{ data.personalInfo.email }}</a>
+            <div class="skill-category">
+              <h4>{{ 'sections.tech' | translate }}</h4>
+              <div class="skills-list">
+                <span class="skill-tag" *ngFor="let skill of data.skills.technical">{{ skill }}</span>
               </div>
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>{{ data.personalInfo.phone }}</span>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>{{ data.personalInfo.location }}</span>
-              </div>
-              <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <a [href]="'https://' + data.personalInfo.linkedin" target="_blank" rel="noopener">LinkedIn</a>
-              </div>
-              <div class="contact-item">
-                <i class="fab fa-youtube"></i>
-                <a [href]="data.personalInfo.youtube" target="_blank" rel="noopener">YouTube</a>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-chart-line"></i>
-                <a [href]="data.personalInfo.assessfirst" target="_blank" rel="noopener">AssessFirst</a>
+            </div>
+            <div class="skill-category">
+              <h4>{{ 'sections.languages' | translate }}</h4>
+              <div class="skills-list">
+                <span class="skill-tag" *ngFor="let lang of data.languages">{{ lang.language }} ({{ lang.level }})</span>
               </div>
             </div>
           </div>
-        </header>
+          
 
-        <!-- Main Content -->
-        <div class="cv-main">
-          <!-- About Section -->
-          <section class="about-section">
-            <h2 class="section-title">
-              <i class="fas fa-user"></i>
-              Qui je suis
-            </h2>
-            <div class="about-content">
-              <p class="about-text" [innerHTML]="getFormattedAbout()"></p>
-            </div>
-          </section>
-
-          <!-- Experiences Section -->
-          <section class="experiences-section">
-            <h2 class="section-title">
-              <i class="fas fa-briefcase"></i>
-              Expériences professionnelles
-            </h2>
-            <div class="experience-item" *ngFor="let exp of variant === 'full' ? data.experiencesLong : data.experiencesShort">
-              <div class="experience-header">
-                <div class="experience-main">
-                  <h4 class="position">{{ exp.position }}</h4>
-                  <div class="company">{{ exp.company }}</div>
-                  <div class="location">{{ exp.location }}</div>
-                </div>
-                <div class="period">{{ exp.period }}</div>
-              </div>
-              <div class="experience-description">
-                <p>{{ exp.description }}</p>
-                <ul *ngIf="exp.achievements && exp.achievements.length > 0">
-                  <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
-                </ul>
+          
+          <!-- Hobbies Section -->
+          <div class="sidebar-hobbies">
+            <h3 class="sidebar-title"><i class="fal fa-heart"></i> {{ 'sections.hobbies' | translate }}</h3>
+            <div class="hobbies-list">
+              <div class="hobby-item" *ngFor="let hobby of data.hobbies">
+                <i class="fas" [ngClass]="{
+                  'fa-tv': hobby.toLowerCase().includes('kaamelott'),
+                  'fa-gamepad': hobby.toLowerCase().includes('tft'),
+                  'fa-hammer': hobby.toLowerCase().includes('bricolage'),
+                  'fa-seedling': hobby.toLowerCase().includes('jardinage'),
+                  'fa-palette': hobby.toLowerCase().includes('tatouage'),
+                  'fa-film': hobby.toLowerCase().includes('cinema') || hobby.toLowerCase().includes('cinéma'),
+                  'fa-desktop': hobby.toLowerCase().includes('series') || hobby.toLowerCase().includes('séries'),
+                  'fa-heart': !hobby.toLowerCase().includes('kaamelott') && !hobby.toLowerCase().includes('tft') && !hobby.toLowerCase().includes('bricolage') && !hobby.toLowerCase().includes('jardinage') && !hobby.toLowerCase().includes('tatouage') && !hobby.toLowerCase().includes('cinema') && !hobby.toLowerCase().includes('cinéma') && !hobby.toLowerCase().includes('series') && !hobby.toLowerCase().includes('séries')
+                }"></i>
+                {{ hobby }}
               </div>
             </div>
-          </section>
+          </div>
+        </div>
 
-          <!-- Skills Section -->
-          <section class="skills-section">
-            <h2 class="section-title">
-              <i class="fas fa-cogs"></i>
-              Compétences
-            </h2>
-            <div class="skills-grid">
-              <div class="skills-column">
-                <div class="skill-category">
-                  <h3><i class="fas fa-rocket"></i> Delivery & Management</h3>
-                  <div class="skills-list">
-                    <span class="skill-tag" *ngFor="let skill of data.skills.leadership">{{ skill }}</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h3><i class="fas fa-sync-alt"></i> Agilité</h3>
-                  <div class="skills-list">
-                    <span class="skill-tag" *ngFor="let skill of data.skills.business">{{ skill }}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="skills-column">
-                <div class="skill-category">
-                  <h3><i class="fas fa-laptop-code"></i> Compétences Tech</h3>
-                  <div class="skills-list">
-                    <span class="skill-tag" *ngFor="let skill of data.skills.technical">{{ skill }}</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h3><i class="fas fa-globe"></i> Langues</h3>
-                  <div class="skills-list">
-                    <span class="skill-tag" *ngFor="let lang of data.languages">{{ lang.language }} ({{ lang.level }})</span>
-                  </div>
-                </div>
-              </div>
-             </div>
-            </section>
-
-            <!-- Education and Certifications Section -->
-            <div class="education-certifications-row">
-              <section class="education-section">
-                <h2 class="section-title">
-                  <i class="fas fa-graduation-cap"></i>
-                  Formation
-                </h2>
-                <div class="section-content">
-                  <div class="education-item" *ngFor="let edu of data.education">
-                    <h4 class="degree">{{ edu.degree }}</h4>
-                    <div class="school">{{ edu.school }}</div>
-                    <div class="year">{{ edu.year }}</div>
-                    <div class="specialization" *ngIf="edu.specialization">{{ edu.specialization }}</div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="certifications-section">
-                <h2 class="section-title">
-                  <i class="fas fa-certificate"></i>
-                  Certifications
-                </h2>
-                <div class="section-content">
-                  <div class="certification-item" *ngFor="let cert of data.certifications">
-                    <h4 class="certification-name">{{ cert.name }}</h4>
-                    <div class="certification-issuer">{{ cert.issuer }}</div>
-                    <div class="certification-year">{{ cert.year }}</div>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-            <!-- Hobbies Section -->
-            <section class="hobbies-section">
-              <h2 class="section-title">
-                <i class="fas fa-heart"></i>
-                Loisirs
+          <!-- Main Content -->
+          <div class="cv-main">
+            <!-- About Section -->
+            <section class="main-section">
+              <h2 class="main-section-title">
+                <i class="fal fa-user"></i>
+                {{ 'sections.about_me' | translate }}
               </h2>
               <div class="section-content">
-                <div class="hobbies-list">
-                  <span class="hobby-item" *ngFor="let hobby of data.hobbies; let last = last">
-                    {{ hobby }}<span *ngIf="!last"> • </span>
-                  </span>
+                <div [innerHTML]="getFormattedAbout()"></div>
+              </div>
+            </section>
+
+            <!-- Accomplishments Section -->
+            <section class="main-section">
+              <h2 class="main-section-title">
+                <i class="fal fa-trophy"></i>
+                {{ 'sections.accomplishments' | translate }}
+              </h2>
+              <div class="accomplishments-grid">
+                <div class="accomplishment-category">
+                  <h4><i class="fal fa-rocket"></i> {{ 'sections.transformation' | translate }}</h4>
+                  <ul>
+                    <li *ngFor="let acc of getAccomplishmentsByCategory('transformation')">
+                      {{ acc.title }} ({{ acc.year }})
+                    </li>
+                  </ul>
+                </div>
+                <div class="accomplishment-category">
+                  <h4><i class="fal fa-users"></i> {{ 'sections.leadership' | translate }}</h4>
+                  <ul>
+                    <li *ngFor="let acc of getAccomplishmentsByCategory('leadership')">
+                      {{ acc.title }} ({{ acc.year }})
+                    </li>
+                  </ul>
+                </div>
+                <div class="accomplishment-category">
+                  <h4><i class="fal fa-cogs"></i> {{ 'sections.innovation' | translate }}</h4>
+                  <ul>
+                    <li *ngFor="let acc of getAccomplishmentsByCategory('innovation')">
+                      {{ acc.title }} ({{ acc.year }})
+                    </li>
+                  </ul>
+                </div>
+                <div class="accomplishment-category">
+                  <h4><i class="fal fa-chart-line"></i> {{ 'sections.performance' | translate }}</h4>
+                  <ul>
+                    <li *ngFor="let acc of getAccomplishmentsByCategory('performance')">
+                      {{ acc.title }} ({{ acc.year }})
+                    </li>
+                  </ul>
                 </div>
               </div>
             </section>
 
-            <!-- Navigation to Other Pages -->
-            <section class="navigation-section">
-              <h2 class="section-title">
-                <i class="fas fa-compass"></i>
-                Explorer plus
+            <!-- Experiences Section -->
+            <section class="main-section">
+              <h2 class="main-section-title">
+                <i class="fal fa-briefcase"></i>
+                {{ 'sections.detailed_experiences' | translate }}
               </h2>
-              <div class="navigation-cards">
-                <div class="nav-card" (click)="navigateToDetailedExperiences()">
-                  <div class="nav-card-icon">
-                    <i class="fas fa-briefcase"></i>
+              <div class="experiences-container">
+                <div *ngFor="let exp of getExperiences()" class="experience-item">
+                  <div class="experience-header">
+                    <div>
+                      <h3 class="experience-title">{{ exp.position }}</h3>
+                      <div class="experience-company">{{ exp.company }}</div>
+                    </div>
+                    <span class="experience-period">{{ exp.period }}</span>
                   </div>
-                  <h3>Expériences détaillées</h3>
-                  <p>Découvrez mon parcours professionnel complet avec tous les détails</p>
-                  <div class="nav-card-arrow">
-                    <i class="fas fa-arrow-right"></i>
+                  <p class="experience-description">{{ exp.description }}</p>
+                  <div *ngIf="exp.achievements" class="experience-achievements">
+                    <h4>{{ 'sections.key_achievements' | translate }}</h4>
+                    <ul>
+                      <li *ngFor="let achievement of exp.achievements" [innerHTML]="formatAchievement(achievement)"></li>
+                    </ul>
                   </div>
-                </div>
-                
-                <div class="nav-card" (click)="navigateToRecommendations()">
-                  <div class="nav-card-icon">
-                    <i class="fas fa-comments"></i>
-                  </div>
-                  <h3>Recommandations</h3>
-                  <p>Lisez les témoignages de mes managers et collègues</p>
-                  <div class="nav-card-arrow">
-                    <i class="fas fa-arrow-right"></i>
+                  <div *ngIf="exp.technologies" class="experience-technologies">
+                    <span class="tech-label">{{ 'sections.technologies' | translate }}</span>
+                    <span class="tech-tags">
+                      <span *ngFor="let tech of exp.technologies" class="tech-tag">{{ tech }}</span>
+                    </span>
                   </div>
                 </div>
               </div>
             </section>
-         </div>
+
+
+
+            <!-- Recommendations Section -->
+            <section class="main-section">
+              <h2 class="main-section-title">
+                <i class="fal fa-quote-left"></i>
+                {{ 'sections.recommendations' | translate }}
+              </h2>
+              <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
+                <p class="recommendation-text">"{{ rec.text }}"</p>
+                <div class="recommendation-author">
+                  <img *ngIf="rec.photo" [src]="rec.photo" [alt]="rec.name" class="author-avatar">
+                  <div class="author-info">
+                    <h4 class="author-name">{{ rec.name }}</h4>
+                    <p class="author-title">{{ rec.position }}<span *ngIf="rec.company"> chez {{ rec.company }}</span></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+          </div>
        </div>
-     </div>
+      </div>
+    </div>
    `,
   styleUrls: ['./cv-page.component.css']
 })
@@ -317,21 +328,14 @@ export class CvPageComponent implements OnChanges {
     const aboutText = this.variant === 'full' ? this.data.aboutLong?.description : this.data.aboutShort?.description;
     if (!aboutText) return '';
     
-    // Mots-clés à mettre en emphase
-    const keywords = [
-      'Agile', 'Lean', 'Scrum', 'Kanban', 'DevOps', 'Leadership', 'Management',
-      'Product Owner', 'Scrum Master', 'Engineering Manager', 'Tech Lead',
-      'Transformation digitale', 'Innovation', 'Équipe', 'Coaching',
-      'Delivery', 'Performance', 'Qualité', 'Continuous Improvement'
-    ];
-    
-    let formattedText = aboutText;
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-      formattedText = formattedText.replace(regex, `<strong class="keyword">${keyword}</strong>`);
-    });
-    
-    return formattedText;
+    // Use markdown pipe for formatting
+    const markdownPipe = new MarkdownPipe();
+    return markdownPipe.transform(aboutText);
+  }
+
+  formatAchievement(achievement: string): string {
+    const markdownPipe = new MarkdownPipe();
+    return markdownPipe.transform(achievement);
   }
 
   navigateToDetailedExperiences(): void {
@@ -377,6 +381,45 @@ export class CvPageComponent implements OnChanges {
     return this.variant === 'short'
       ? this.data.experiencesShort || []
       : this.data.experiencesLong || [];
+  }
+
+  getRecommendations() {
+    if (!this.data?.recommendations) return [];
+    return this.recommendationsExpanded ? this.data.recommendations : this.data.recommendations.slice(0, 3);
+  }
+
+
+
+  getAccomplishmentsByCategory(category: string) {
+    if (!this.data?.accomplishments) return [];
+    
+    const categoryMap: { [key: string]: string[] } = {
+      'transformation': ['transformation', 'change', 'agile', 'lean', 'process'],
+      'leadership': ['leadership', 'team', 'management', 'coaching', 'mentor'],
+      'innovation': ['innovation', 'product', 'development', 'creation', 'launch'],
+      'performance': ['performance', 'improvement', 'optimization', 'efficiency', 'results']
+    };
+    
+    const keywords = categoryMap[category] || [];
+    
+    return this.data.accomplishments.filter(acc => 
+      keywords.some(keyword => 
+        acc.title.toLowerCase().includes(keyword) || 
+        acc.description.toLowerCase().includes(keyword)
+      )
+    ).slice(0, this.accomplishmentsExpanded ? undefined : 3);
+  }
+
+  getCompanyLogo(companyName: string): string | null {
+    const logoMap: { [key: string]: string } = {
+      'Deezer': 'assets/images/logos/deezer.png',
+      'Onepoint': 'assets/images/logos/onepoint.png',
+      'Santeclair': 'assets/images/logos/santeclair.png',
+      'MeteoNews': 'assets/images/logos/meteonews.png',
+      'Talan': 'assets/images/logos/talan.png'
+    };
+    
+    return logoMap[companyName] || null;
   }
 
   getSkillCategories(): SkillCategory[] {
