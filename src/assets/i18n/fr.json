@@ -38,6 +38,92 @@
       "technologies": ["JavaScript", "Python", "React", "Node.js"]
     }
   ],
+  "experiencesLong": [
+    {
+      "company": "Dougs",
+      "position": "Engineering Manager",
+      "period": "2022 - Présent",
+      "description": "Leadership et management d'équipes techniques dans la première plateforme française de comptabilité 100% digitale. Accompagnement de la croissance de l'équipe de 15 à 35+ développeurs et ingénieurs.",
+      "achievements": [
+        "Structuration du delivery et mise en place de pratiques DevOps avancées",
+        "Transformation agile à l'échelle avec adoption de SAFe",
+        "Développement des talents : 80% de promotions internes",
+        "Amélioration de 40% des métriques de performance équipe"
+      ],
+      "technologies": ["Node.js", "React", "TypeScript", "AWS", "Docker", "Kubernetes"],
+      "logo": "assets/images/companies/dougs.png"
+    },
+    {
+      "company": "SantéVet",
+      "position": "Lead Scrum Master",
+      "period": "2020 - 2022",
+      "description": "Accompagnement de la transformation agile dans le leader européen de l'assurance santé animale. Coaching d'équipes produit et tech dans un contexte de forte croissance.",
+      "achievements": [
+        "Mise en place du framework Scrum à l'échelle pour 8 équipes",
+        "Réduction de 50% du time-to-market des nouvelles fonctionnalités",
+        "Formation et coaching de 15+ Scrum Masters",
+        "Amélioration de la satisfaction client de 25%"
+      ],
+      "technologies": ["Scrum", "SAFe", "Jira", "Confluence", "Azure DevOps"],
+      "logo": "assets/images/companies/santevet.png"
+    },
+    {
+      "company": "ManoMano",
+      "position": "Senior Scrum Master",
+      "period": "2018 - 2020",
+      "description": "Accompagnement agile dans la marketplace européenne leader du bricolage et jardinage. Support de la croissance explosive avec passage de 50 à 200+ développeurs.",
+      "achievements": [
+        "Structuration du delivery pour 12 équipes produit",
+        "Mise en place de rituels agiles à l'échelle",
+        "Coaching de Product Owners et développement de la culture produit",
+        "Amélioration de 60% de la vélocité des équipes"
+      ],
+      "technologies": ["Scrum", "Kanban", "OKRs", "Slack", "GitHub"],
+      "logo": "assets/images/companies/manomano.png"
+    },
+    {
+      "company": "onepoint",
+      "position": "Ingénieur d'études / Coach Agile",
+      "period": "2016 - 2018",
+      "description": "Conseil en transformation digitale et accompagnement agile pour des grands comptes. Expertise technique et coaching d'équipes dans des contextes variés.",
+      "achievements": [
+        "Accompagnement de 5+ transformations agiles en grand compte",
+        "Développement d'une expertise en architecture microservices",
+        "Formation de 50+ collaborateurs aux pratiques agiles",
+        "Certification Professional Scrum Master"
+      ],
+      "technologies": ["Java", "Spring", "Angular", "Docker", "Jenkins"],
+      "logo": "assets/images/companies/onepoint.png"
+    },
+    {
+      "company": "Capgemini × Cdiscount",
+      "position": "Chef de projet fonctionnel",
+      "period": "2014 - 2016",
+      "description": "Gestion de projets e-commerce pour le leader français du commerce en ligne. Coordination d'équipes pluridisciplinaires et livraison de fonctionnalités critiques.",
+      "achievements": [
+        "Livraison de 10+ projets e-commerce majeurs",
+        "Coordination d'équipes de 15+ personnes",
+        "Amélioration des processus de livraison",
+        "Réduction de 30% des délais de mise en production"
+      ],
+      "technologies": ["Java", "Oracle", "Weblogic", "Selenium"],
+      "logo": "assets/images/companies/capgemini.png"
+    },
+    {
+      "company": "Galilée",
+      "position": "Développeur & \"Scrum Master\"",
+      "period": "2012 - 2014",
+      "description": "Développement d'applications métier et découverte des pratiques agiles dans une ESN spécialisée. Premiers pas en leadership d'équipe.",
+      "achievements": [
+        "Développement de 5+ applications métier",
+        "Introduction des pratiques Scrum dans l'équipe",
+        "Montée en compétences sur les technologies web modernes",
+        "Mentorat de développeurs juniors"
+      ],
+      "technologies": ["C#", ".NET", "SQL Server", "JavaScript"],
+      "logo": "assets/images/companies/galilee.png"
+    }
+  ],
   "skills": {
     "technical": ["JavaScript", "TypeScript", "React", "Node.js", "AWS", "Docker", "PostgreSQL", "MongoDB"],
     "leadership": ["Management d'équipe", "Coaching", "Mentoring", "Transformation Agile", "Scrum Master"],
@@ -133,5 +219,35 @@
       "language": "Espagnol",
       "level": "Intermédiaire (B2)"
     }
+  ],
+  "certifications": [
+    {
+      "name": "Professional Scrum Master (PSM I)",
+      "issuer": "Scrum.org",
+      "year": "2018"
+    },
+    {
+      "name": "SAFe 5 Agilist",
+      "issuer": "Scaled Agile",
+      "year": "2021"
+    },
+    {
+      "name": "AWS Solutions Architect Associate",
+      "issuer": "Amazon Web Services",
+      "year": "2020"
+    },
+    {
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "issuer": "Cloud Native Computing Foundation",
+      "year": "2022"
+    }
+  ],
+  "hobbies": [
+    "🎸 Guitare",
+    "🏃‍♂️ Course à pied",
+    "📚 Lecture",
+    "🎮 Gaming",
+    "🌱 Jardinage",
+    "🍳 Cuisine"
   ]
 }
