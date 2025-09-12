@@ -37,5 +37,101 @@
       "description": "Développement d'applications web et mobiles pour diverses startups et entreprises. Spécialisation en architecture moderne et UX.",
       "technologies": ["JavaScript", "Python", "React", "Node.js"]
     }
+  ],
+  "skills": {
+    "technical": ["JavaScript", "TypeScript", "React", "Node.js", "AWS", "Docker", "PostgreSQL", "MongoDB"],
+    "leadership": ["Management d'équipe", "Coaching", "Mentoring", "Transformation Agile", "Scrum Master"],
+    "business": ["Product Management", "Stratégie", "Growth Hacking", "Analytics", "UX/UI"]
+  },
+  "accomplishments": [
+    {
+      "title": "Transformation Agile chez Dougs",
+      "description": "Mise en place des pratiques Agile et Scrum pour une équipe de 25+ développeurs",
+      "year": "2019"
+    },
+    {
+      "title": "Certification Scrum Master",
+      "description": "Obtention de la certification Professional Scrum Master (PSM I)",
+      "year": "2018"
+    }
+  ],
+  "recommendations": [
+    {
+      "name": "Alice Martin",
+      "position": "Product Manager",
+      "company": "Dougs",
+      "text": "Alec est un manager exceptionnel qui sait allier vision technique et leadership humain. Son approche collaborative a transformé notre façon de travailler.",
+      "relationship": "Collègue",
+      "date": "2023",
+      "linkedinUrl": "https://linkedin.com/in/alice-martin",
+      "photo": "assets/images/recommendations/alice.jpg"
+    },
+    {
+      "name": "Domingo Rodriguez",
+      "position": "Senior Developer",
+      "company": "Dougs",
+      "text": "Travailler avec Alec a été une expérience enrichissante. Il crée un environnement où chacun peut s'épanouir et donner le meilleur de soi-même.",
+      "relationship": "Équipe",
+      "date": "2023",
+      "linkedinUrl": "https://linkedin.com/in/domingo-rodriguez",
+      "photo": "assets/images/recommendations/domingo.jpg"
+    },
+    {
+      "name": "Florian Dubois",
+      "position": "Tech Lead",
+      "company": "Dougs",
+      "text": "Alec a une capacité remarquable à fédérer les équipes autour d'objectifs communs. Son expertise technique et son sens du leadership font de lui un manager de référence.",
+      "relationship": "Équipe",
+      "date": "2022",
+      "linkedinUrl": "https://linkedin.com/in/florian-dubois",
+      "photo": "assets/images/recommendations/florian.jpg"
+    },
+    {
+      "name": "Simon Leroy",
+      "position": "DevOps Engineer",
+      "company": "Dougs",
+      "text": "Alec comprend parfaitement les enjeux techniques tout en gardant une vision business claire. C'est un plaisir de travailler sous sa direction.",
+      "relationship": "Équipe",
+      "date": "2022",
+      "linkedinUrl": "https://linkedin.com/in/simon-leroy",
+      "photo": "assets/images/recommendations/simon.jpg"
+    },
+    {
+      "name": "Xavier Moreau",
+      "position": "CTO",
+      "company": "TechCorp",
+      "text": "Alec est un leader naturel qui inspire confiance et respect. Sa capacité à transformer les défis en opportunités est remarquable.",
+      "relationship": "Manager",
+      "date": "2021",
+      "linkedinUrl": "https://linkedin.com/in/xavier-moreau",
+      "photo": "assets/images/recommendations/xavier.jpg"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master en Informatique",
+      "school": "École Supérieure d'Informatique",
+      "year": "2015",
+      "specialization": "Génie Logiciel et Systèmes Distribués"
+    },
+    {
+      "degree": "Licence en Informatique",
+      "school": "Université de Technologie",
+      "year": "2013"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Français",
+      "level": "Natif"
+    },
+    {
+      "language": "Anglais",
+      "level": "Courant (C1)"
+    },
+    {
+      "language": "Espagnol",
+      "level": "Intermédiaire (B2)"
+    }
   ]
 }
