@@ -37,17 +37,17 @@ import { CvPageComponent } from './pages/cv-page.component';
           <div class="tool-group segmented-group">
             <button 
               class="segmented-button" 
-              [class.active]="variant() === 'short'"
-              (click)="setVariant('short')"
-              title="Version courte">
-              <i class="fal fa-file-alt"></i>
-            </button>
-            <button 
-              class="segmented-button" 
               [class.active]="variant() === 'full'"
               (click)="setVariant('full')"
               title="Version complète">
               <i class="fal fa-file-invoice"></i>
+            </button>
+            <button 
+              class="segmented-button" 
+              [class.active]="variant() === 'short'"
+              (click)="setVariant('short')"
+              title="Version courte">
+              <i class="fal fa-file-alt"></i>
             </button>
           </div>
 

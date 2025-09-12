@@ -33,13 +33,26 @@ En résumé, je suis un **servant leader** qui rayonne par l’enthousiasme, la
 
 ### Compétences
 
-**Agilité :** SAFe, LeSS, Nexus, unFIX, Lean, Scrum, ShapeUp…  
-**Coaching Agile :** accompagnement d’équipes (tech et managériales) et d’individus (SE, Scrum Master, PO/PM, PDS)…  
-**Leadership/Management :** servant leader, mentor, développement de carrière, motivateurs intrinsèques, responsabilisation, autonomisation et délégation…  
-**Delivery :** OKRs, coordination multi‑équipes, co‑construction de roadmaps stratégiques, suivi de production, optimisation des flux…  
-**Communication :** facilitateur, écoute active, animateur, formateur…  
-**Tech :** Node.js, TypeScript, Nest.js, PostgreSQL, Docker…  
-**Langues :** français et anglais courants
+- Scaled Agile (SAFe, LeSS, Nexus, unFIX)
+- Lean
+- Scrum
+- Coaching (équipes & individus)
+- Servant leader
+- Mentoring
+- Career development
+- Autonomisation
+- OKRs
+- Multi‑team coordination
+- Roadmaps
+- Delivery
+- Facilitation
+- Formation
+- Node.js
+- TypeScript
+- PostgreSQL
+- Docker
+- Français
+- Anglais
 
 ### Loisirs
 

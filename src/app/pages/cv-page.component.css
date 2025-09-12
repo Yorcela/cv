@@ -132,6 +132,40 @@
   margin-bottom: 2rem;
 }
 
+.certifications-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.certification-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  align-self: flex-start;
+  border: 1px solid #e0e0e0;
+}
+
+.chip-text {
+  margin-right: 8px;
+}
+
+.chip-badge {
+  background: #4285f4;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
 .sidebar-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -153,6 +187,134 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   opacity: 0.9;
+}
+
+.skills-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skills-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.skill-chip-xs {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem;
+  border-radius: 12px;
+  border: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.skill-chip-xs:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Compétences Agiles */
+.skill-chip-xs:nth-child(1),
+.skill-chip-xs:nth-child(2),
+.skill-chip-xs:nth-child(3),
+.skill-chip-xs:nth-child(4),
+.skill-chip-xs:nth-child(5) {
+  background: linear-gradient(135deg, #c7d2fe 0%, #ddd6fe 100%);
+  color: #4338ca;
+}
+
+/* Leadership & Coaching */
+.skill-chip-xs:nth-child(6),
+.skill-chip-xs:nth-child(7),
+.skill-chip-xs:nth-child(8),
+.skill-chip-xs:nth-child(9),
+.skill-chip-xs:nth-child(10) {
+  background: linear-gradient(135deg, #fce7f3 0%, #fed7e2 100%);
+  color: #be185d;
+}
+
+/* Technologies */
+.skill-chip-xs:nth-child(11),
+.skill-chip-xs:nth-child(12),
+.skill-chip-xs:nth-child(13),
+.skill-chip-xs:nth-child(14),
+.skill-chip-xs:nth-child(15),
+.skill-chip-xs:nth-child(16),
+.skill-chip-xs:nth-child(17),
+.skill-chip-xs:nth-child(18) {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1d4ed8;
+}
+
+/* Langues */
+.skill-chip-xs:nth-child(19),
+.skill-chip-xs:nth-child(20) {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #059669;
+}
+
+/* Education & Certifications Section */
+.sidebar-education {
+  margin-bottom: 2rem;
+}
+
+.education-content {
+  margin-top: 1rem;
+}
+
+.education-subsection {
+  margin-bottom: 1.5rem;
+}
+
+.education-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.education-subtitle i {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.education-item,
+.certification-item {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.education-degree,
+.certification-name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.25rem;
+}
+
+.education-school {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.25rem;
+}
+
+.education-year,
+.certification-year {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
 }
 
 .skills-list {

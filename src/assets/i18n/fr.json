@@ -16,6 +16,7 @@
     "skills": "Compétences",
     "hobbies": "Loisirs",
     "education": "Diplômes",
+    "education_certifications": "Diplômes & Certifications",
     "certifications": "Certifications",
     "recommendations": "Recommandations",
     "detailed_experiences": "Expériences détaillées",
@@ -366,56 +367,13 @@
     }
   ],
   "skills": {
-    "leadership": [
-      "Management d'équipe",
-      "Coaching individuel et collectif",
-      "Développement des talents",
-      "Recrutement et onboarding",
-      "Entretiens 1:1",
-      "Plans de carrière",
-      "Feedback constructif",
-      "Leadership servant"
-    ],
-    "agile": [
-      "Scrum Master certifié (PSM I & II)",
-      "SAFe 5 Agilist",
-      "Frameworks agiles (Scrum, Kanban, LeSS)",
-      "Agilité à l'échelle (SAFe, unFIX, MACS)",
-      "Facilitation d'équipes",
-      "Coaching agile",
-      "Transformation organisationnelle",
-      "Amélioration continue"
-    ],
-    "product": [
-      "Product Management",
-      "Roadmap produit",
-      "OKRs et KPIs",
-      "ShapeUp",
-      "Design Thinking",
-      "User Stories",
-      "Priorisation",
-      "Analyse des besoins"
-    ],
-    "technical": [
-      "TypeScript / JavaScript",
-      "Node.js",
-      "PHP (Zend Framework)",
-      "Bases de données (PostgreSQL, MSSQL)",
-      "Architecture SOA",
-      "Docker",
-      "AWS",
-      "Git / GitHub"
-    ],
-    "business": [
-      "Gestion de projet",
-      "Risk Management",
-      "Budget Management",
-      "Communication inter-équipes",
-      "Relation client",
-      "Avant-vente",
-      "Négociation",
-      "Présentation"
-    ]
+    "agile": "SAFe, LeSS, Nexus, unFIX, Lean, Scrum, ShapeUp…",
+    "coaching": "accompagnement d'équipes (tech et managériales) et d'individus (SE, Scrum Master, PO/PM, PDS)…",
+    "leadership": "servant leader, mentor, développement de carrière, motivateurs intrinsèques, responsabilisation, autonomisation et délégation…",
+    "delivery": "OKRs, coordination multi‑équipes, co‑construction de roadmaps stratégiques, suivi de production, optimisation des flux…",
+    "communication": "facilitateur, écoute active, animateur, formateur…",
+    "tech": "Node.js, TypeScript, Nest.js, PostgreSQL, Docker…",
+    "languages": "français et anglais courants"
   },
   "languages": [
     {
@@ -425,10 +383,6 @@
     {
       "language": "Anglais",
       "level": "Courant (C1)"
-    },
-    {
-      "language": "Espagnol",
-      "level": "Intermédiaire (B2)"
     }
   ],
   "certifications": [

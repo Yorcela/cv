@@ -30,9 +30,13 @@ interface CVData {
     content: ExperienceDetailed[];
   };
   skills: {
-    technical: string[];
-    leadership: string[];
-    business: string[];
+    agile: string;
+    coaching: string;
+    leadership: string;
+    delivery: string;
+    communication: string;
+    tech: string;
+    languages: string;
   };
   accomplishments: Accomplishment[];
   recommendations: Recommendation[];
@@ -146,27 +150,70 @@ interface SkillCategory {
           <!-- Skills Section -->
           <div class="sidebar-skills">
             <h3 class="sidebar-title"><i class="fal fa-cogs"></i> {{ 'sections.skills' | translate }}</h3>
-            <div class="skill-category">
-              <h4>{{ 'sections.leadership' | translate }}</h4>
-              <div class="skills-list">
-                <span class="skill-tag" *ngFor="let skill of data.skills.leadership">{{ skill }}</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h4>{{ 'sections.tech' | translate }}</h4>
-              <div class="skills-list">
-                <span class="skill-tag" *ngFor="let skill of data.skills.technical">{{ skill }}</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h4>{{ 'sections.languages' | translate }}</h4>
-              <div class="skills-list">
-                <span class="skill-tag" *ngFor="let lang of data.languages">{{ lang.language }} ({{ lang.level }})</span>
-              </div>
+            <div class="skills-chips-container">
+              <span class="skill-chip-xs">Scaled Agile (SAFe, LeSS, Nexus, unFIX)</span>
+              <span class="skill-chip-xs">Lean</span>
+              <span class="skill-chip-xs">Scrum</span>
+              <span class="skill-chip-xs">Coaching (équipes & individus)</span>
+              <span class="skill-chip-xs">Servant leader</span>
+              <span class="skill-chip-xs">Mentoring</span>
+              <span class="skill-chip-xs">Career development</span>
+              <span class="skill-chip-xs">Autonomisation</span>
+              <span class="skill-chip-xs">OKRs</span>
+              <span class="skill-chip-xs">Multi‑team coordination</span>
+              <span class="skill-chip-xs">Roadmaps</span>
+              <span class="skill-chip-xs">Delivery</span>
+              <span class="skill-chip-xs">Facilitation</span>
+              <span class="skill-chip-xs">Formation</span>
+              <span class="skill-chip-xs">Node.js</span>
+              <span class="skill-chip-xs">TypeScript</span>
+              <span class="skill-chip-xs">PostgreSQL</span>
+              <span class="skill-chip-xs">Docker</span>
+              <span class="skill-chip-xs">Français</span>
+              <span class="skill-chip-xs">Anglais</span>
             </div>
           </div>
           
-
+          <!-- Education & Certifications Section -->
+          <div class="sidebar-education">
+            <h3 class="sidebar-title"><i class="fal fa-graduation-cap"></i> {{ 'sections.education_certifications' | translate }}</h3>
+            <div class="education-content">
+              <div class="education-subsection">
+                <h4 class="education-subtitle"><i class="fal fa-university"></i> {{ 'sections.education' | translate }}</h4>
+                <div class="education-item">
+                  <div class="education-degree">Chef de projet informatique (niveau II)</div>
+                  <div class="education-school">Esarc Évolution</div>
+                  <div class="education-year">2011</div>
+                </div>
+                <div class="education-item">
+                  <div class="education-degree">Bac Communication et Gestion des RH</div>
+                  <div class="education-school">Lycée Jean Monnet</div>
+                  <div class="education-year">2007</div>
+                </div>
+              </div>
+              <div class="education-subsection">
+                <h4 class="education-subtitle"><i class="fal fa-certificate"></i> {{ 'sections.certifications' | translate }}</h4>
+                <div class="certifications-chips">
+                  <div class="certification-chip">
+                    <span class="chip-text">PSM II</span>
+                    <span class="chip-badge">2021</span>
+                  </div>
+                  <div class="certification-chip">
+                    <span class="chip-text">SAFe Agilist</span>
+                    <span class="chip-badge">2020</span>
+                  </div>
+                  <div class="certification-chip">
+                    <span class="chip-text">PSM I</span>
+                    <span class="chip-badge">2020</span>
+                  </div>
+                  <div class="certification-chip">
+                    <span class="chip-text">PSPO I</span>
+                    <span class="chip-badge">2020</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
           <!-- Hobbies Section -->
           <div class="sidebar-hobbies">
