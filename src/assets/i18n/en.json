@@ -57,13 +57,13 @@
   ],
   "recommendations": [
     {
-      "name": "Alice Martin",
-      "position": "Product Manager",
+      "name": "Alice Montel",
+      "position": "Scrum Master",
       "company": "Dougs",
       "text": "Alec is an exceptional manager who knows how to combine technical vision with human leadership. His collaborative approach has transformed the way we work.",
       "relationship": "Colleague",
       "date": "2023",
-      "linkedinUrl": "https://linkedin.com/in/alice-martin",
+      "linkedinUrl": "https://www.linkedin.com/in/alice-montel-17358088/",
       "photo": "assets/images/recommendations/alice.jpg"
     },
     {
