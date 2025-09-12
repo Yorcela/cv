@@ -11,9 +11,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       <h3 class="sidebar-title"><i class="fad fa-university"></i> {{ 'sections.education' | translate }}</h3>
       <div class="education-content">
         <div class="education-item" *ngFor="let edu of education">
-          <div class="education-degree">{{ edu.degree }}</div>
-          <div class="education-school">{{ edu.institution }}</div>
-          <div class="education-year">{{ edu.year }}</div>
+          <div class="education-main">
+            <div class="education-degree">{{ edu.degree }}</div>
+            <div class="education-school">{{ edu.school }}</div>
+          </div>
+          <span class="education-year">{{ edu.year }}</span>
         </div>
       </div>
     </div>

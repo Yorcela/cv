@@ -185,19 +185,7 @@
       "photo": "assets/images/recommendations/xavier.jpg"
     }
   ],
-  "education": [
-    {
-      "degree": "Chef de projet informatique (niveau II)",
-      "school": "Esarc Évolution",
-      "year": "2011",
-      "specialization": "Gestion de projet et développement"
-    },
-    {
-      "degree": "Bac Communication et Gestion des RH",
-      "school": "Lycée Jean Monnet",
-      "year": "2007"
-    }
-  ],
+
   "experiencesDetailed": [
     {
       "company": "Dougs",
@@ -408,13 +396,13 @@
   ],
   "education": [
     {
-      "degree": "Chef de projet informatique (niveau II)",
-      "school": "Esarc Évolution",
+      "degree": "Chef de projet informatique",
+      "school": "Esarc Évolution (Bordeaux - 33)",
       "year": "2011"
     },
     {
-      "degree": "Bac Communication et Gestion des RH",
-      "school": "Lycée Jean Monnet",
+      "degree": "Bac STG CGRH",
+      "school": "Lycée Jean Monnet (Cognac - 16)",
       "year": "2007"
     }
   ],
