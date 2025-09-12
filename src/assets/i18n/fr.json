@@ -1,7 +1,41 @@
 {
-  "tagline": "Engineering Manager • Agile Leader",
-  "variant_full": "Version complète",
-  "variant_short": "Version courte",
-  "download_pdf": "Télécharger le PDF",
-  "footer": "Site CV statique Angular • Hash routing prêt pour OVH"
+  "ui": {
+    "tagline": "Engineering Manager • Agile Leader",
+    "variant_full": "Version complète",
+    "variant_short": "Version courte",
+    "download_pdf": "Télécharger le PDF",
+    "footer": "Site CV statique Angular • Hash routing prêt pour OVH"
+  },
+  "personalInfo": {
+    "name": "Alec Roy",
+    "title": "Leader Lean & Agile • Engineering Manager",
+    "email": "alecroy89@gmail.com",
+    "phone": "+33 6 19 19 65 16",
+    "location": "22300 Lannion, France",
+    "linkedin": "linkedin.com/in/alec-roy",
+    "youtube": "https://www.youtube.com/@alec-agile-gardener",
+    "assessfirst": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=fr-FR"
+  },
+  "aboutShort": {
+    "description": "Leader Lean et Agile avec près de 15 ans d'expérience à la croisée du produit, de la tech, du business et du management, j'ai accompagné des scale-ups (ManoMano, SantéVet, Dougs…) dans leur hyper-croissance en structurant le delivery, en menant des transformations agiles à l'échelle et en développant les talents. Mon style est humain, collaboratif et orienté résultats. Je crée les conditions pour que chacun progresse, gagne en autonomie et trouve du sens. Vision stratégique et posture de coach s'articulent dans mon leadership : transparence, confiance et excellence. Reconnu pour ma capacité à fédérer, motiver et inspirer, j'apporte empathie, spontanéité et pragmatisme. Moteur d'innovation, je challenge l'existant, teste, apprends et itère. En résumé, un servant leader passionné, animé par l'envie de contribuer à la croissance d'une entreprise où les personnes et les produits grandissent ensemble."
+  },
+  "aboutLong": {
+    "description": "Je suis un leader Lean / Agile et manager passionné, avec près de 15 ans d'expérience à la croisée du produit, de la tech, du business et du management. J'ai accompagné mes équipes dans des scale-ups (ManoMano, SantéVet, Dougs…) en hyper-croissance en structurant le delivery, en accompagnant des transformations agiles à l'échelle et en développant les talents de mes équipes. Mon style est résolument humain, collaboratif et orienté résultats. Les équipes que j'accompagne décrivent mon approche comme motivante et engageante. Je crée les conditions pour que chacun progresse, prenne confiance et gagne en autonomie. Je combine sens de vision stratégique (roadmaps alignées sur la stratégie globale de l'entreprise, adaptation des cadres de travail aux contextes…) et posture de coach (mentorat, écoute active, feedback constructif…). Mon leadership repose sur la transparence, la confiance et l'excellence. Sur le plan humain, mes forces résident dans ma capacité à fédérer, motiver et inspirer. Je suis reconnu pour mon empathie, ma facilité à nouer des relations authentiques et ma spontanéité, qui rendent la collaboration naturelle et agréable. Je suis aussi moteur d'innovation et de changement : j'aime comprendre pourquoi, questionner l'existant de manière pragmatique, tester de nouvelles approches, apprendre vite et itérer. Ce qui me définit en tant que manager : People first : je valorise la progression individuelle et collective, j'aime mettre en avant le talent des autres, je détecte facilement le potentiel de chacun. Coach & visionnaire : j'aide à grandir et j'entraîne vers un objectif commun, en encourageant à définir des objectifs collectifs et individuels. Catalyseur : je transforme les défis en opportunités et stimule l'énergie collective, en m'entourant d'early adopters qui viendront m'épauler dans la transformation. Structuré & pragmatique : je sais concevoir des cadres clairs, réalistes (mais ambitieux) et adaptés aux enjeux business, tout en restant pragmatique et progressif. En résumé, je suis un servant leader qui rayonne par l'enthousiasme, la proximité et la volonté d'avoir un impact global, positif et durable. Mon moteur : contribuer à la croissance d'une entreprise en créant un environnement où les personnes et les produits grandissent ensemble."
+  },
+  "experiencesShort": [
+    {
+      "company": "Dougs",
+      "position": "Engineering Manager",
+      "period": "2018 - Présent",
+      "description": "Management d'équipes techniques dans la première plateforme française de comptabilité 100% digitale. Leadership, coaching et développement d'une équipe de 25+ développeurs et ingénieurs.",
+      "technologies": ["Node.js", "React", "TypeScript", "AWS", "Docker"]
+    },
+    {
+      "company": "Freelance & Projets personnels",
+      "position": "Développeur Full-Stack",
+      "period": "2015 - 2018",
+      "description": "Développement d'applications web et mobiles pour diverses startups et entreprises. Spécialisation en architecture moderne et UX.",
+      "technologies": ["JavaScript", "Python", "React", "Node.js"]
+    }
+  ]
 }

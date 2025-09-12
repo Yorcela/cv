@@ -287,8 +287,8 @@ export class CvPageComponent implements OnChanges {
   }
 
   private loadData(): void {
-    const fileName = `cv-data-${this.lang}.json`;
-    this.http.get<CVData>(`assets/data/${fileName}`).subscribe({
+    const fileName = `${this.lang}.json`;
+    this.http.get<CVData>(`assets/i18n/${fileName}`).subscribe({
       next: (data) => {
         this.data = data;
         this.loading = false;

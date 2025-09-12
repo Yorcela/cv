@@ -1,7 +1,41 @@
 {
-  "tagline": "Engineering Manager • Agile Leader",
-  "variant_full": "Full version",
-  "variant_short": "Short version",
-  "download_pdf": "Download PDF",
-  "footer": "Static Angular CV site • Hash routing ready for OVH"
+  "ui": {
+    "tagline": "Engineering Manager • Agile Leader",
+    "variant_full": "Full version",
+    "variant_short": "Short version",
+    "download_pdf": "Download PDF",
+    "footer": "Static Angular CV site • Hash routing ready for OVH"
+  },
+  "personalInfo": {
+    "name": "Alec Roy",
+    "title": "Lean & Agile Leader • Engineering Manager",
+    "email": "alecroy89@gmail.com",
+    "phone": "+33 6 19 19 65 16",
+    "location": "22300 Lannion, France",
+    "linkedin": "linkedin.com/in/alec-roy",
+    "youtube": "https://www.youtube.com/@alec-agile-gardener",
+    "assessfirst": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=en-US"
+  },
+  "aboutShort": {
+    "description": "Lean and Agile Leader with nearly 15 years of experience at the crossroads of product, tech, business and management, I have supported scale-ups (ManoMano, SantéVet, Dougs…) in their hyper-growth by structuring delivery, leading agile transformations at scale and developing talent. My style is human, collaborative and results-oriented. I create the conditions for everyone to grow, gain autonomy and find meaning. Strategic vision and coaching posture come together in my leadership: transparency, trust and excellence. Recognized for my ability to unite, motivate and inspire, I bring empathy, spontaneity and pragmatism. As an innovation driver, I challenge the status quo, test, learn and iterate. In short, a passionate servant leader, driven by the desire to contribute to the growth of a company where people and products grow together."
+  },
+  "aboutLong": {
+    "description": "I am a Lean/Agile leader and passionate manager, with nearly 15 years of experience at the crossroads of product, tech, business, and management.\n\nI have supported my teams in scale-ups (ManoMano, SantéVet, Dougs…) during hyper-growth by structuring delivery, leading agile transformations at scale, and developing talent. My style is resolutely human, collaborative, and results-oriented.\n\nThe teams I work with describe my approach as motivating and engaging. I create the conditions for everyone to grow, gain confidence, and become autonomous. I combine strategic vision (roadmaps aligned with the company's global strategy, adaptation of frameworks to context) with a coaching posture (mentoring, active listening, constructive feedback). My leadership is built on transparency, trust, and excellence.\n\nOn a human level, my strengths lie in my ability to unite, motivate, and inspire. I am recognized for my empathy, my ability to build authentic relationships, and my spontaneity, which make collaboration natural and enjoyable. I am also a driver of innovation and change: I like to understand the \"why,\" challenge the status quo pragmatically, test new approaches, learn quickly, and iterate.\n\nWhat defines me as a manager:\n• People first: I value individual and collective growth, highlight the talent of others, and easily detect everyone's potential.\n• Coach & visionary: I help people grow and lead them toward a shared goal, encouraging the definition of collective and individual objectives.\n• Catalyst: I turn challenges into opportunities and stimulate collective energy, surrounding myself with early adopters to support transformation.\n• Structured & pragmatic: I design clear, realistic (yet ambitious) frameworks."
+  },
+  "experiencesShort": [
+    {
+      "company": "Dougs",
+      "position": "Technical Director & Co-founder",
+      "period": "2018 - Present",
+      "description": "Technical direction of a team of 25+ developers. Architecture and development of the leading SaaS platform in digital accounting.",
+      "technologies": ["Node.js", "React", "TypeScript", "AWS", "Docker"]
+    },
+    {
+      "company": "Previous Startup",
+      "position": "Lead Developer",
+      "period": "2015 - 2018",
+      "description": "Development and architecture of innovative web solutions. Technical team management.",
+      "technologies": ["JavaScript", "Python", "PostgreSQL", "Redis"]
+    }
+  ]
 }
