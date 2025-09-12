@@ -60,7 +60,7 @@ interface CVData {
         <header class="page-header">
           <div class="header-navigation">
             <button class="back-button" (click)="navigateHome()">
-              <i class="fal fa-arrow-left"></i>
+              <i class="fad fa-arrow-left"></i>
               Retour au CV
             </button>
           </div>
@@ -76,7 +76,10 @@ interface CVData {
           <!-- Left Column -->
           <div class="experiences-column left-column">
             <div *ngFor="let exp of getLeftColumnExperiences(); let i = index" class="experience-block">
-              <div class="experience-date">{{ exp.period }}</div>
+              <div class="experience-date">
+                <i class="fad fa-calendar-alt"></i>
+                {{ exp.period }}
+              </div>
               <div class="experience-content">
                 <div class="experience-header">
                   <img *ngIf="exp.logo" [src]="exp.logo" [alt]="exp.company + ' logo'" class="company-logo">

@@ -98,7 +98,7 @@ interface CVData {
 
             <!-- Quote Icon -->
             <div class="quote-icon">
-              <i class="fal fa-quote-right"></i>
+              <i class="fad fa-quote-right"></i>
             </div>
           </div>
         </div>

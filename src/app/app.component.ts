@@ -20,7 +20,7 @@ import { CvPageComponent } from './pages/cv-page.component';
               [class.active]="lang() === 'fr'"
               (click)="setLang('fr')"
               title="Français">
-              <i class="fal fa-globe"></i>
+              <i class="fad fa-language"></i>
                <strong>FR</strong>
             </button>
             <button 
@@ -81,11 +81,7 @@ import { CvPageComponent } from './pages/cv-page.component';
 
     <app-cv-page [lang]="lang()" [variant]="variant()"></app-cv-page>
 
-    <div class="container-content">
-      <footer class="small">
-        © {{year}} Alec Roy
-      </footer>
-    </div>
+
   </div>
   `
 })

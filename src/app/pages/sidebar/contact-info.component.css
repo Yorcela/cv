@@ -1,0 +1,36 @@
+.contact-section {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item i {
+  width: 20px;
+  margin-right: 0.75rem;
+  color: #e8f4fd;
+  text-align: center;
+}
+
+.contact-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: #e8f4fd;
+}
+
+.contact-item span {
+  color: #ffffff;
+}

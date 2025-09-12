@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../pipes/markdown.pipe';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 interface ExperienceDetailed {
   title: string;
@@ -92,7 +93,7 @@ interface SkillCategory {
 @Component({
   selector: 'app-cv-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MarkdownPipe],
+  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent],
   template: `
     <div class="page-background">
       <div class="cv-container">
@@ -113,127 +114,8 @@ interface SkillCategory {
       
       <div *ngIf="!loading && !error && data" class="cv-content">
         <!-- Left Sidebar -->
-        <div class="cv-sidebar">
-          <!-- Profile Section -->
-          <div class="profile-section">
-            <div class="profile-photo-container">
-              <img src="assets/images/profile-photo.png" alt="{{ data.personalInfo.name }}" class="profile-photo">
-            </div>
-            <h1 class="name">{{ data.personalInfo.name }}</h1>
-            <h2 class="title">{{ data.personalInfo.title }}</h2>
-          </div>
-          
-          <!-- Contact Info -->
-          <div class="contact-section">
-            <div class="contact-item">
-              <i class="fal fa-phone"></i>
-              <span>{{ data.personalInfo.phone }}</span>
-            </div>
-            <div class="contact-item">
-              <i class="fal fa-envelope"></i>
-              <a href="mailto:{{ data.personalInfo.email }}">{{ data.personalInfo.email }}</a>
-            </div>
-            <div class="contact-item">
-              <i class="fal fa-map-marker-alt"></i>
-              <span>{{ data.personalInfo.location }}</span>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-linkedin"></i>
-              <a href="{{ data.personalInfo.linkedin }}" target="_blank">{{ 'sections.linkedin' | translate }}</a>
-            </div>
-            <div class="contact-item" *ngIf="data.personalInfo.github">
-              <i class="fab fa-github"></i>
-              <a href="{{ data.personalInfo.github }}" target="_blank">{{ 'sections.github' | translate }}</a>
-            </div>
-          </div>
-          
-          <!-- Skills Section -->
-          <div class="sidebar-skills">
-            <h3 class="sidebar-title"><i class="fal fa-cogs"></i> {{ 'sections.skills' | translate }}</h3>
-            <div class="skills-chips-container">
-              <span class="skill-chip-xs">Scaled Agile (SAFe, LeSS, Nexus, unFIX)</span>
-              <span class="skill-chip-xs">Lean</span>
-              <span class="skill-chip-xs">Scrum</span>
-              <span class="skill-chip-xs">Coaching (équipes & individus)</span>
-              <span class="skill-chip-xs">Servant leader</span>
-              <span class="skill-chip-xs">Mentoring</span>
-              <span class="skill-chip-xs">Career development</span>
-              <span class="skill-chip-xs">Autonomisation</span>
-              <span class="skill-chip-xs">OKRs</span>
-              <span class="skill-chip-xs">Multi‑team coordination</span>
-              <span class="skill-chip-xs">Roadmaps</span>
-              <span class="skill-chip-xs">Delivery</span>
-              <span class="skill-chip-xs">Facilitation</span>
-              <span class="skill-chip-xs">Formation</span>
-              <span class="skill-chip-xs">Node.js</span>
-              <span class="skill-chip-xs">TypeScript</span>
-              <span class="skill-chip-xs">PostgreSQL</span>
-              <span class="skill-chip-xs">Docker</span>
-              <span class="skill-chip-xs">Français</span>
-              <span class="skill-chip-xs">Anglais</span>
-            </div>
-          </div>
-          
-          <!-- Education & Certifications Section -->
-          <div class="sidebar-education">
-            <h3 class="sidebar-title"><i class="fal fa-graduation-cap"></i> {{ 'sections.education_certifications' | translate }}</h3>
-            <div class="education-content">
-              <div class="education-subsection">
-                <h4 class="education-subtitle"><i class="fal fa-university"></i> {{ 'sections.education' | translate }}</h4>
-                <div class="education-item">
-                  <div class="education-degree">Chef de projet informatique (niveau II)</div>
-                  <div class="education-school">Esarc Évolution</div>
-                  <div class="education-year">2011</div>
-                </div>
-                <div class="education-item">
-                  <div class="education-degree">Bac Communication et Gestion des RH</div>
-                  <div class="education-school">Lycée Jean Monnet</div>
-                  <div class="education-year">2007</div>
-                </div>
-              </div>
-              <div class="education-subsection">
-                <h4 class="education-subtitle"><i class="fal fa-certificate"></i> {{ 'sections.certifications' | translate }}</h4>
-                <div class="certifications-chips">
-                  <div class="certification-chip">
-                    <span class="chip-text">PSM II</span>
-                    <span class="chip-badge">2021</span>
-                  </div>
-                  <div class="certification-chip">
-                    <span class="chip-text">SAFe Agilist</span>
-                    <span class="chip-badge">2020</span>
-                  </div>
-                  <div class="certification-chip">
-                    <span class="chip-text">PSM I</span>
-                    <span class="chip-badge">2020</span>
-                  </div>
-                  <div class="certification-chip">
-                    <span class="chip-text">PSPO I</span>
-                    <span class="chip-badge">2020</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Hobbies Section -->
-          <div class="sidebar-hobbies">
-            <h3 class="sidebar-title"><i class="fal fa-heart"></i> {{ 'sections.hobbies' | translate }}</h3>
-            <div class="hobbies-list">
-              <div class="hobby-item" *ngFor="let hobby of data.hobbies">
-                <i class="fas" [ngClass]="{
-                  'fa-tv': hobby.toLowerCase().includes('kaamelott'),
-                  'fa-gamepad': hobby.toLowerCase().includes('tft'),
-                  'fa-hammer': hobby.toLowerCase().includes('bricolage'),
-                  'fa-seedling': hobby.toLowerCase().includes('jardinage'),
-                  'fa-palette': hobby.toLowerCase().includes('tatouage'),
-                  'fa-film': hobby.toLowerCase().includes('cinema') || hobby.toLowerCase().includes('cinéma'),
-                  'fa-desktop': hobby.toLowerCase().includes('series') || hobby.toLowerCase().includes('séries'),
-                  'fa-heart': !hobby.toLowerCase().includes('kaamelott') && !hobby.toLowerCase().includes('tft') && !hobby.toLowerCase().includes('bricolage') && !hobby.toLowerCase().includes('jardinage') && !hobby.toLowerCase().includes('tatouage') && !hobby.toLowerCase().includes('cinema') && !hobby.toLowerCase().includes('cinéma') && !hobby.toLowerCase().includes('series') && !hobby.toLowerCase().includes('séries')
-                }"></i>
-                {{ hobby }}
-              </div>
-            </div>
-          </div>
+        <div class="app-sidebar">
+          <app-sidebar [personalInfo]="data.personalInfo" [hobbies]="data.hobbies || []"></app-sidebar>
         </div>
 
           <!-- Main Content -->
@@ -241,7 +123,7 @@ interface SkillCategory {
             <!-- About Section -->
             <section class="main-section">
               <h2 class="main-section-title">
-                <i class="fal fa-user"></i>
+                <i class="fad fa-user"></i>
                 {{ 'sections.about_me' | translate }}
               </h2>
               <div class="section-content">
@@ -252,12 +134,12 @@ interface SkillCategory {
             <!-- Accomplishments Section -->
             <section class="main-section">
               <h2 class="main-section-title">
-                <i class="fal fa-trophy"></i>
+                <i class="fad fa-trophy"></i>
                 {{ 'sections.accomplishments' | translate }}
               </h2>
               <div class="accomplishments-grid">
                 <div class="accomplishment-category">
-                  <h4><i class="fal fa-rocket"></i> {{ 'sections.transformation' | translate }}</h4>
+                  <h4><i class="fad fa-rocket"></i> {{ 'sections.transformation' | translate }}</h4>
                   <ul>
                     <li *ngFor="let acc of getAccomplishmentsByCategory('transformation')">
                       {{ acc.title }} ({{ acc.year }})
@@ -265,7 +147,7 @@ interface SkillCategory {
                   </ul>
                 </div>
                 <div class="accomplishment-category">
-                  <h4><i class="fal fa-users"></i> {{ 'sections.leadership' | translate }}</h4>
+                  <h4><i class="fad fa-users"></i> {{ 'sections.leadership' | translate }}</h4>
                   <ul>
                     <li *ngFor="let acc of getAccomplishmentsByCategory('leadership')">
                       {{ acc.title }} ({{ acc.year }})
@@ -273,7 +155,7 @@ interface SkillCategory {
                   </ul>
                 </div>
                 <div class="accomplishment-category">
-                  <h4><i class="fal fa-cogs"></i> {{ 'sections.innovation' | translate }}</h4>
+                  <h4><i class="fad fa-cogs"></i> {{ 'sections.innovation' | translate }}</h4>
                   <ul>
                     <li *ngFor="let acc of getAccomplishmentsByCategory('innovation')">
                       {{ acc.title }} ({{ acc.year }})
@@ -281,7 +163,7 @@ interface SkillCategory {
                   </ul>
                 </div>
                 <div class="accomplishment-category">
-                  <h4><i class="fal fa-chart-line"></i> {{ 'sections.performance' | translate }}</h4>
+                  <h4><i class="fad fa-chart-line"></i> {{ 'sections.performance' | translate }}</h4>
                   <ul>
                     <li *ngFor="let acc of getAccomplishmentsByCategory('performance')">
                       {{ acc.title }} ({{ acc.year }})
@@ -294,7 +176,7 @@ interface SkillCategory {
             <!-- Experiences Section -->
             <section class="main-section">
               <h2 class="main-section-title">
-                <i class="fal fa-briefcase"></i>
+                <i class="fad fa-briefcase"></i>
                 {{ 'sections.detailed_experiences' | translate }}
               </h2>
               <div class="experiences-container">

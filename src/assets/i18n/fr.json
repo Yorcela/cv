@@ -367,61 +367,17 @@
     }
   ],
   "skills": {
-    "agile": "SAFe, LeSS, Nexus, unFIX, Lean, Scrum, ShapeUp…",
-    "coaching": "accompagnement d'équipes (tech et managériales) et d'individus (SE, Scrum Master, PO/PM, PDS)…",
-    "leadership": "servant leader, mentor, développement de carrière, motivateurs intrinsèques, responsabilisation, autonomisation et délégation…",
-    "delivery": "OKRs, coordination multi‑équipes, co‑construction de roadmaps stratégiques, suivi de production, optimisation des flux…",
-    "communication": "facilitateur, écoute active, animateur, formateur…",
-    "tech": "Node.js, TypeScript, Nest.js, PostgreSQL, Docker…",
-    "languages": "français et anglais courants"
+    "delivery": ["OKRs", "Stratégie", "Multi‑équipes", "Suivi et optimisationation de production"],
+    "coaching": ["Coaching", "Autonomisation"],
+    "leadership": ["Servant leader", "Mentor", "Développement de carrière", "Management 3.0"],
+    "communication": ["Écoute active", "Animation d'événements", "Formateur"],
+    "agile": ["Scrum", "SAFe", "LeSS", "Nexus", "unFIX", "Lean", "ShapeUp"],
+    "tech": ["Node.js", "TypeScript", "Nest.js", "PostgreSQL", "Docker"],
+    "languages": ["Français", "Anglais"]
   },
-  "languages": [
-    {
-      "language": "Français",
-      "level": "Natif"
-    },
-    {
-      "language": "Anglais",
-      "level": "Courant (C1)"
-    }
-  ],
   "certifications": [
     {
-      "name": "Professional Scrum Master II (PSM II)",
-      "issuer": "Scrum.org",
-      "year": "2021"
-    },
-    {
-      "name": "SAFe 5 Agilist (SA)",
-      "issuer": "Scaled Agile",
-      "year": "2020"
-    },
-    {
-      "name": "Professional Scrum Master I (PSM I)",
-      "issuer": "Scrum.org",
-      "year": "2020"
-    },
-    {
-      "name": "Professional Scrum Product Owner I",
-      "issuer": "Scrum.org",
-      "year": "2020"
-    }
-  ],
-  "education": [
-    {
-      "degree": "Chef de projet informatique (niveau II)",
-      "year": "2011",
-      "institution": "Esarc Évolution"
-    },
-    {
-      "degree": "Bac Communication et Gestion des RH",
-      "year": "2007",
-      "institution": "Lycée Jean Monnet"
-    }
-  ],
-  "certifications": [
-    {
-      "name": "Professional Scrum Master II",
+      "name": "PSM II",
       "year": "2021"
     },
     {
@@ -429,21 +385,21 @@
       "year": "2020"
     },
     {
-      "name": "Professional Scrum Master I",
+      "name": "PSM I",
       "year": "2020"
     },
     {
-      "name": "Professional Scrum Product Owner I",
+      "name": "PSPO I",
       "year": "2020"
     }
   ],
   "hobbies": [
-    "Kaamelott",
-    "Bricolage",
-    "Jardinage",
-    "TFT",
-    "Tatouage",
-    "Cinéma",
-    "Séries"
+    { "name": "Kaamelott", "icon": "fa-tv" },
+    { "name": "Bricolage", "icon": "fa-hammer" },
+    { "name": "Jardinage", "icon": "fa-seedling" },
+    { "name": "TFT", "icon": "fa-gamepad" },
+    { "name": "Tatouage", "icon": "fa-palette" },
+    { "name": "Cinéma", "icon": "fa-film" },
+    { "name": "Séries", "icon": "fa-desktop" }
   ]
 }

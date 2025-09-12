@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
+@Component({
+  selector: 'app-hobbies',
+  standalone: true,
+  imports: [CommonModule, TranslateModule],
+  template: `
+    <div class="sidebar-hobbies">
+      <h3 class="sidebar-title"><i class="fad fa-heart"></i> {{ 'sections.hobbies' | translate }}</h3>
+      <div class="hobbies-list">
+        <div class="hobby-item" *ngFor="let hobby of hobbies">
+          <i class="fas" [ngClass]="hobby.icon"></i>
+          {{ hobby.name }}
+        </div>
+      </div>
+    </div>
+  `,
+  styleUrls: ['./hobbies.component.css']
+})
+export class HobbiesComponent {
+  hobbies: { name: string; icon: string }[] = [];
+
+  constructor(private translate: TranslateService) {
+    this.translate.get('hobbies').subscribe((data: { name: string; icon: string }[]) => {
+      this.hobbies = data || [];
+    });
+  }
+}
