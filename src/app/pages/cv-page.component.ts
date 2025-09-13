@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../pipes/markdown.pipe';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
 interface ExperienceDetailed {
   title: string;
