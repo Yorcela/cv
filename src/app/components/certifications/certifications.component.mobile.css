@@ -1,0 +1,72 @@
+/* Mobile Styles for Certifications Component */
+
+@media (max-width: 768px) {
+  .sidebar-certifications {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-title i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .certifications-chips {
+    gap: 0.5rem;
+  }
+
+  .certification-chip {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .chip-badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-certifications {
+    padding: 0.75rem;
+  }
+
+  .sidebar-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+
+  .certifications-chips {
+    gap: 0.4rem;
+  }
+
+  .certification-chip {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.7rem;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .chip-text {
+    line-height: 1.2;
+  }
+
+  .chip-badge {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.6rem;
+    align-self: flex-end;
+  }
+
+  .certification-chip::before {
+    width: 3px;
+  }
+}

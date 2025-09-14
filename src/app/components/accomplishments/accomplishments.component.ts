@@ -22,23 +22,28 @@ interface Accomplishment {
       </h2>
       <div *ngIf="accomplishmentsSectionExpanded">
         <div class="accomplishments-container">
-          <div *ngFor="let accomplishment of accomplishments" class="accomplishment-item">
-            <div class="accomplishment-header">
-            <div class="accomplishment-company-info">
-              <img 
-                [src]="accomplishment.logo" 
-                [alt]="accomplishment.company + ' logo'"
-                class="company-logo"
-                (error)="onImageError($event)"
-              />
-              <h3 class="accomplishment-company">{{ accomplishment.company }}</h3>
-            </div>
-            <span class="accomplishment-position">{{ accomplishment.position }}</span>
-          </div>
-            <ul class="accomplishment-details">
-              <li *ngFor="let detail of accomplishment.details" [innerHTML]="formatDetail(detail)"></li>
-            </ul>
-          </div>
+          <ol class="accomplishments-list">
+            <ng-container *ngFor="let accomplishment of accomplishments; let companyIndex = index">
+              <li *ngIf="variant === 'full'" class="accomplishment-company-header">
+                <div class="accomplishment-header-content">
+                  <div class="accomplishment-company-info">
+                    <img 
+                      [src]="accomplishment.logo" 
+                      [alt]="accomplishment.company + ' logo'"
+                      class="company-logo"
+                      (error)="onImageError($event)"
+                    />
+                    <h3 class="accomplishment-company">{{ accomplishment.company }}</h3>
+                  </div>
+                  <span class="accomplishment-position">{{ accomplishment.position }}</span>
+                </div>
+              </li>
+              <li *ngFor="let detail of accomplishment.details; let detailIndex = index" 
+                  class="accomplishment-item-unified" 
+                  [innerHTML]="formatDetailForVariant(detail)">
+              </li>
+            </ng-container>
+          </ol>
         </div>
       </div>
     </section>
@@ -65,6 +70,32 @@ export class AccomplishmentsComponent implements OnInit {
     // Use markdown pipe for formatting
     const markdownPipe = new MarkdownPipe();
     return markdownPipe.transform(detail);
+  }
+
+  getAllAccomplishmentDetails(): string[] {
+    const allDetails: string[] = [];
+    this.accomplishments.forEach(accomplishment => {
+      accomplishment.details.forEach(detail => {
+        allDetails.push(detail);
+      });
+    });
+    return allDetails;
+  }
+
+  formatDetailForVariant(detail: string): string {
+    let formattedDetail = detail;
+    
+    // For short variant, remove everything after "Résultat:"
+    if (this.variant === 'short') {
+      const resultIndex = detail.indexOf('<br/><u>Résultat:</u>');
+      if (resultIndex !== -1) {
+        formattedDetail = detail.substring(0, resultIndex);
+      }
+    }
+    
+    // Use markdown pipe for formatting
+    const markdownPipe = new MarkdownPipe();
+    return markdownPipe.transform(formattedDetail);
   }
 
 

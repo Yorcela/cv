@@ -1,0 +1,122 @@
+/* Mobile Styles for Recommendations Component */
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .recommendations-content-inner {
+    padding: 0 1rem;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .recommendation-card {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .author-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .author-avatar {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+  }
+
+  .author-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .recommendation-text {
+    text-align: left;
+    font-size: 0.9em;
+    margin-top: 8px;
+  }
+
+  .main-section-title {
+    border-radius: 8px;
+    padding: 0.75rem 0.9rem;
+    font-size: 1.2rem;
+  }
+
+  /* Mobile animations */
+  .recommendation-card.left-column,
+  .recommendation-card.right-column {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .page-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .header-navigation {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .back-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .recommendation-card {
+    padding: 16px;
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .author-name {
+    font-size: 1rem;
+  }
+
+  .author-title {
+    font-size: 0.85em;
+  }
+
+  .author-company {
+    font-size: 0.8em;
+  }
+
+  .recommendation-text {
+    font-size: 0.85em;
+  }
+
+  .main-section-title {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
