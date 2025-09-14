@@ -77,7 +77,7 @@ interface Experience {
       </div>
     </section>
   `,
-  styleUrls: ['./experiences.component.css']
+  styleUrls: ['./experiences.component.desktop.scss', './experiences.component.mobile.scss']
 })
 export class ExperiencesComponent {
   @Input() variant: 'short' | 'full' = 'short';

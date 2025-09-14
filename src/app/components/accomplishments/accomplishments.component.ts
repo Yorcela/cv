@@ -48,7 +48,7 @@ interface Accomplishment {
       </div>
     </section>
   `,
-  styleUrls: ['./accomplishments.component.css']
+  styleUrls: ['./accomplishments.component.desktop.scss']
 })
 export class AccomplishmentsComponent implements OnInit {
   @Input() variant: 'full' | 'short' = 'full';
@@ -89,9 +89,11 @@ export class AccomplishmentsComponent implements OnInit {
   formatDetailForVariant(detail: string): string {
     let formattedDetail = detail;
     
-    // For short variant, remove everything after "Résultat:"
+    // For short variant, remove everything after "Résultat:" or "Result:"
     if (this.variant === 'short') {
-      const resultIndex = detail.indexOf('<br/><u>Résultat:</u>');
+      const resultIndexFr = detail.indexOf('<br/><u>Résultat:</u>');
+      const resultIndexEn = detail.indexOf('<br/><u>Result:</u>');
+      const resultIndex = resultIndexFr !== -1 ? resultIndexFr : resultIndexEn;
       if (resultIndex !== -1) {
         formattedDetail = detail.substring(0, resultIndex);
       }

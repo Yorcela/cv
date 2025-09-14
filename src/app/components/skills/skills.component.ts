@@ -25,7 +25,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       </div>
     </div>
   `,
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.desktop.scss', './skills.component.mobile.scss']
 })
 export class SkillsComponent {
   skills: any[] = [];

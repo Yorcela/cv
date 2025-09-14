@@ -1,17 +1,11 @@
 /* Desktop Styles for Experiences Component */
 
 /* Section title styles */
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+
 .main-section-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #608abf;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: space-between;
+  @include main-section-title;
 }
 
 .main-section-title i {
@@ -50,12 +44,7 @@
 }
 
 .experience-item {
-  padding: 1.5rem;
-  border-left: 4px solid #3b82f6;
-  background: #f8fafc;
-  margin-bottom: 1.5rem;
-  border-radius: 0 8px 8px 0;
-  transition: all 0.2s ease;
+  @include experience-card;
 }
 
 .experience-item:hover {
@@ -95,25 +84,25 @@
 }
 
 .experience-company {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #2d3748;
+  color: $text-dark;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
   margin: 0;
 }
 
 .experience-period {
-  color: #3b82f6;
-  font-weight: 500;
-  font-size: 0.95rem;
+  color: $primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
 }
 
 .experience-position {
-  background: #3b82f6;
+  background: $primary;
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
   white-space: nowrap;
   align-self: flex-start;
 }
@@ -159,7 +148,8 @@
 }
 
 .task-list-simple li {
-  color: #4a5568;
+  color: $text-medium;
+  line-height: $line-height-relaxed;
 }
 
 .task-list-simple li:hover {

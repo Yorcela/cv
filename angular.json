@@ -19,7 +19,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -58,6 +58,16 @@
     }
   },
   "cli": {
-    "analytics": "19c2e1bd-dcda-497d-88cd-d4cc50927627"
+    "analytics": "19c2e1bd-dcda-497d-88cd-d4cc50927627",
+    "schematicCollections": ["@angular/material"],
+    "defaultCollection": "@angular/material"
+  },
+  "schematics": {
+    "@angular/material:ng-add": {
+      "theme": "indigo-pink"
+    },
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
   }
 }

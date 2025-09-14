@@ -1,0 +1,123 @@
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+
+/* Desktop Styles for Skills Component */
+
+.sidebar-skills {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-title i {
+  margin-right: 0.75rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.skills-chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-category {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $spacing-md;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+}
+
+.icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(232, 244, 253, 0.2);
+  border: 1px solid rgba(232, 244, 253, 0.3);
+  border-radius: $border-radius-md;
+  transition: all $transition-fast;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-chip:hover {
+  background: rgba(232, 244, 253, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-chip i {
+  color: #e8f4fd;
+  font-size: 0.8rem;
+}
+
+/* Tooltip styles */
+.icon-chip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-xs;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.icon-chip::before {
+  content: '';
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.icon-chip:hover::after,
+.icon-chip:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skill-item {
+  font-size: $font-size-sm;
+  color: #e8f4fd;
+  line-height: 1.4;
+}

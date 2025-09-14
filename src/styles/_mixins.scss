@@ -1,0 +1,399 @@
+// Mixins SCSS pour le CV d'Alec Roy
+// =================================
+
+@import 'variables';
+
+// Mixin pour les titres de section principaux
+@mixin main-section-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $primary-dark;
+  margin-bottom: $spacing-2xl;
+  padding-bottom: $spacing-sm;
+  border-bottom: 2px solid $primary-blue;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  justify-content: space-between;
+
+  i {
+    color: $primary-blue;
+    font-size: $font-size-lg;
+  }
+}
+
+// Mixin pour les titres cliquables
+@mixin clickable-title {
+  cursor: pointer;
+  transition: all $transition-normal;
+  user-select: none;
+
+  &:hover {
+    color: $primary-blue;
+    transform: $animation-bounce;
+  }
+
+  .fa-chevron-down,
+  .fa-chevron-right {
+    font-size: $font-size-base;
+    transition: transform $transition-normal;
+    margin-left: auto;
+  }
+
+  &:hover .fa-chevron-down,
+  &:hover .fa-chevron-right {
+    transform: $animation-scale;
+  }
+}
+
+// Mixin pour les cartes/items d'expérience
+@mixin experience-card {
+  padding: $spacing-2xl;
+  border-left: 4px solid $primary-light;
+  background: $bg-secondary;
+  margin-bottom: $spacing-2xl;
+  border-radius: 0 $border-radius-lg $border-radius-lg 0;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $bg-tertiary;
+    border-left-color: $secondary-blue;
+  }
+}
+
+// Mixin pour les logos d'entreprise
+@mixin company-logo($size: 40px) {
+  width: $size;
+  height: $size;
+  border-radius: $border-radius-lg;
+  object-fit: contain;
+  background: $bg-primary;
+  padding: 6px;
+  box-shadow: $shadow-md;
+}
+
+// Mixin pour les en-têtes d'entreprise
+@mixin company-header {
+  background: $bg-gray-light;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-sm;
+  padding: $spacing-lg $spacing-2xl;
+  border-left: 4px solid $accent-blue;
+}
+
+// Mixin pour les informations d'entreprise
+@mixin company-info {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+// Mixin pour les noms d'entreprise
+@mixin company-name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  margin: 0;
+}
+
+// Mixin pour les badges de position
+@mixin position-badge {
+  background: $accent-blue;
+  color: $text-white;
+  padding: $btn-padding-sm;
+  border-radius: $border-radius-xl;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}
+
+// Mixin pour les périodes
+@mixin period-text {
+  font-size: $font-size-sm;
+  color: $text-light;
+  font-weight: $font-weight-medium;
+}
+
+// Mixin pour les conteneurs de chips
+@mixin chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+// Mixin pour les chips/tags de compétences
+@mixin skill-chip {
+  background: $chip-bg;
+  color: $chip-text;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  border: 1px solid $chip-border;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $chip-hover-bg;
+    transform: $animation-bounce;
+  }
+}
+
+// Mixin pour les chips d'icônes (sidebar)
+@mixin icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: $blue-alpha-light;
+  border: 1px solid $blue-alpha-medium;
+  border-radius: $border-radius-md;
+  transition: all $transition-fast;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background: $blue-alpha-medium;
+    transform: $animation-bounce;
+    box-shadow: $shadow-sm;
+  }
+
+  i {
+    color: #e8f4fd;
+    font-size: $font-size-xs;
+  }
+}
+
+// Mixin pour les tooltips
+@mixin tooltip {
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $overlay-dark;
+    color: $text-white;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-xs;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-normal, visibility $transition-normal;
+    pointer-events: none;
+    z-index: $z-tooltip;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: $overlay-dark;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-normal, visibility $transition-normal;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Mixin pour les titres de sidebar
+@mixin sidebar-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $sidebar-text;
+  margin: 0 0 $spacing-2xl 0;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  i {
+    margin-right: $spacing-md;
+    color: $sidebar-text;
+    font-size: $font-size-lg;
+  }
+}
+
+// Mixin pour les sections de sidebar
+@mixin sidebar-section {
+  padding: $spacing-2xl;
+  border-bottom: 1px solid $sidebar-border;
+  margin-bottom: $spacing-lg;
+}
+
+// Mixin pour les boutons segmentés
+@mixin segmented-button {
+  background: transparent;
+  border: none;
+  color: $text-light;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: $primary-light;
+  }
+
+  &.active {
+    background: $primary-light;
+    color: $text-white;
+    box-shadow: $shadow-sm;
+  }
+}
+
+// Mixin pour les groupes segmentés
+@mixin segmented-group {
+  background: #f1f5f9;
+  border-radius: $border-radius-lg;
+  padding: 2px;
+  gap: 0;
+  border: 1px solid $border-gray;
+}
+
+// Mixin pour les dropdowns modernes
+@mixin modern-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: $bg-primary;
+  border: 1px solid $border-light;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-lg;
+  z-index: $z-dropdown;
+  opacity: 0;
+  visibility: hidden;
+  transform: $animation-fade-in;
+  transition: all $transition-fast;
+  min-width: 200px;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+// Mixin pour les items de dropdown
+@mixin dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  width: 100%;
+  padding: $spacing-md $spacing-lg;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  transition: background-color $transition-fast;
+  white-space: nowrap;
+
+  &:hover {
+    background: $bg-tertiary;
+  }
+
+  &:first-child {
+    border-radius: $border-radius-md $border-radius-md 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $border-radius-md $border-radius-md;
+  }
+
+  i {
+    color: $danger;
+    width: 16px;
+  }
+}
+
+// Mixin pour les animations de fade-in
+@mixin fade-in-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Mixin pour les grilles responsives
+@mixin responsive-grid($columns: 1, $gap: $spacing-lg) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Mixin pour les conteneurs flexibles
+@mixin flex-container($direction: row, $align: center, $justify: flex-start, $gap: $spacing-sm) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+// Mixin pour les textes tronqués
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Mixin pour les textes multi-lignes tronqués
+@mixin text-truncate-multiline($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Mixin pour les focus states accessibles
+@mixin focus-ring {
+  &:focus {
+    outline: 2px solid $primary-light;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Mixin pour les états de chargement
+@mixin loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
