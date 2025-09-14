@@ -22,16 +22,17 @@ interface Recommendation {
         {{ 'i18n.ui.sections.recommendations' | translate }}
         <i class="fad" [class.fa-chevron-down]="recommendationsSectionExpanded" [class.fa-chevron-right]="!recommendationsSectionExpanded"></i>
       </h2>
-      <div *ngIf="recommendationsSectionExpanded">
+      <div *ngIf="recommendationsSectionExpanded" class="recommendations-grid">
         <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
-          <p class="recommendation-text" [innerHTML]="formatTestimonial(rec.message)"></p>
-          <div class="recommendation-author">
+          <div class="author-header">
             <img *ngIf="rec.picture" [src]="rec.picture" [alt]="rec.name" class="author-avatar">
             <div class="author-info">
               <h4 class="author-name">{{ rec.name }}</h4>
-              <p class="author-title">{{ rec.role }}<span *ngIf="rec.company"> {{ rec.company }}</span></p>
+              <p class="author-title">{{ rec.role }}</p>
+              <p class="author-company" *ngIf="rec.company">{{ rec.company }}</p>
             </div>
           </div>
+          <div class="recommendation-text" [innerHTML]="formatTestimonial(rec.message)"></div>
         </div>
       </div>
     </section>
