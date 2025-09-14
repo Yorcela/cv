@@ -8,6 +8,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { AboutMeComponent } from '../components/aboute-me/about-me.component';
 import { AccomplishmentsComponent } from '../components/accomplishments/accomplishments.component';
 import { ExperiencesComponent } from '../components/experiences/experiences.component';
+import { RecommendationsComponent } from '../components/recommendations/recommendations.component';
 
 interface ExperienceDetailed {
   title: string;
@@ -95,61 +96,36 @@ interface SkillCategory {
 @Component({
   selector: 'app-cv-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, AboutMeComponent, AccomplishmentsComponent, ExperiencesComponent],
+  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, AboutMeComponent, AccomplishmentsComponent, ExperiencesComponent, RecommendationsComponent],
   template: `
     <div class="page-background">
       <div class="cv-container">
-      <div *ngIf="loading" class="loading-state">
-        <div class="loading-card">
-          <i class="fad fa-spinner fa-spin"></i>
-          <span>{{ 'i18n.ui.loading' | translate }}</span>
-        </div>
-      </div>
-      
-      <div *ngIf="error" class="error-state">
-        <div class="error-card">
-          <i class="fad fa-exclamation-triangle"></i>
-          <h3>{{ 'i18n.ui.error_loading' | translate }}</h3>
-          <p>{{ error }}</p>
-        </div>
-      </div>
-      
-      <div *ngIf="!loading && !error && data" class="cv-content">
-        <!-- Left Sidebar -->
-        <div class="app-sidebar">
-          <app-sidebar [personalInfo]="data.personalInfo" [hobbies]="data.hobbies || []"></app-sidebar>
-        </div>
-
-          <!-- Main Content -->
-          <div class="cv-main">
-            <app-about-me [variant]="variant"></app-about-me>
-            <app-accomplishments [variant]="variant"></app-accomplishments>
-            <app-experiences [variant]="variant"></app-experiences>
-
-            <!-- Recommendations Section -->
-            <section class="main-section">
-              <h2 class="main-section-title clickable-title" (click)="toggleRecommendationsSection()">
-                <i class="fal fa-quote-left"></i>
-                {{ 'i18n.ui.sections.recommendations' | translate }}
-                <i class="fad" [class.fa-chevron-down]="recommendationsSectionExpanded" [class.fa-chevron-right]="!recommendationsSectionExpanded"></i>
-              </h2>
-              <div *ngIf="recommendationsSectionExpanded">
-                <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
-                  <p class="recommendation-text">"{{ rec.text }}"</p>
-                  <div class="recommendation-author">
-                    <img *ngIf="rec.photo" [src]="rec.photo" [alt]="rec.name" class="author-avatar">
-                    <div class="author-info">
-                      <h4 class="author-name">{{ rec.name }}</h4>
-                      <p class="author-title">{{ rec.position }}<span *ngIf="rec.company"> chez {{ rec.company }}</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-
+        <div *ngIf="loading" class="loading-state">
+          <div class="loading-card">
+            <i class="fad fa-spinner fa-spin"></i>
+            <span>{{ 'i18n.ui.loading' | translate }}</span>
           </div>
-       </div>
+        </div>
+    
+        <div *ngIf="error" class="error-state">
+          <div class="error-card">
+            <i class="fad fa-exclamation-triangle"></i>
+            <h3>{{ 'i18n.ui.error_loading' | translate }}</h3>
+            <p>{{ error }}</p>
+          </div>
+        </div>
+      
+        <div *ngIf="!loading && !error && data" class="cv-content">
+          <div class="app-sidebar">
+            <app-sidebar></app-sidebar>
+          </div>
+          <div class="cv-main">
+            <app-about-me [variant]="variant" [data]="data"></app-about-me>
+            <app-accomplishments [variant]="variant" [data]="data"></app-accomplishments>
+            <app-experiences [variant]="variant" [data]="data"></app-experiences>
+            <app-recommendations [data]="data"></app-recommendations>
+          </div>
+        </div>
       </div>
     </div>
    `,

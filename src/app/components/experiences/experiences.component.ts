@@ -28,7 +28,7 @@ interface Experience {
   template: `
         <section class="main-section">
           <h2 class="main-section-title clickable-title" (click)="toggleExperiencesSection()">
-            <i class="fal fa-briefcase"></i>
+            <i class="fad fa-briefcase"></i>
             {{ variant === 'short' ? ('i18n.ui.sections.experiences_short' | translate) : ('i18n.ui.sections.experiences_long' | translate) }}
             <i class="fad" [class.fa-chevron-down]="experiencesSectionExpanded" [class.fa-chevron-right]="!experiencesSectionExpanded"></i>
           </h2>
