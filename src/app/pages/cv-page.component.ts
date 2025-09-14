@@ -121,8 +121,8 @@ interface SkillCategory {
           </div>
           <div class="cv-main">
             <app-about-me [variant]="variant" [data]="data"></app-about-me>
-            <app-accomplishments [variant]="variant" [data]="data"></app-accomplishments>
             <app-experiences [variant]="variant" [data]="data"></app-experiences>
+            <app-accomplishments [variant]="variant" [data]="data"></app-accomplishments>
             <app-recommendations [data]="data"></app-recommendations>
           </div>
         </div>

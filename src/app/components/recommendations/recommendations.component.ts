@@ -1,23 +1,14 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 
 interface Recommendation {
   name: string;
-  position: string;
+  role: string; 
   company: string;
-  photo?: string;
-  text: string;
-  relationship?: string;
-  date?: string;
-  linkedinUrl?: string;
-}
-
-interface CVData {
-  recommendations: Recommendation[];
+  picture?: string;
+  message: string;
 }
 
 @Component({
@@ -33,12 +24,12 @@ interface CVData {
       </h2>
       <div *ngIf="recommendationsSectionExpanded">
         <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
-          <p class="recommendation-text">"{{ rec.text }}"</p>
+          <p class="recommendation-text" [innerHTML]="formatTestimonial(rec.message)"></p>
           <div class="recommendation-author">
-            <img *ngIf="rec.photo" [src]="rec.photo" [alt]="rec.name" class="author-avatar">
+            <img *ngIf="rec.picture" [src]="rec.picture" [alt]="rec.name" class="author-avatar">
             <div class="author-info">
               <h4 class="author-name">{{ rec.name }}</h4>
-              <p class="author-title">{{ rec.position }}<span *ngIf="rec.company"> chez {{ rec.company }}</span></p>
+              <p class="author-title">{{ rec.role }}<span *ngIf="rec.company"> {{ rec.company }}</span></p>
             </div>
           </div>
         </div>
@@ -47,51 +38,22 @@ interface CVData {
   `,
   styleUrls: ['./recommendations.component.css']
 })
-export class RecommendationsComponent implements OnChanges {
-  @Input() lang: 'fr' | 'en' = 'fr';
-  data: CVData | null = null;
-  loading = true;
-  error: string | null = null;
+export class RecommendationsComponent {
+  @Input() variant: 'full' | 'short' = 'full';
+  recommendations: Recommendation[] = [];
   recommendationsSectionExpanded = true;
 
-  constructor(private http: HttpClient, private router: Router) {}
-
-  ngOnChanges(): void {
-    this.loading = true;
-    this.error = null;
-    this.loadData();
-  }
-
-  private loadData(): void {
-    const fileName = `${this.lang}.json`;
-    this.http.get<CVData>(`assets/i18n/${fileName}`).subscribe({
-      next: (data) => {
-        this.data = data;
-        this.loading = false;
-        this.error = null;
-      },
-      error: (err) => {
-        console.error('Error loading recommendations data:', err);
-        this.error = 'Erreur lors du chargement des données des recommandations';
-        this.data = null;
-        this.loading = false;
-      }
+  constructor(private translate: TranslateService) {
+    this.translate.get('cv.recommandations').subscribe((data: Recommendation[]) => {
+      this.recommendations = data || [];
     });
   }
 
-  formatTestimonial(testimonial: string, highlights?: string[]): string {
+  formatTestimonial(testimonial: string): string {
     // Use markdown pipe for basic formatting
     const markdownPipe = new MarkdownPipe();
     let formattedText = markdownPipe.transform(testimonial);
     
-    // Apply highlights if provided
-    if (highlights && highlights.length > 0) {
-      highlights.forEach(highlight => {
-        const regex = new RegExp(`(${highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-        formattedText = formattedText.replace(regex, '<strong>$1</strong>');
-      });
-    }
-
     // Add emphasis to certain phrases
     const emphasisPhrases = [
       'excellent', 'exceptionnel', 'remarquable', 'outstanding', 'exceptional',
@@ -112,14 +74,6 @@ export class RecommendationsComponent implements OnChanges {
   }
 
   getRecommendations(): Recommendation[] {
-    if (!this.data?.recommendations) {
-      return [];
-    }
-    
-    return this.data.recommendations;
-  }
-
-  navigateHome(): void {
-    this.router.navigate(['/']);
+    return this.recommendations;
   }
 }
