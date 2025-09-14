@@ -1,4 +1,4 @@
-import { Component, Input, computed, signal } from '@angular/core';
+import { Component, Input, Output, EventEmitter, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -8,12 +8,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [CommonModule, TranslateModule],
   template: `
     <section class="main-section">
-      <h2 class="main-section-title clickable-title" (click)="toggleAboutSection()">
+      <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
         <i class="fad fa-user"></i>
         {{ 'i18n.ui.sections.about_me' | translate }}
-        <i class="fad" [class.fa-chevron-down]="aboutSectionExpanded" [class.fa-chevron-right]="!aboutSectionExpanded"></i>
+        <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
       </h2>
-      <div *ngIf="aboutSectionExpanded">
+      <div *ngIf="isExpanded">
         <div class="section-content">
           <div [innerHTML]="getFormattedAbout()"></div>
         </div>
@@ -24,8 +24,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AboutMeComponent {
   @Input() variant: 'full' | 'short' = 'full';
+  @Input() isExpanded: boolean = true;
+  @Output() toggleSection = new EventEmitter<void>();
   about: any = {};
-  aboutSectionExpanded = true;
 
   constructor(private translate: TranslateService) {
     this.translate.get('cv').subscribe((data: any) => {
@@ -49,7 +50,7 @@ export class AboutMeComponent {
     return aboutText || '';
   }
 
-  toggleAboutSection(): void {
-    this.aboutSectionExpanded = !this.aboutSectionExpanded;
+  onToggleSection(): void {
+    this.toggleSection.emit();
   }
 }

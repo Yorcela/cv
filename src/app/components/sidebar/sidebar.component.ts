@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { WhoamiComponent } from '../whoami/whoami.component';
 import { ContactInfoComponent } from '../contact-info/contact-info.component';
+import { PersonnaliteComponent } from '../personnality/personnalite.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { EducationComponent } from '../education/education.component';
 import { CertificationsComponent } from '../certifications/certifications.component';
@@ -16,6 +17,7 @@ import { HobbiesComponent } from '../hobbies/hobbies.component';
     TranslateModule,
     WhoamiComponent,
     ContactInfoComponent,
+    PersonnaliteComponent,
     SkillsComponent,
     EducationComponent,
     CertificationsComponent,
@@ -25,6 +27,7 @@ import { HobbiesComponent } from '../hobbies/hobbies.component';
     <div class="cv-sidebar">
       <app-whoami></app-whoami>
       <app-contact-info></app-contact-info>
+      <app-personnalite></app-personnalite>
       <app-skills></app-skills>
       <app-education></app-education>
       <app-certifications></app-certifications>

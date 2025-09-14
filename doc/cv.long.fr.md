@@ -88,7 +88,7 @@ Kaamelott, bricolage, jardinage, TFT, tatouage, cinéma, séries.
 #### Engineering Manager – **Dougs** (depuis septembre 2023)
 
 - **Management d'un Domaine**
-    - Accompagnement à la définition des plans de carrières individuels (entretiens annuels, entretien RH, etc.) de SE, Lead SE, PM, PDS
+    - Accompagnement à la définition des plans de carrières individuels (entretiens annuels, entretien RH, etc.) de Software Engineers, Lead Software Engineers, Product Manager, Product Designer
     - Recrutement des membres de l'équipe
     - Management de proximité (1:1 et discussions quotidiennes pour conserver le lien)
 - **Coach d'équipe**

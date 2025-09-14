@@ -1,0 +1,35 @@
+/* Mobile styles for personality component */
+@media (max-width: 767px) {
+  .sidebar-personnalite {
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .sidebar-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .personality-items {
+    gap: 0.5rem;
+  }
+
+  .personality-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+  }
+
+  .personality-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(102, 126, 234, 0.25);
+  }
+
+  .personality-link i {
+    font-size: 0.9rem;
+  }
+
+  .personality-link span {
+    font-size: 0.85rem;
+  }
+}

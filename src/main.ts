@@ -6,6 +6,7 @@ import { importProvidersFrom } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { TuiRootModule, TuiDialogModule, TuiAlertModule } from '@taiga-ui/core';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 
@@ -24,7 +25,10 @@ bootstrapApplication(AppComponent, {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
         }
-      })
+      }),
+      TuiRootModule,
+      TuiDialogModule,
+      TuiAlertModule
     )
   ]
 }).catch(err => console.error(err));

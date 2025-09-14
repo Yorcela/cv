@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
@@ -15,12 +15,12 @@ interface Accomplishment {
   imports: [CommonModule, TranslateModule, MarkdownPipe],
   template: `
     <section class="main-section">
-      <h2 class="main-section-title clickable-title" (click)="toggleAccomplishmentsSection()">
+      <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
         <i class="fad fa-trophy"></i>
         {{ 'i18n.ui.sections.accomplishments' | translate }}
-        <i class="fad" [class.fa-chevron-down]="accomplishmentsSectionExpanded" [class.fa-chevron-right]="!accomplishmentsSectionExpanded"></i>
+        <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
       </h2>
-      <div *ngIf="accomplishmentsSectionExpanded">
+      <div *ngIf="isExpanded">
         <div class="accomplishments-container">
           <ol class="accomplishments-list">
             <ng-container *ngFor="let accomplishment of accomplishments; let companyIndex = index">
@@ -52,8 +52,10 @@ interface Accomplishment {
 })
 export class AccomplishmentsComponent implements OnInit {
   @Input() variant: 'full' | 'short' = 'full';
+  @Input() data: any = null;
+  @Input() isExpanded: boolean = true;
+  @Output() toggleSection = new EventEmitter<void>();
   accomplishments: Accomplishment[] = [];
-  accomplishmentsSectionExpanded = true;
 
   constructor(private translate: TranslateService) {
     this.translate.get('cv.accomplishments').subscribe((data: any) => {
@@ -63,7 +65,9 @@ export class AccomplishmentsComponent implements OnInit {
 
   ngOnInit(): void {
     // Set default expanded state based on variant
-    this.accomplishmentsSectionExpanded = this.variant === 'full';
+    if (!this.isExpanded) {
+      this.isExpanded = this.variant === 'full';
+    }
   }
 
   formatDetail(detail: string): string {
@@ -103,7 +107,7 @@ export class AccomplishmentsComponent implements OnInit {
     event.target.style.display = 'none';
   }
 
-  toggleAccomplishmentsSection(): void {
-    this.accomplishmentsSectionExpanded = !this.accomplishmentsSectionExpanded;
+  onToggleSection(): void {
+    this.toggleSection.emit();
   }
 }

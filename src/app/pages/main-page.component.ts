@@ -94,7 +94,7 @@ interface SkillCategory {
 }
 
 @Component({
-  selector: 'app-cv-page',
+  selector: 'app-main-page',
   standalone: true,
   imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, AboutMeComponent, AccomplishmentsComponent, ExperiencesComponent, RecommendationsComponent],
   template: `
@@ -120,18 +120,33 @@ interface SkillCategory {
             <app-sidebar></app-sidebar>
           </div>
           <div class="cv-main">
-            <app-about-me [variant]="variant" [data]="data"></app-about-me>
-            <app-experiences [variant]="variant" [data]="data"></app-experiences>
-            <app-accomplishments [variant]="variant" [data]="data"></app-accomplishments>
-            <app-recommendations [data]="data"></app-recommendations>
+            <app-about-me 
+              [variant]="variant" 
+              [data]="data" 
+              [isExpanded]="isSectionExpanded('about')"
+              (toggleSection)="toggleSection('about')"></app-about-me>
+            <app-accomplishments 
+              [variant]="variant" 
+              [data]="data" 
+              [isExpanded]="isSectionExpanded('accomplishments')"
+              (toggleSection)="toggleSection('accomplishments')"></app-accomplishments>
+            <app-experiences 
+              [variant]="variant" 
+              [data]="data" 
+              [isExpanded]="isSectionExpanded('experiences')"
+              (toggleSection)="toggleSection('experiences')"></app-experiences>
+            <app-recommendations 
+              [data]="data" 
+              [isExpanded]="isSectionExpanded('recommendations')"
+              (toggleSection)="toggleSection('recommendations')"></app-recommendations>
           </div>
         </div>
       </div>
     </div>
    `,
-  styleUrls: ['./cv-page.component.css']
+  styleUrls: ['./main-page.component.css']
 })
-export class CvPageComponent implements OnChanges {
+export class MainPageComponent implements OnChanges {
   @Input() lang: 'fr' | 'en' = 'fr';
   @Input() variant: 'full' | 'short' = 'full';
   data: CVData | null = null;
@@ -139,9 +154,24 @@ export class CvPageComponent implements OnChanges {
   error: string | null = null;
   accomplishmentsExpanded = false;
   recommendationsExpanded = false;
-  recommendationsSectionExpanded = true;
+
+  // Section expansion states - multiple sections can be open
+  sectionStates: { [key: string]: boolean } = {
+    about: true,
+    experiences: true,
+    accomplishments: false,
+    recommendations: false
+  };
 
   constructor(private http: HttpClient, private router: Router) {}
+
+  toggleSection(section: 'about' | 'experiences' | 'accomplishments' | 'recommendations'): void {
+    this.sectionStates[section] = !this.sectionStates[section];
+  }
+
+  isSectionExpanded(section: 'about' | 'experiences' | 'accomplishments' | 'recommendations'): boolean {
+    return this.sectionStates[section];
+  }
 
   toggleAccomplishments(): void {
     this.accomplishmentsExpanded = !this.accomplishmentsExpanded;
@@ -149,10 +179,6 @@ export class CvPageComponent implements OnChanges {
 
   toggleRecommendations(): void {
     this.recommendationsExpanded = !this.recommendationsExpanded;
-  }
-
-  toggleRecommendationsSection(): void {
-    this.recommendationsSectionExpanded = !this.recommendationsSectionExpanded;
   }
 
 

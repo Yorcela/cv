@@ -2,13 +2,15 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { CvPageComponent } from './pages/cv-page.component';
+import { TuiRootModule } from '@taiga-ui/core';
+import { MainPageComponent } from './pages/main-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TranslateModule, CvPageComponent],
+  imports: [CommonModule, RouterOutlet, TranslateModule, TuiRootModule, MainPageComponent],
   template: `
+  <tui-root>
   <div class="container-full-width">
     <div class="container-content">
       <header class="appbar">
@@ -79,10 +81,11 @@ import { CvPageComponent } from './pages/cv-page.component';
       </header>
     </div>
 
-    <app-cv-page [lang]="lang()" [variant]="variant()"></app-cv-page>
+    <app-main-page [lang]="lang()" [variant]="variant()"></app-main-page>
 
 
   </div>
+  </tui-root>
   `
 })
 export class AppComponent {

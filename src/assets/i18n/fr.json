@@ -7,6 +7,8 @@
       "linkedin": "LinkedIn",
       "youtube": "YouTube",
       "assessfirst": "AssessFirst",
+      "insightDiscovery": "Insight Discovery",
+      "mbti": "MBTI",
       "email": "Email",
       "phone": "Téléphone",
       "location": "Emplacement",
@@ -21,6 +23,7 @@
       "sections": {
         "about_me": "Qui suis-je ?",
         "accomplishments": "Quelques accomplissements",
+        "personnalite": "Personnalité",
         "skills": "Compétences",
         "hobbies": "Loisirs",
         "education": "Diplômes",
@@ -45,7 +48,31 @@
       "location": "22300 Lannion, France",
       "linkedin": "https://linkedin.com/in/alec-roy",
       "youtube": "https://youtube.com/@alec-agile-gardener",
-      "assessfirst": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=fr-FR"
+      "assessfirst": "assets/pdfs/20250726-AssessFirst.pdf",
+      "insightDiscovery": "assets/pdfs/20230511 - Insight Discovery.pdf"
+    },
+    "personnality": {
+      "assessFirst": {
+        "icon": "fa-trophy-alt",
+        "tooltip":"AssessFirst",
+        "pdf":"assets/pdfs/20250726-AssessFirst.pdf",
+        "url": null,
+        "label":"Profil A-Player"
+      },
+      "insightDiscovery": {
+        "icon": "fa-lightbulb-on",
+        "tooltip":"Insight Discovery",
+        "pdf":"assets/pdfs/20230511 - Insight Discovery.pdf",
+        "url": null,
+        "label":"Conseiller / Inspirateur"
+      },
+      "mbti": {
+        "icon": "fa-helmet-battle",
+        "tooltip":"MBTI",
+        "pdf":null,
+        "url": "https://www.16personalities.com/fr/la-personnalite-enfj",
+        "label":"Protagoniste (ENFJ)"
+      }
     },
     "about-me": {
       "short": "<p><strong>Leader Lean et Agile</strong> avec près de <strong>15 ans d'expérience</strong> à la croisée du produit, de la tech, du business et du management, j'ai accompagné des <strong>scale-ups</strong> (ManoMano, SantéVet, Dougs…) en hyper-croissance en structurant le <strong>delivery</strong>, en menant des <strong>transformations agiles à l'échelle</strong> et en développant les talents.</p><p>Mon style est <strong>humain, collaboratif et orienté résultats</strong>. Je crée les conditions pour que chacun progresse, gagne en autonomie et trouve du sens. <strong>Vision stratégique</strong> et <strong>posture de coach</strong> se conjuguent dans mon leadership : <strong>transparence</strong>, <strong>confiance</strong> et <strong>excellence</strong>.</p><p>Reconnu pour ma capacité à fédérer, motiver et inspirer, j'apporte <strong>empathie</strong>, <strong>spontanéité</strong> et pragmatisme. <strong>Moteur d'innovation</strong>, je questionne l'existant, teste, apprends et itère.</p><p>En résumé, un <strong>servant leader</strong> passionné, animé par l'envie de contribuer à la croissance d'une entreprise où les personnes et les produits grandissent ensemble.</p>",
@@ -102,9 +129,9 @@
           {
             "N/A": [
               {
-                "category": "Management d'un Domaine",
+                "category": "Management d'un Domaine (3 squads, 13 personnes)",
                 "tasks": [
-                  "Accompagnement à la définition des plans de carrières individuels (entretiens annuels, entretien RH, etc.) de SE, Lead SE, PM, PDS",
+                  "Accompagnement à la définition des plans de carrières individuels (entretiens annuels, entretien RH, etc.) de Software Engineers, Lead Software Engineers, Product Manager, Product Designer",
                   "Recrutement des membres de l'équipe",
                   "Management de proximité (1:1 et discussions quotidiennes pour conserver le lien)"
                 ]
@@ -114,7 +141,7 @@
                 "tasks": [
                   "Accompagnement à la compréhension et la bonne application du framework (ShapeUp)",
                   "Facilitation des ateliers et événements d'équipe",
-                  "Coaching individuel pour certains SE et Lead SE"
+                  "Accompagnement de carrière et progression individuelle"
                 ]
               },
               {
@@ -131,13 +158,12 @@
           }
         ],
         "skills": [
-          "Agilité",
-          "ShapeUp",
+          "Management 3.0",
+          "OKRs",
           "Roadmap",
           "Stratégie",
-          "OKRs",
+          "ShapeUp",
           "Optimisation des flux",
-          "Management 3.0",
           "Autonomisation",
           "Délégation",
           "Multi-équipes"
@@ -145,9 +171,9 @@
       },
       {
         "company": "SantéVet",
-        "logo": "https://img.logo.dev/santevet.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "logo": "https://img.logo.dev/santevet.de?token=pk_IrBjZU0lQJeNJRZcgNP55w",
         "position": "Lead Scrum Master",
-        "period": "fév. 2023 - juil. 2023",
+        "period": "fév. 2023 - juil. 2023 (6 mois)",
         "description": [
           {
             "N/A": [
@@ -177,14 +203,14 @@
           }
         ],
         "skills": [
+          "Management 3.0",
           "Agilité",
           "Less",
-          "unFIX",
+          "SAFe",
+          "OKRs",
           "Roadmap",
           "Stratégie",
-          "OKRs",
           "Optimisation des flux",
-          "Management 3.0",
           "Autonomisation",
           "Délégation",
           "Multi-équipes",
@@ -200,7 +226,7 @@
         "company": "ManoMano",
         "logo": "https://img.logo.dev/manomano.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
         "position": "Senior Scrum Master (Coach Agile / RTE)",
-        "period": "fév. 2021 - fév. 2023",
+        "period": "fév. 2021 - fév. 2023 (2 ans)",
         "description": [
           {
             "N/A": [
@@ -235,9 +261,9 @@
       },
       {
         "company": "onepoint",
-        "logo": "https://img.logo.dev/onepoint.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "logo": "https://img.logo.dev/groupeonepoint.com?token=pk_IrBjZU0lQJeNJRZcgNP55w",
         "position": "Ingénieur d'étude",
-        "period": "nov. 2015 - fév. 2021",
+        "period": "nov. 2015 - fév. 2021 (5 ans 2 mois)",
         "description": [
           {
             "Lead Scrum Master - CRÉDIT MUTUEL ARKEA": [
@@ -286,14 +312,10 @@
         "skills": [
           "Agilité",
           "Scrum",
-          "Roadmap",
           "Optimisation des flux",
           "Autonomisation",
           "Délégation",
-          "Multi-équipes",
           "Facilitation",
-          "Animation d'événements",
-          "Mentor",
           "Jira",
           "TypeScript",
           "PostgreSQL",
@@ -304,10 +326,10 @@
         "company": "capgemini",
         "logo": "https://img.logo.dev/capgemini.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
         "position": "Chef de projet",
-        "period": "fév. 2015 - août 2021",
+        "period": "fév. 2015 - août 2015 (7 mois)",
         "description": [
           {
-            "Chef de projet - CDISCOUNT": [
+            "Chef de projet fonctionnel - CDISCOUNT": [
               {
                 "category": "Accompagner le projet stratégique de refonte du système de gestion de produit de Cdiscount (modèle offre v1).",
                 "tasks": [
@@ -323,17 +345,18 @@
         ],
         "skills": [
           "Roadmap",
+          "Spécification détaillées",
           "Multi-équipes"
         ]
       },
       {
         "company": "galilée",
         "logo": "https://img.logo.dev/galilee.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
-        "position": "Développeur & “Scrum Master”",
-        "period": "oct. 2011 - fév. 2015",
+        "position": "Développeur & Scrum Master",
+        "period": "oct. 2011 - fév. 2015 (4 ans 3 mois)",
         "description": [
           {
-            "“N/A”": [
+            "N/A": [
               {
                 "category": "Scrum Master",
                 "tasks": [

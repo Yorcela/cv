@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
@@ -17,12 +17,12 @@ interface Recommendation {
   imports: [CommonModule, TranslateModule, MarkdownPipe],
   template: `
     <section class="main-section">
-      <h2 class="main-section-title clickable-title" (click)="toggleRecommendationsSection()">
+      <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
         <i class="fad fa-quote-left"></i>
         {{ 'i18n.ui.sections.recommendations' | translate }}
-        <i class="fad" [class.fa-chevron-down]="recommendationsSectionExpanded" [class.fa-chevron-right]="!recommendationsSectionExpanded"></i>
+        <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
       </h2>
-      <div *ngIf="recommendationsSectionExpanded" class="recommendations-grid">
+      <div *ngIf="isExpanded" class="recommendations-grid">
         <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
           <div class="author-header">
             <img *ngIf="rec.picture" [src]="rec.picture" [alt]="rec.name" class="author-avatar">
@@ -41,8 +41,10 @@ interface Recommendation {
 })
 export class RecommendationsComponent {
   @Input() variant: 'full' | 'short' = 'full';
+  @Input() data: any = null;
+  @Input() isExpanded: boolean = true;
+  @Output() toggleSection = new EventEmitter<void>();
   recommendations: Recommendation[] = [];
-  recommendationsSectionExpanded = true;
 
   constructor(private translate: TranslateService) {
     this.translate.get('cv.recommandations').subscribe((data: Recommendation[]) => {
@@ -70,8 +72,8 @@ export class RecommendationsComponent {
     return formattedText;
   }
 
-  toggleRecommendationsSection(): void {
-    this.recommendationsSectionExpanded = !this.recommendationsSectionExpanded;
+  onToggleSection(): void {
+    this.toggleSection.emit();
   }
 
   getRecommendations(): Recommendation[] {
