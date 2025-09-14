@@ -12,7 +12,7 @@
 }
 
 .app-sidebar {
-  width: 30%;
+  width: 25%;
 }
 
 .cv-content {
@@ -132,7 +132,10 @@
   text-decoration: underline;
 }
 
-.sidebar-skills, .sidebar-education, .sidebar-certifications, .sidebar-hobbies {
+.sidebar-skills,
+.sidebar-education,
+.sidebar-certifications,
+.sidebar-hobbies {
   margin-bottom: 2rem;
 }
 
@@ -220,7 +223,7 @@
 
 .skill-chip-xs:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Compétences Agiles */
@@ -342,11 +345,13 @@
 
 /* Main Content Styles */
 .cv-main {
-  width: 60%;
-  padding: 2rem 3rem;
+  width: 75%;
+  padding: 0 3rem;
   background: white;
   overflow: visible;
   min-height: 100vh;
+  text-align: justify;
+  font-size: .9em;
 }
 
 .contact-item {
@@ -370,7 +375,7 @@
 
 /* Main Content Sections */
 .main-section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .main-section-title {
@@ -383,11 +388,35 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-content: space-between;
 }
 
 .main-section-title i {
   color: #608abf;
   font-size: 1.2rem;
+}
+
+.clickable-title {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.clickable-title:hover {
+  color: #608abf;
+  transform: translateY(-1px);
+}
+
+.clickable-title .fa-chevron-down,
+.clickable-title .fa-chevron-right {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.clickable-title:hover .fa-chevron-down,
+.clickable-title:hover .fa-chevron-right {
+  transform: scale(1.1);
 }
 
 .section-content {
@@ -546,28 +575,33 @@
 }
 
 /* Education & Certifications */
-.education-item, .certification-item {
+.education-item,
+.certification-item {
   padding: 1rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
-.education-item:last-child, .certification-item:last-child {
+.education-item:last-child,
+.certification-item:last-child {
   border-bottom: none;
 }
 
-.education-title, .certification-title {
+.education-title,
+.certification-title {
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 0.3rem;
 }
 
-.education-institution, .certification-issuer {
+.education-institution,
+.certification-issuer {
   color: #4a90e2;
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
 
-.education-period, .certification-period {
+.education-period,
+.certification-period {
   color: #666;
   font-size: 0.9rem;
 }
@@ -1118,27 +1152,31 @@
 }
 
 /* Education and Certifications Styles */
-.education-list, .certifications-list {
+.education-list,
+.certifications-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.education-item, .certification-item {
+.education-item,
+.certification-item {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.8rem;
   border-radius: 8px;
   border-left: 3px solid #4a90e2;
 }
 
-.education-degree, .certification-name {
+.education-degree,
+.certification-name {
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
   color: white;
 }
 
-.education-details, .certification-year {
+.education-details,
+.certification-year {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1227,8 +1265,9 @@
 
 /* Page Layout Styles */
 .page-background {
-  background: #f5f7fa;
   min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Responsive Design */
@@ -1236,42 +1275,42 @@
   .cv-container {
     flex-direction: column;
   }
-  
+
   .cv-sidebar {
     width: 100%;
     min-height: auto;
   }
-  
+
   .cv-main {
     width: 100%;
     padding: 1.5rem;
   }
-  
+
   .accomplishments-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .experience-header {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .company-logo {
     align-self: flex-start;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .education-certifications-row {
     grid-template-columns: 1fr;
   }
-  
+
   .main-content {
     padding: 2rem 1rem;
   }
-  
+
   .section {
     padding: 1.5rem;
   }
@@ -1295,19 +1334,19 @@
   .header-controls {
     display: none;
   }
-  
+
   .cv-container {
     box-shadow: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .cv-sidebar {
     background: #608abf !important;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
-  
+
   .page-background {
     background: white;
   }

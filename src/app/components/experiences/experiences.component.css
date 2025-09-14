@@ -1,0 +1,306 @@
+/* Section title styles */
+.main-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #608abf;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.main-section-title i {
+  color: #608abf;
+  font-size: 1.2rem;
+}
+
+.clickable-title {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.clickable-title:hover {
+  color: #608abf;
+  transform: translateY(-1px);
+}
+
+.clickable-title .fa-chevron-down,
+.clickable-title .fa-chevron-right {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.clickable-title:hover .fa-chevron-down,
+.clickable-title:hover .fa-chevron-right {
+  transform: scale(1.1);
+}
+
+/* Utilise les styles globaux pour main-section et main-section-title */
+
+.experiences-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-item {
+  padding: 1.5rem;
+  border-left: 4px solid #3b82f6;
+  background: #f8fafc;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.2s ease;
+}
+
+.experience-item:hover {
+  background: #f1f5f9;
+  border-left-color: #2563eb;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.experience-company-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.company-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.experience-company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.experience-position {
+  color: #3b82f6;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.experience-period {
+  background: #3b82f6;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.experience-description {
+  margin-bottom: 1.5rem;
+}
+
+.description-group {
+  margin-bottom: 1rem;
+}
+
+.client-section {
+  margin-bottom: 1.5rem;
+}
+
+.client-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #dbeafe;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+}
+
+.task-category {
+  margin-bottom: 1rem;
+}
+
+.category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-list li {
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid #60a5fa;
+  line-height: 1.6;
+  color: #4a5568;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.task-list li:hover {
+  border-left-color: #3b82f6;
+  background: #fefefe;
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.skills-label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #bae6fd;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: #0369a1;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .experience-period {
+    align-self: flex-start;
+  }
+  
+  .company-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .experience-company {
+    font-size: 1.1rem;
+  }
+  
+  .experience-skills {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .section-title {
+    color: #f1f5f9;
+    border-bottom-color: #60a5fa;
+  }
+  
+  .experience-item {
+    background: #1e293b;
+    border-left-color: #60a5fa;
+  }
+  
+  .experience-item:hover {
+    background: #334155;
+    border-left-color: #3b82f6;
+  }
+  
+  .experience-company {
+    color: #f1f5f9;
+  }
+  
+  .experience-position {
+    color: #60a5fa;
+  }
+  
+  .client-name {
+    color: #60a5fa;
+    background: #1e3a8a;
+    border-left-color: #60a5fa;
+  }
+  
+  .category-title {
+    color: #cbd5e1;
+  }
+  
+  .task-list li {
+    background: #0f172a;
+    color: #cbd5e1;
+    border-left-color: #60a5fa;
+  }
+  
+  .task-list li:hover {
+    background: #1e293b;
+    border-left-color: #3b82f6;
+  }
+  
+  .skills-label {
+    color: #f1f5f9;
+  }
+  
+  .skill-tag {
+    background: #1e3a8a;
+    color: #bfdbfe;
+    border-color: #3b82f6;
+  }
+  
+  .skill-tag:hover {
+    background: #3b82f6;
+    color: white;
+  }
+  
+  .company-logo {
+    background: #f8fafc;
+  }
+}

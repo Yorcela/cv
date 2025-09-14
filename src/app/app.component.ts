@@ -55,22 +55,22 @@ import { CvPageComponent } from './pages/cv-page.component';
           <div class="tool-group">
           <div class="dropdown-container">
               <button class="download-btn modern-dropdown" (click)="toggleDropdown()">
-                <i class="fas fa-download"></i>
-                <span>{{ 'ui.download_pdf' | translate }}</span>
-                <i class="fas fa-chevron-down dropdown-arrow" [class.rotated]="showDropdown()"></i>
+                <i class="fad fa-download"></i>
+                <span>{{ 'i18n.ui.download_options.download_pdf' | translate }}</span>
+                <i class="fad fa-chevron-down dropdown-arrow" [class.rotated]="showDropdown()"></i>
               </button>
             <div class="dropdown-menu modern-menu" [class.show]="showDropdown()">
               <button class="dropdown-item" (click)="downloadSpecific('long_fr')">
                 <i class="fal fa-file-pdf"></i>
-                <span>{{ 'download_options.long_fr' | translate }}</span>
+                <span>{{ 'i18n.ui.download_options.long_fr' | translate }}</span>
               </button>
               <button class="dropdown-item" (click)="downloadSpecific('long_en')">
                 <i class="fal fa-file-pdf"></i>
-                <span>{{ 'download_options.long_en' | translate }}</span>
+                <span>{{ 'i18n.ui.download_options.long_en' | translate }}</span>
               </button>
               <button class="dropdown-item" (click)="downloadSpecific('short_bilingual')">
                 <i class="fal fa-file-pdf"></i>
-                <span>{{ 'download_options.short_bilingual' | translate }}</span>
+                <span>{{ 'i18n.ui.download_options.short_bilingual' | translate }}</span>
               </button>
             </div>
           </div>

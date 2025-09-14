@@ -8,10 +8,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [CommonModule, TranslateModule],
   template: `
     <div class="sidebar-hobbies">
-      <h3 class="sidebar-title"><i class="fad fa-heart"></i> {{ 'sections.hobbies' | translate }}</h3>
+      <h3 class="sidebar-title"><i class="fad fa-heart"></i> {{ 'i18n.ui.sections.hobbies' | translate }}</h3>
       <div class="hobbies-list">
         <div class="hobby-item" *ngFor="let hobby of hobbies">
-          <i class="fas" [ngClass]="hobby.icon"></i>
+          <i class="fad" [ngClass]="hobby.icon"></i>
           {{ hobby.name }}
         </div>
       </div>
@@ -23,7 +23,7 @@ export class HobbiesComponent {
   hobbies: { name: string; icon: string }[] = [];
 
   constructor(private translate: TranslateService) {
-    this.translate.get('hobbies').subscribe((data: { name: string; icon: string }[]) => {
+    this.translate.get('cv.hobbies').subscribe((data: { name: string; icon: string }[]) => {
       this.hobbies = data || [];
     });
   }

@@ -14,7 +14,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       </div>
       <div class="contact-item">
         <i class="fad fa-envelope"></i>
-        <a [href]="'mailto:' + personalInfo?.email">{{ personalInfo?.email }}</a>
+        <a [href]="'mailto:' + personalInfo?.email">{{personalInfo?.email }}</a>
       </div>
       <div class="contact-item">
         <i class="fad fa-map-marker-alt"></i>
@@ -22,7 +22,15 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       </div>
       <div class="contact-item">
         <i class="fab fa-linkedin"></i>
-        <a [href]="personalInfo?.linkedin" target="_blank">{{ 'sections.linkedin' | translate }}</a>
+        <a [href]="personalInfo?.linkedin" target="_blank">{{ 'i18n.ui.linkedin' | translate }}</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-youtube"></i>
+        <a [href]="personalInfo?.youtube" target="_blank">{{ 'i18n.ui.youtube' | translate }}</a>
+      </div>
+      <div class="contact-item">
+        <i class="fad fa-unicorn"></i>
+        <a [href]="personalInfo?.assessfirst" target="_blank">{{ 'i18n.ui.assessfirst' | translate }}</a>
       </div>
     </div>
   `,
@@ -30,9 +38,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class ContactInfoComponent {
   personalInfo: any = {};
+  ui: any = {};
 
   constructor(private translate: TranslateService) {
-    this.translate.get('personalInfo').subscribe((data: any) => {
+    this.translate.get('cv.personalInfo').subscribe((data: any) => {
       this.personalInfo = data || {};
     });
   }

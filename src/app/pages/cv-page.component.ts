@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../pipes/markdown.pipe';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { AboutMeComponent } from '../components/aboute-me/about-me.component';
+import { AccomplishmentsComponent } from '../components/accomplishments/accomplishments.component';
+import { ExperiencesComponent } from '../components/experiences/experiences.component';
 
 interface ExperienceDetailed {
   title: string;
@@ -20,7 +23,6 @@ interface CVData {
     phone: string;
     location: string;
     linkedin: string;
-    github?: string;
   };
   aboutShort?: { description: string };
   aboutLong?: { description: string };
@@ -93,21 +95,21 @@ interface SkillCategory {
 @Component({
   selector: 'app-cv-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent],
+  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, AboutMeComponent, AccomplishmentsComponent, ExperiencesComponent],
   template: `
     <div class="page-background">
       <div class="cv-container">
       <div *ngIf="loading" class="loading-state">
         <div class="loading-card">
-          <i class="fas fa-spinner fa-spin"></i>
-          <span>{{ 'sections.loading' | translate }}</span>
+          <i class="fad fa-spinner fa-spin"></i>
+          <span>{{ 'i18n.ui.loading' | translate }}</span>
         </div>
       </div>
       
       <div *ngIf="error" class="error-state">
         <div class="error-card">
-          <i class="fas fa-exclamation-triangle"></i>
-          <h3>{{ 'sections.error_loading' | translate }}</h3>
+          <i class="fad fa-exclamation-triangle"></i>
+          <h3>{{ 'i18n.ui.error_loading' | translate }}</h3>
           <p>{{ error }}</p>
         </div>
       </div>
@@ -120,106 +122,26 @@ interface SkillCategory {
 
           <!-- Main Content -->
           <div class="cv-main">
-            <!-- About Section -->
-            <section class="main-section">
-              <h2 class="main-section-title">
-                <i class="fad fa-user"></i>
-                {{ 'sections.about_me' | translate }}
-              </h2>
-              <div class="section-content">
-                <div [innerHTML]="getFormattedAbout()"></div>
-              </div>
-            </section>
-
-            <!-- Accomplishments Section -->
-            <section class="main-section">
-              <h2 class="main-section-title">
-                <i class="fad fa-trophy"></i>
-                {{ 'sections.accomplishments' | translate }}
-              </h2>
-              <div class="accomplishments-grid">
-                <div class="accomplishment-category">
-                  <h4><i class="fad fa-rocket"></i> {{ 'sections.transformation' | translate }}</h4>
-                  <ul>
-                    <li *ngFor="let acc of getAccomplishmentsByCategory('transformation')">
-                      {{ acc.title }} ({{ acc.year }})
-                    </li>
-                  </ul>
-                </div>
-                <div class="accomplishment-category">
-                  <h4><i class="fad fa-users"></i> {{ 'sections.leadership' | translate }}</h4>
-                  <ul>
-                    <li *ngFor="let acc of getAccomplishmentsByCategory('leadership')">
-                      {{ acc.title }} ({{ acc.year }})
-                    </li>
-                  </ul>
-                </div>
-                <div class="accomplishment-category">
-                  <h4><i class="fad fa-cogs"></i> {{ 'sections.innovation' | translate }}</h4>
-                  <ul>
-                    <li *ngFor="let acc of getAccomplishmentsByCategory('innovation')">
-                      {{ acc.title }} ({{ acc.year }})
-                    </li>
-                  </ul>
-                </div>
-                <div class="accomplishment-category">
-                  <h4><i class="fad fa-chart-line"></i> {{ 'sections.performance' | translate }}</h4>
-                  <ul>
-                    <li *ngFor="let acc of getAccomplishmentsByCategory('performance')">
-                      {{ acc.title }} ({{ acc.year }})
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <!-- Experiences Section -->
-            <section class="main-section">
-              <h2 class="main-section-title">
-                <i class="fad fa-briefcase"></i>
-                {{ 'sections.detailed_experiences' | translate }}
-              </h2>
-              <div class="experiences-container">
-                <div *ngFor="let exp of getExperiences()" class="experience-item">
-                  <div class="experience-header">
-                    <div>
-                      <h3 class="experience-title">{{ exp.position }}</h3>
-                      <div class="experience-company">{{ exp.company }}</div>
-                    </div>
-                    <span class="experience-period">{{ exp.period }}</span>
-                  </div>
-                  <p class="experience-description">{{ exp.description }}</p>
-                  <div *ngIf="exp.achievements" class="experience-achievements">
-                    <h4>{{ 'sections.key_achievements' | translate }}</h4>
-                    <ul>
-                      <li *ngFor="let achievement of exp.achievements" [innerHTML]="formatAchievement(achievement)"></li>
-                    </ul>
-                  </div>
-                  <div *ngIf="exp.technologies" class="experience-technologies">
-                    <span class="tech-label">{{ 'sections.technologies' | translate }}</span>
-                    <span class="tech-tags">
-                      <span *ngFor="let tech of exp.technologies" class="tech-tag">{{ tech }}</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-
+            <app-about-me [variant]="variant"></app-about-me>
+            <app-accomplishments [variant]="variant"></app-accomplishments>
+            <app-experiences [variant]="variant"></app-experiences>
 
             <!-- Recommendations Section -->
             <section class="main-section">
-              <h2 class="main-section-title">
+              <h2 class="main-section-title clickable-title" (click)="toggleRecommendationsSection()">
                 <i class="fal fa-quote-left"></i>
-                {{ 'sections.recommendations' | translate }}
+                {{ 'i18n.ui.sections.recommendations' | translate }}
+                <i class="fad" [class.fa-chevron-down]="recommendationsSectionExpanded" [class.fa-chevron-right]="!recommendationsSectionExpanded"></i>
               </h2>
-              <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
-                <p class="recommendation-text">"{{ rec.text }}"</p>
-                <div class="recommendation-author">
-                  <img *ngIf="rec.photo" [src]="rec.photo" [alt]="rec.name" class="author-avatar">
-                  <div class="author-info">
-                    <h4 class="author-name">{{ rec.name }}</h4>
-                    <p class="author-title">{{ rec.position }}<span *ngIf="rec.company"> chez {{ rec.company }}</span></p>
+              <div *ngIf="recommendationsSectionExpanded">
+                <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
+                  <p class="recommendation-text">"{{ rec.text }}"</p>
+                  <div class="recommendation-author">
+                    <img *ngIf="rec.photo" [src]="rec.photo" [alt]="rec.name" class="author-avatar">
+                    <div class="author-info">
+                      <h4 class="author-name">{{ rec.name }}</h4>
+                      <p class="author-title">{{ rec.position }}<span *ngIf="rec.company"> chez {{ rec.company }}</span></p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -241,6 +163,7 @@ export class CvPageComponent implements OnChanges {
   error: string | null = null;
   accomplishmentsExpanded = false;
   recommendationsExpanded = false;
+  recommendationsSectionExpanded = true;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -252,15 +175,11 @@ export class CvPageComponent implements OnChanges {
     this.recommendationsExpanded = !this.recommendationsExpanded;
   }
 
-  getFormattedAbout(): string {
-    if (!this.data) return '';
-    const aboutText = this.variant === 'full' ? this.data.aboutLong?.description : this.data.aboutShort?.description;
-    if (!aboutText) return '';
-    
-    // Use markdown pipe for formatting
-    const markdownPipe = new MarkdownPipe();
-    return markdownPipe.transform(aboutText);
+  toggleRecommendationsSection(): void {
+    this.recommendationsSectionExpanded = !this.recommendationsSectionExpanded;
   }
+
+
 
   formatAchievement(achievement: string): string {
     const markdownPipe = new MarkdownPipe();
@@ -366,35 +285,35 @@ export class CvPageComponent implements OnChanges {
         switch(key) {
           case 'Agilité':
             title = 'Agilité';
-            icon = 'fas fa-sync-alt';
+            icon = 'fad fa-sync-alt';
             break;
           case 'Coaching Agile':
             title = 'Coaching Agile';
-            icon = 'fas fa-chalkboard-teacher';
+            icon = 'fad fa-chalkboard-teacher';
             break;
           case 'Leadership/Management':
             title = 'Leadership/Management';
-            icon = 'fas fa-users';
+            icon = 'fad fa-users';
             break;
           case 'Delivery':
             title = 'Delivery';
-            icon = 'fas fa-shipping-fast';
+            icon = 'fad fa-shipping-fadt';
             break;
           case 'Communication':
             title = 'Communication';
-            icon = 'fas fa-comments';
+            icon = 'fad fa-comments';
             break;
           case 'Tech':
             title = 'Tech';
-            icon = 'fas fa-code';
+            icon = 'fad fa-code';
             break;
           case 'Langues':
             title = 'Langues';
-            icon = 'fas fa-globe';
+            icon = 'fad fa-globe';
             break;
           default:
             title = key;
-            icon = 'fas fa-star';
+            icon = 'fad fa-star';
         }
         
         categories.push({

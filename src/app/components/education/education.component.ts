@@ -8,7 +8,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [CommonModule, TranslateModule],
   template: `
     <div class="sidebar-education">
-      <h3 class="sidebar-title"><i class="fad fa-university"></i> {{ 'sections.education' | translate }}</h3>
+      <h3 class="sidebar-title"><i class="fad fa-university"></i> {{ 'i18n.ui.sections.education' | translate }}</h3>
       <div class="education-content">
         <div class="education-item" *ngFor="let edu of education">
           <div class="education-main">
@@ -26,7 +26,7 @@ export class EducationComponent {
   education: any[] = [];
 
   constructor(private translate: TranslateService) {
-    this.translate.get('education').subscribe((data: any[]) => {
+    this.translate.get('cv.education').subscribe((data: any[]) => {
       this.education = data || [];
     });
   }

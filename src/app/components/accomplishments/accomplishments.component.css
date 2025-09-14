@@ -1,0 +1,135 @@
+/* Section title styles */
+.main-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #608abf;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.main-section-title i {
+  color: #608abf;
+  font-size: 1.2rem;
+}
+
+.clickable-title {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.clickable-title:hover {
+  color: #608abf;
+  transform: translateY(-1px);
+}
+
+.clickable-title .fa-chevron-down,
+.clickable-title .fa-chevron-right {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.clickable-title:hover .fa-chevron-down,
+.clickable-title:hover .fa-chevron-right {
+  transform: scale(1.1);
+}
+
+.accomplishments-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.accomplishment-item {
+  padding: 1.5rem;
+  border-left: 4px solid #3b82f6;
+  background: #f8fafc;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.2s ease;
+}
+
+.accomplishment-item:hover {
+  background: #f1f5f9;
+  border-left-color: #2563eb;
+}
+
+.accomplishment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.accomplishment-company-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.company-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: white;
+  padding: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.accomplishment-company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.accomplishment-position {
+  background: #3b82f6;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.accomplishment-details {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accomplishment-details li {
+  padding-bottom: 0.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .accomplishment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .accomplishment-position {
+    align-self: flex-start;
+  }
+
+  .company-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .accomplishment-company {
+    font-size: 1.1rem;
+  }
+}

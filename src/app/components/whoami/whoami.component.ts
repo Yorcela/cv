@@ -12,7 +12,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
         <img src="assets/images/profile-photo.png" [alt]="personalInfo?.name" class="profile-photo">
       </div>
       <h1 class="name">{{ personalInfo?.name }}</h1>
-      <h2 class="title">{{ personalInfo?.title }}</h2>
+      <span class="title" *ngFor="let title of personalInfo?.titles">{{ title }}</span>
     </div>
   `,
   styleUrls: ['./whoami.component.css']
@@ -21,7 +21,7 @@ export class WhoamiComponent {
   personalInfo: any = {};
 
   constructor(private translate: TranslateService) {
-    this.translate.get('personalInfo').subscribe((data: any) => {
+    this.translate.get('cv.personalInfo').subscribe((data: any) => {
       this.personalInfo = data || {};
     });
   }

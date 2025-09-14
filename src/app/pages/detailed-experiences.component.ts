@@ -41,14 +41,14 @@ interface CVData {
     <div class="detailed-experiences-container">
       <!-- Loading State -->
       <div *ngIf="loading" class="loading-card">
-        <i class="fas fa-spinner fa-spin"></i>
+        <i class="fad fa-spinner fa-spin"></i>
         <span>Chargement des expériences détaillées...</span>
       </div>
 
       <!-- Error State -->
       <div *ngIf="error" class="error-state">
         <div class="error-card">
-          <i class="fas fa-exclamation-triangle"></i>
+          <i class="fad fa-exclamation-triangle"></i>
           <h3>Erreur</h3>
           <p>{{ error }}</p>
         </div>
@@ -64,7 +64,7 @@ interface CVData {
               Retour au CV
             </button>
           </div>
-          <h1 class="page-title">{{ 'sections.detailed_experiences' | translate }}</h1>
+          <h1 class="page-title">{{ 'i18n.ui.sections.detailed_experiences' | translate }}</h1>
           <p class="page-subtitle">Parcours professionnel complet et réalisations marquantes</p>
         </header>
 
@@ -90,7 +90,7 @@ interface CVData {
                 </div>
                 <p class="experience-description">{{ exp.description }}</p>
                 <div *ngIf="exp.achievements && exp.achievements.length > 0" class="achievements">
-                  <h5>{{ 'sections.key_achievements' | translate }}</h5>
+                  <h5>{{ 'i18n.ui.sections.key_achievements' | translate }}</h5>
                   <ul>
                     <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
                   </ul>
@@ -116,7 +116,7 @@ interface CVData {
                 </div>
                 <p class="experience-description">{{ exp.description }}</p>
                 <div *ngIf="exp.achievements && exp.achievements.length > 0" class="achievements">
-                  <h5>{{ 'sections.key_achievements' | translate }}</h5>
+                  <h5>{{ 'i18n.ui.sections.key_achievements' | translate }}</h5>
                   <ul>
                     <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
                   </ul>
@@ -129,7 +129,7 @@ interface CVData {
           </div>
           <!-- Humor Footer -->
           <footer class="humor-footer">
-            <p>{{ 'ui.reading_humor' | translate }}</p>
+            <p>{{ 'i18n.ui.reading_humor' | translate }}</p>
           </footer>
         </div>
       </div>

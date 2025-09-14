@@ -1,10 +1,20 @@
 {
-  "ui": {
+  "i18n": {
+    "ui": {
     "tagline": "Engineering Manager • Agile Leader",
     "variant_full": "Full version",
     "variant_short": "Short version",
     "download_pdf": "Download CV",
-  "download_options": {
+    "reading_humor": "That's quite a read! 😉",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "assessfirst": "AssessFirst",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "error_loading": "Loading error",
+    "loading": "Loading CV…",
+    "download_options": {
     "long_fr": "French long version",
     "long_en": "English long version",
     "short_bilingual": "Short version (bilingual)"
@@ -19,7 +29,7 @@
     "certifications": "Certifications",
     "recommendations": "Recommendations",
     "detailed_experiences": "Detailed experiences",
-    "key_achievements": "Key achievements:",
+    "key_achievements": "Key achievements",
     "languages": "Languages",
     "leadership": "Leadership",
     "tech": "Tech",
@@ -59,7 +69,7 @@
       "period": "2018 - Present",
       "description": "Technical direction of a team of 25+ developers. Architecture and development of the leading SaaS platform in digital accounting.",
       "technologies": ["Node.js", "React", "TypeScript", "AWS", "Docker"],
-      "logo": "https://img.logo.dev/dougs.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
+      "logo": "https://img.logo.dev/dougs.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w"
     },
     {
       "company": "Previous Startup",
@@ -199,4 +209,5 @@
       "level": "Intermediate (B2)"
     }
   ]
+  }
 }

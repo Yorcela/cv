@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { MarkdownPipe } from '../pipes/markdown.pipe';
+import { MarkdownPipe } from '../../pipes/markdown.pipe';
 
 interface Recommendation {
   name: string;
@@ -34,7 +34,7 @@ interface CVData {
       <!-- Error State -->
       <div *ngIf="error" class="error-state">
         <div class="error-card">
-          <i class="fas fa-exclamation-triangle"></i>
+          <i class="fad fa-exclamation-triangle"></i>
           <h3>Erreur</h3>
           <p>{{ error }}</p>
         </div>
@@ -51,7 +51,7 @@ interface CVData {
               Retour au CV
             </button>
           </div>
-          <h1 class="page-title">{{ 'sections.recommendations' | translate }}</h1>
+          <h1 class="page-title">{{ 'i18n.ui.sections.recommendations' | translate }}</h1>
           <p class="page-subtitle">Témoignages de managers et collègues</p>
         </header>
 

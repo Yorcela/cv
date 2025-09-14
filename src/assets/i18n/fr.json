@@ -1,519 +1,494 @@
 {
-  "ui": {
-    "tagline": "Engineering Manager • Agile Leader",
-    "variant_full": "Version complète",
-    "variant_short": "Version courte",
-    "download_pdf": "Télécharger le CV"
+  "i18n": {
+    "ui": {
+      "variant_full": "Version complète",
+      "variant_short": "Version courte",
+      "reading_humor": "Ça en fait de la lecture ! 😉",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "assessfirst": "AssessFirst",
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Emplacement",
+      "error_loading": "Erreur de chargement",
+      "loading": "Chargement du CV…",
+      "download_options": {
+        "download_pdf": "Télécharger le CV",
+        "long_fr": "Version longue française",
+        "long_en": "Version longue anglaise",
+        "short_bilingual": "Version courte (bi-lingue)"
+      },
+      "sections": {
+        "about_me": "Qui suis-je ?",
+        "accomplishments": "Quelques accomplissements",
+        "skills": "Compétences",
+        "hobbies": "Loisirs",
+        "education": "Diplômes",
+        "certifications": "Certifications",
+        "recommendations": "Recommandations",
+        "experiences_short": "3 dernières expériences",
+        "experiences_long": "Expériences détaillées",
+        "key_achievements": "Réalisations clés"
+      }
+    }
   },
-  "download_options": {
-    "long_fr": "Version longue française",
-    "long_en": "Version longue anglaise",
-    "short_bilingual": "Version courte (bi-lingue)"
-  },
-  "sections": {
-    "about_me": "Qui suis-je ?",
-    "accomplishments": "Quelques accomplissements",
-    "skills": "Compétences",
-    "hobbies": "Loisirs",
-    "education": "Diplômes",
-    "education_certifications": "Diplômes & Certifications",
-    "certifications": "Certifications",
-    "recommendations": "Recommandations",
-    "detailed_experiences": "Expériences détaillées",
-    "key_achievements": "Réalisations clés :",
-    "languages": "Langues",
-    "leadership": "Leadership",
-    "tech": "Tech",
-    "technologies": "Technologies :",
-    "transformation": "Transformation",
-    "innovation": "Innovation",
-    "performance": "Performance",
-    "loading": "Chargement du CV...",
-    "error_loading": "Erreur de chargement",
-    "back": "Retour",
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "reading_humor": "Ça en fait de la lecture ! 😉"
-  },
-  "footer": "Site CV statique Angular • Hash routing prêt pour OVH",
-  "personalInfo": {
-    "name": "Alec Roy",
-    "title": "Leader Lean & Agile • Engineering Manager",
-    "email": "alecroy89@gmail.com",
-    "phone": "+33 6 19 19 65 16",
-    "location": "22300 Lannion, France",
-    "linkedin": "linkedin.com/in/alec-roy",
-    "youtube": "youtube.com/@alec-agile-gardener",
-    "assessfirst": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=fr-FR"
-  },
-  "aboutShort": {
-    "description": "Leader Lean et Agile avec près de 15 ans d'expérience à la croisée du produit, de la tech, du business et du management, j'ai accompagné des scale-ups (ManoMano, SantéVet, Dougs…) en hyper-croissance en structurant le delivery, en menant des transformations agiles à l'échelle et en développant les talents. Mon style est humain, collaboratif et orienté résultats. Je crée les conditions pour que chacun progresse, gagne en autonomie et trouve du sens. Vision stratégique et posture de coach se conjuguent dans mon leadership : transparence, confiance et excellence. Reconnu pour ma capacité à fédérer, motiver et inspirer, j'apporte empathie, spontanéité et pragmatisme. Moteur d'innovation, je questionne l'existant, teste, apprends et itère. En résumé, un servant leader passionné, animé par l'envie de contribuer à la croissance d'une entreprise où les personnes et les produits grandissent ensemble."
-  },
-  "aboutLong": {
-    "description": "<p>Je suis un <strong>leader Lean / Agile</strong> et <strong>manager passionné</strong>, avec près de <strong>15 ans d'expérience</strong> à la croisée du produit, de la tech, du business et du management. J'ai accompagné mes équipes dans des <strong>scale‑ups</strong> (ManoMano, SantéVet, Dougs…) en hyper‑croissance en structurant le <strong>delivery</strong>, en accompagnant des <strong>transformations agiles à l'échelle</strong> et en développant les talents de mes équipes. Mon style est résolument <strong>humain, collaboratif et orienté résultats</strong>.</p><p>Les équipes que j'accompagne décrivent mon approche comme motivante et engageante. Je crée les conditions pour que chacun progresse, prenne confiance et gagne en autonomie. Je combine <strong>sens de vision stratégique</strong> – roadmaps alignées sur la stratégie globale de l'entreprise, adaptation des cadres de travail aux contextes – et <strong>posture de coach</strong> : mentorat, écoute active, feedback constructif. Mon leadership repose sur la <strong>transparence</strong>, la <strong>confiance</strong> et <strong>l'excellence</strong>.</p><p>Sur le plan humain, mes forces résident dans ma capacité à fédérer, motiver et inspirer. Je suis reconnu pour mon <strong>empathie</strong>, ma facilité à <strong>nouer des relations authentiques</strong> et ma <strong>spontanéité</strong>, qui rendent la collaboration naturelle et agréable. Je suis aussi <strong>moteur d'innovation et de changement :</strong> j'aime comprendre pourquoi, questionner l'existant de manière pragmatique, tester de nouvelles approches, apprendre vite et itérer.</p><h4>Ce qui me définit en tant que manager</h4><ul><li><strong>People first :</strong> je valorise la progression individuelle et collective, j'aime mettre en avant le talent des autres et je détecte facilement le potentiel de chacun.</li><li><strong>Coach & visionnaire :</strong> j'aide à grandir et j'entraîne vers un objectif commun, en encourageant à définir des objectifs collectifs et individuels.</li><li><strong>Catalyseur :</strong> je transforme les défis en opportunités et stimule l'énergie collective, en m'entourant d'<em>early adopters</em> qui viendront m'épauler dans la transformation.</li><li><strong>Structuré & pragmatique :</strong> je conçois des cadres clairs, réalistes (mais ambitieux) et adaptés aux enjeux business tout en restant pragmatique et progressif.</li></ul><p>En résumé, je suis un <strong>servant leader</strong> qui rayonne par l'enthousiasme, la proximité et la volonté d'avoir un impact global, positif et durable. Mon moteur : contribuer à la croissance d'une entreprise en créant un environnement où les personnes et les produits grandissent ensemble.</p>"
-  },
-  "experiencesShort": [
-    {
-      "company": "Dougs",
-      "position": "Engineering Manager",
-      "period": "2023 - Présent",
-      "description": "Management d'un domaine technique de 25+ développeurs. Architecture et développement de la plateforme SaaS leader en comptabilité digitale.",
-      "technologies": [
-        "Node.js",
-        "TypeScript",
-        "ShapeUp",
-        "OKRs",
-        "Docker"
+  "cv": {
+    "personalInfo": {
+      "name": "Alec Roy",
+      "titles": [
+        "Engineering Director",
+        "Engineering Manager",
+        "Leader Lean & Agile"
       ],
-      "logo": "https://img.logo.dev/dougs.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
+      "email": "alecroy89@gmail.com",
+      "phone": "+33 (0)6.19.19.65.16",
+      "location": "22300 Lannion, France",
+      "linkedin": "https://linkedin.com/in/alec-roy",
+      "youtube": "https://youtube.com/@alec-agile-gardener",
+      "assessfirst": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=fr-FR"
     },
-    {
-      "company": "SantéVet",
-      "position": "Lead Scrum Master",
-      "period": "2023",
-      "description": "Transformation agile à l'échelle pour 12 équipes. Mise en place de frameworks agiles et coaching d'équipes.",
-      "technologies": [
-        "SAFe",
-        "Scrum",
-        "Kanban",
-        "OKRs",
-        "Coaching"
-      ],
-      "logo": "https://img.logo.dev/santevet.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
+    "about-me": {
+      "short": "<p><strong>Leader Lean et Agile</strong> avec près de <strong>15 ans d'expérience</strong> à la croisée du produit, de la tech, du business et du management, j'ai accompagné des <strong>scale-ups</strong> (ManoMano, SantéVet, Dougs…) en hyper-croissance en structurant le <strong>delivery</strong>, en menant des <strong>transformations agiles à l'échelle</strong> et en développant les talents.</p><p>Mon style est <strong>humain, collaboratif et orienté résultats</strong>. Je crée les conditions pour que chacun progresse, gagne en autonomie et trouve du sens. <strong>Vision stratégique</strong> et <strong>posture de coach</strong> se conjuguent dans mon leadership : <strong>transparence</strong>, <strong>confiance</strong> et <strong>excellence</strong>.</p><p>Reconnu pour ma capacité à fédérer, motiver et inspirer, j'apporte <strong>empathie</strong>, <strong>spontanéité</strong> et pragmatisme. <strong>Moteur d'innovation</strong>, je questionne l'existant, teste, apprends et itère.</p><p>En résumé, un <strong>servant leader</strong> passionné, animé par l'envie de contribuer à la croissance d'une entreprise où les personnes et les produits grandissent ensemble.</p>",
+      "long": "<p>Je suis un <strong>leader Lean / Agile</strong> et <strong>manager passionné</strong>, avec près de <strong>15 ans d'expérience</strong> à la croisée du produit, de la tech, du business et du management. J'ai accompagné mes équipes dans des <strong>scale-ups</strong> (ManoMano, SantéVet, Dougs…) en hyper-croissance en structurant le <strong>delivery</strong>, en accompagnant des <strong>transformations agiles à l'échelle</strong> et en développant les talents de mes équipes. Mon style est résolument <strong>humain, collaboratif et orienté résultats</strong>.</p><p>Les équipes que j'accompagne décrivent mon approche comme motivante et engageante. Je crée les conditions pour que chacun progresse, prenne confiance et gagne en autonomie. Je combine <strong>sens de vision stratégique</strong> – roadmaps alignées sur la stratégie globale de l'entreprise, adaptation des cadres de travail aux contextes – et <strong>posture de coach</strong> : mentorat, écoute active, feedback constructif. Mon leadership repose sur la <strong>transparence</strong>, la <strong>confiance</strong> et <strong>l'excellence</strong>.</p><p>Sur le plan humain, mes forces résident dans ma capacité à fédérer, motiver et inspirer. Je suis reconnu pour mon <strong>empathie</strong>, ma facilité à <strong>nouer des relations authentiques</strong> et ma <strong>spontanéité</strong>, qui rendent la collaboration naturelle et agréable. Je suis aussi <strong>moteur d'innovation et de changement :</strong> j'aime comprendre pourquoi, questionner l'existant de manière pragmatique, tester de nouvelles approches, apprendre vite et itérer.</p><h4>Ce qui me définit en tant que manager</h4><ul><li><strong>People first :</strong> je valorise la progression individuelle et collective, j'aime mettre en avant le talent des autres et je détecte facilement le potentiel de chacun.</li><li><strong>Coach & visionnaire :</strong> j'aide à grandir et j'entraîne vers un objectif commun, en encourageant à définir des objectifs collectifs et individuels.</li><li><strong>Catalyseur :</strong> je transforme les défis en opportunités et stimule l'énergie collective, en m'entourant d'<em>early adopters</em> qui viendront m'épauler dans la transformation.</li><li><strong>Structuré & pragmatique :</strong> je conçois des cadres clairs, réalistes (mais ambitieux) et adaptés aux enjeux business tout en restant pragmatique et progressif.</li></ul><p>En résumé, je suis un <strong>servant leader</strong> qui rayonne par l'enthousiasme, la proximité et la volonté d'avoir un impact global, positif et durable. Mon moteur : contribuer à la croissance d'une entreprise en créant un environnement où les personnes et les produits grandissent ensemble.</p>"
     },
-    {
-      "company": "ManoMano",
-      "position": "Senior Scrum Master",
-      "period": "2021 - 2023",
-      "description": "Accompagnement de l'hyper-croissance et passage à l'agilité à l'échelle. Coaching d'équipes et framework MACS.",
-      "technologies": [
-        "MACS",
-        "Scrum",
-        "Coaching",
-        "Facilitation"
-      ],
-      "logo": "https://img.logo.dev/manomano.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ"
-    }
-  ],
-  "accomplishments": [
-    {
-      "title": "Optimisation du suivi de production",
-      "description": "Mise en place d'un système de suivi dans Notion avec automatisation GitHub et Slack, déployé à tous les domaines",
-      "year": "2024",
-      "category": "delivery"
-    },
-    {
-      "title": "Déploiement des OKRs de Domaine",
-      "description": "Redonnage de sens aux équipes avec impact sur les OKRs stratégiques, méthode adoptée par les autres domaines",
-      "year": "2024",
-      "category": "leadership"
-    },
-    {
-      "title": "Solution de bureau virtuel Gather",
-      "description": "Déploiement de Gather de mon domaine à toute l'organisation (400+ personnes) pour faciliter la collaboration distribuée",
-      "year": "2024",
-      "category": "innovation"
-    },
-    {
-      "title": "PI Planning pour 12 équipes en 1 semaine",
-      "description": "Organisation express d'un PI Planning : roadmap trimestrielle livrée au COMEX en 1 jour vs 2 semaines avant",
-      "year": "2023",
-      "category": "agile"
-    },
-    {
-      "title": "Amélioration de la prédictibilité",
-      "description": "Définition d'objectifs SMART : passage de 0% à 30% d'équipes terminant tout ce qu'elles démarrent",
-      "year": "2023",
-      "category": "performance"
-    },
-    {
-      "title": "Réduction des incidents critiques",
-      "description": "Diffusion de la culture qualité : incidents critiques réduits de 3/semaine à 3/mois",
-      "year": "2023",
-      "category": "technical"
-    }
-  ],
-  "recommendations": [
-    {
-      "name": "Simon Françoise",
-      "position": "Engineering Director",
-      "company": "Dougs",
-      "text": "Alec est un manager profondément impliqué, toujours présent pour ses équipes, avec une communication claire, bienveillante et efficace. Il sait créer un climat de confiance, où chacun se sent écouté et responsabilisé. Il s'est distingué par son rôle actif dans l'amélioration du suivi de production, identifiant les points de friction et proposant des changements concrets et impactants.",
-      "relationship": "Manager",
-      "date": "2024",
-      "linkedinUrl": "https://www.linkedin.com/in/simon-francoise",
-      "photo": "assets/images/recommendations/simon.jpg"
-    },
-    {
-      "name": "Domingo Nofre",
-      "position": "CTPO",
-      "company": "SantéVet",
-      "text": "Alec a constamment démontré une compréhension remarquable des méthodologies Lean et Agile. Il a géré avec brio des cérémonies importantes impliquant plusieurs équipes. Son expertise allait au-delà de la connaissance théorique, dirigeant avec succès une équipe de Scrum Masters.",
-      "relationship": "Manager",
-      "date": "2023",
-      "linkedinUrl": "https://www.linkedin.com/in/domingo-nofre",
-      "photo": "assets/images/recommendations/domingo.jpg"
-    },
-    {
-      "name": "Florian Labadens",
-      "position": "Head of Agile",
-      "company": "ManoMano",
-      "text": "Alec est un coach senior d'équipe avec une compréhension approfondie du développement de produits agiles. Il a un regard avisé pour remettre en question l'état actuel, optimiser les processus et éliminer les obstacles. Son engagement à apporter de la valeur à l'organisation est remarquable.",
-      "relationship": "Manager",
-      "date": "2023",
-      "linkedinUrl": "https://www.linkedin.com/in/florian-labadens",
-      "photo": "assets/images/recommendations/florian.jpg"
-    },
-    {
-      "name": "Alice Montel",
-      "position": "Scrum Master",
-      "company": "SantéVet",
-      "text": "Alec a rapidement compris le contexte et proposé des améliorations pertinentes. En quelques mois, les équipes se sont considérablement améliorées : meilleure planification, gestion des dépendances plus efficace. Il incarne la définition d'un servant leader, toujours prêt à aider.",
-      "relationship": "Équipe",
-      "date": "2023",
-      "linkedinUrl": "https://www.linkedin.com/in/alice-montel-17358088/",
-      "photo": "assets/images/recommendations/alice.jpg"
-    },
-    {
-      "name": "Xavier Terradellas Fernández",
-      "position": "Head of Product",
-      "company": "SantéVet",
-      "text": "L'engagement d'Alec à aider les individus, équipes et organisations à adopter les pratiques agiles est exceptionnel. Il adapte son approche à chaque contexte. Sa capacité à impliquer ses collègues et les inspirer à adopter de nouvelles façons de travailler est remarquable.",
-      "relationship": "Collègue",
-      "date": "2023",
-      "linkedinUrl": "https://www.linkedin.com/in/xavier-terradellas-fernandez",
-      "photo": "assets/images/recommendations/xavier.jpg"
-    }
-  ],
-
-  "experiencesDetailed": [
-    {
-      "company": "Dougs",
-      "position": "Engineering Manager",
-      "period": "septembre 2023 - Présent",
-      "description": "Management d'un Domaine de 25+ développeurs répartis en 4 équipes. Architecture et développement de la plateforme SaaS leader en comptabilité digitale.",
-      "logo": "https://img.logo.dev/dougs.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ",
-      "responsibilities": [
-        {
-          "category": "Management d'un Domaine",
-          "tasks": [
-            "Accompagnement à la définition des plans de carrières individuels (entretiens annuels, entretien RH, etc.) de SE, Lead SE, PM, PDS",
-            "Recrutement des membres de l'équipe",
-            "Management de proximité (1:1 et discussions quotidiennes pour conserver le lien)"
-          ]
-        },
-        {
-          "category": "Coach d'équipe",
-          "tasks": [
-            "Accompagnement à la compréhension et la bonne application du framework (ShapeUp)",
-            "Facilitation des ateliers et événements d'équipe",
-            "Coaching individuel pour certains SE et Lead SE"
-          ]
-        },
-        {
-          "category": "Responsable du delivery",
-          "tasks": [
-            "Mise en place d'OKRs de domaine",
-            "Co-construction des roadmaps en fonction des OKRs stratégiques",
-            "Mise à disposition des Squads des moyens nécessaires à l'atteinte des objectifs",
-            "Coordination avec les autres Squads (avec les autres EM) et avec les autres pôles hors Tech",
-            "Suivi de production des équipes et optimisation des processus"
-          ]
-        }
-      ],
-      "technologies": [
-        "Node.js",
-        "TypeScript",
-        "ShapeUp",
-        "OKRs",
-        "Docker"
-      ]
-    },
-    {
-      "company": "SantéVet",
-      "position": "Lead Scrum Master",
-      "period": "février 2023 - juillet 2023",
-      "description": "Transformation agile à l'échelle pour 12 équipes. Leadership d'une équipe de Scrum Masters et mise en place de frameworks agiles.",
-      "logo": "https://img.logo.dev/santevet.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ",
-      "responsibilities": [
-        {
-          "category": "Mener la transformation de culture agile",
-          "tasks": [
-            "Expliquer et promouvoir l'approche Agile",
-            "Travailler avec les responsables Produit et Ingénierie pour définir les modes de fonctionnement",
-            "Améliorer la livraison : de 1 à 2 livraisons par mois en 3 mois d'action",
-            "Améliorer la prédictibilité : +30% en 3 mois d'action",
-            "Établir des plans trimestriels et itératifs",
-            "Définir et appliquer l'organisation des équipes pour la mise à l'échelle (inspiré de SAFe, unFIX, etc.)",
-            "Impliquer et collaborer avec le COMEX"
-          ]
-        },
-        {
-          "category": "Encadrer et mentorer les Scrum Masters",
-          "tasks": [
-            "Co-définition de leur plans de carrière",
-            "Encadrer les SM pour qu'ils s'améliorent et puissent participer davantage à l'initiative Agile@Scale",
-            "Favoriser un esprit communautaire parmi les SM",
-            "Orienter et soutenir les SM pour qu'ils puissent coacher leurs équipes"
-          ]
-        }
-      ],
-      "technologies": [
-        "SAFe",
-        "Scrum",
-        "Kanban",
-        "OKRs",
-        "Coaching"
-      ]
-    },
-    {
-      "company": "ManoMano",
-      "position": "Senior Scrum Master (Coach Agile d'équipe / RTE)",
-      "period": "février 2021 - février 2023",
-      "description": "Accompagnement de l'hyper-croissance et passage à l'agilité à l'échelle. Coaching d'équipes et framework MACS.",
-      "logo": "https://img.logo.dev/manomano.fr?token=pk_X-1ZO13GSVKaE4k8PIzWdQ",
-      "responsibilities": [
-        {
-          "category": "Accompagner l'hyper-croissance et le passage de l'Agilité à l'échelle",
-          "tasks": [
-            "Accompagnement d'équipes et d'équipes d'équipes (trains)",
-            "Coaching, mentorat, formations, conseil auprès des équipes et des individus dans les trains Money et Operations",
-            "Établissement de contrat de coaching avec les équipes",
-            "Participer à la définition, à l'alignement et à la communication de l'Agilité chez ManoMano",
-            "Participer à la conception et à la mise en œuvre du framework d'Agilité à l'échelle: MACS",
-            "Faciliter les événements impliquant de grandes équipes (de 30 à 80 personnes)"
-          ]
-        }
-      ],
-      "technologies": [
-        "MACS",
-        "Scrum",
-        "Coaching",
-        "Facilitation"
-      ]
-    },
-    {
-      "company": "onepoint",
-      "position": "Ingénieur d'études / Coach Agile",
-      "period": "novembre 2015 - février 2021",
-      "description": "Missions de conseil en transformation agile et développement pour différents clients.",
-      "responsibilities": [
-        {
-          "category": "Lead Scrum Master - CRÉDIT MUTUEL ARKEA",
-          "tasks": [
-            "Mise en place d'une organisation (inspirée de LeSS) pour 4 équipes (environ 30 collaborateurs)",
-            "Accompagnement d'une à deux équipes pour la migration d'application mobile",
-            "Aide au Responsable du Changement à la conception du framework à l'échelle"
-          ]
-        },
-        {
-          "category": "Développeur TypeScript / Product Specialist / Expert Agile - BOUGE TA BOÎTE",
-          "tasks": [
-            "Développer les fonctionnalités (backend) de la plateforme web d'un réseau social d'entrepreneuses",
-            "Accompagner la cliente dans ses choix stratégiques applicatifs",
-            "Recueillir et reformuler le besoin sous forme de tâches",
-            "Proposer une organisation permettant d'optimiser les résultats"
-          ]
-        },
-        {
-          "category": "Scrum Master - CAISSE DES DÉPÔTS ET CONSIGNATIONS",
-          "tasks": [
-            "Scrum Master au sein d'une équipe de 15 ingénieurs pour la 3ème version du Compte Personnel de Formation",
-            "Facilitation des Daily Scrum, Sprint Planning, Sprint Reviews, Sprint Retrospectives",
-            "Mise en place et suivi des méthodes et actions de rétrospectives"
-          ]
-        }
-      ],
-      "technologies": [
-        "TypeScript",
-        "Node.js",
-        "LeSS",
-        "Scrum",
-        "Coaching"
-      ]
-    },
-    {
-      "company": "Capgemini",
-      "position": "Chef de projet",
-      "period": "février 2015 - août 2015",
-      "description": "Chef de projet fonctionnel pour Cdiscount sur la refonte du système de gestion de produit.",
-      "logo": "https://img.logo.dev/capgemini.com?token=pk_X-1ZO13GSVKaE4k8PIzWdQ",
-      "responsibilities": [
-        {
-          "category": "Chef de projet fonctionnel - CDISCOUNT",
-          "tasks": [
-            "Élaboration d'un plan détaillé des différents projets, définition des objectifs",
-            "Identification des risques potentiels et mise en place de stratégies de gestion",
-            "Surveillance de l'avancement du projet alloué à un prestataire",
-            "Gestion des budgets et suivi des dépenses",
-            "Communication entre les parties prenantes du projet"
-          ]
-        }
-      ],
-      "technologies": [
-        "Gestion de projet",
-        "Risk Management",
-        "Budget Management"
-      ]
-    },
-    {
-      "company": "Galilée",
-      "position": "Développeur & \"Scrum Master\"",
-      "period": "octobre 2011 - février 2015",
-      "description": "Refonte et MCO de la plateforme front de prise de commande du leader européen de l'imprimerie des imprimeurs (Exaprint, groupe Vistaprint).",
-      "logo": "https://img.logo.dev/galileeassocies.com?token=pk_X-1ZO13GSVKaE4k8PIzWdQ",
-      "responsibilities": [
-        {
-          "category": "Développeur",
-          "tasks": [
-            "Intégration WEB xHTML / CSS",
-            "Développement PHP5 (Zend Framework) + S.O.A",
-            "Développement JavaScript (jQuery), MSSQL",
-            "Relationnel avec service marketing du client"
-          ]
-        },
-        {
-          "category": "\"Scrum Master\"",
-          "tasks": [
-            "Conduite de projet",
-            "Leader d'une équipe de 3 à 8 développeurs",
-            "Facilitation des Daily Scrum, Estimations, Sprint Planning, Sprint Reviews, Sprint Retrospectives",
-            "Relationnel client (Président, Directeur Général et CTO)",
-            "Avant-vente et facturation"
-          ]
-        }
-      ],
-      "technologies": [
-        "PHP",
-        "Zend Framework",
-        "JavaScript",
-        "jQuery",
-        "MSSQL",
-        "xHTML",
-        "CSS"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "degree": "Chef de projet informatique",
-      "school": "Esarc Évolution (Bordeaux - 33)",
-      "year": "2011"
-    },
-    {
-      "degree": "Bac STG CGRH",
-      "school": "Lycée Jean Monnet (Cognac - 16)",
-      "year": "2007"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Agilité",
-      "icon": "fa-sync-alt",
-      "skills": [
-        "Lean",
-        "SAFe",
-        "LeSS",
-        "Nexus",
-        "unFIX",
-        "ShapeUp"
-      ]
-    },
-    {
-      "name": "Delivery",
-      "icon": "fa-shipping-fast",
-      "skills": [
-        "Stratégie",
-        "Roadmap",
-        "OKRs",
-        "Optimisation des flux"
-      ]
-    },
-    {
-      "name": "Management",
-      "icon": "fa-user-tie",
-      "skills": [
-        "Autonomisation",
-        "Management 3.0",
-        "Délégation",
-        "Multi‑équipes"
-      ]
-    },
-    {
-      "name": "Communication",
-      "icon": "fa-comments",
-      "skills": [
-        "Écoute active",
-        "Animation d'événements",
-        "Formateur"
-      ]
-    },
-    {
-      "name": "Technos",
-      "icon": "fa-code",
-      "skills": [
-        "Node.js",
-        "TypeScript",
-        "Nest.js",
-        "PostgreSQL",
-        "Docker"
-      ]
-    },
-    {
-      "name": "Langues",
-      "icon": "fa-language",
-      "skills": [
-        "Français",
-        "Anglais"
-      ]
-    }
-  ],
-  "certifications": [
-    {
-      "name": "PSM II",
-      "year": "2021"
-    },
-    {
-      "name": "SAFe Agilist",
-      "year": "2020"
-    },
-    {
-      "name": "PSM I",
-      "year": "2020"
-    },
-    {
-      "name": "PSPO I",
-      "year": "2020"
-    }
-  ],
-  "hobbies": [
-    {
-      "name": "Kaamelott",
-      "icon": "fa-tv"
-    },
-    {
-      "name": "Bricolage",
-      "icon": "fa-hammer"
-    },
-    {
-      "name": "Jardinage",
-      "icon": "fa-seedling"
-    },
-    {
-      "name": "TFT",
-      "icon": "fa-gamepad"
-    },
-    {
-      "name": "Tatouage",
-      "icon": "fa-palette"
-    },
-    {
-      "name": "Cinéma",
-      "icon": "fa-film"
-    },
-    {
-      "name": "Séries",
-      "icon": "fa-desktop"
-    }
-  ]
+    "accomplishments": [
+      {
+        "company": "Dougs",
+        "logo": "https://img.logo.dev/dougs.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Engineering Manager",
+        "details": [
+          "<strong>Optimisation du suivi de production</strong> de mon domaine dans Notion (à défaut d’un outil dédié au suivi). <br/><u>Résultat:</u> Pilotage du delivery simplifié, automatisation de l’avancement des tickets branchés sur GitHub, identification et résolution des bottlenecks, amélioration de la communication de l’avancement (automatisation Slack), déploiement aux autres domaines.",
+          "<strong>Déploiement des OKRs de Domaine</strong> pour redonner du sens aux équipes. <br/><u>Résultat:</u> les autres domaines ont voulu appliquer la même méthode en voyant notre impact pertinent sur les OKRs stratégiques de l’entreprise.",
+          "<strong>Déploiement d’une solution de bureau virtuel</strong> (Gather). <br/><u>Résultat:</u> Utilisé dans mon domaine, on m’a demandé de le déployer à la Tech (80 personnes) puis à toute l’organisation (400+ personnes). Facilite la collaboration dans un environnement distribué partout en France.",
+          "<strong>Promotion d’un Software Engineer au poste de Lead Software Engineer</strong>, alors que personne n’avait détecté son Leadership. <br/><u>Résultat:</u> Augmentation de la performance de l’équipe (motivation, productivité, innovation, qualité des livrables)."
+        ]
+      },
+      {
+        "company": "SantéVet",
+        "logo": "https://img.logo.dev/santevet.de?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Lead Scrum Master",
+        "details": [
+          "<strong>Organisation (en 1 semaine de délai) d’un PI Planning pour 12 équipes.</strong> <br/><u>Résultat:</u> Roadmap trimestrielle réalisée et livrée au COMEX en 1 jour, avec gestion des dépendances contre 2 semaines avec leurs anciennes méthodes, sans gestion de dépendances.",
+          "<strong>Définition d’objectifs SMART de cycle pour les équipes.</strong> <br/><u>Résultat:</u> Amélioration de la prédictabilité, passage de 0% à 30% d’équipes terminant tout ce qu’elles démarrent.",
+          "<strong>Planification des cycles inter-équipes.</strong> <br/><u>Résultat:</u> identification plus tôt des dépendances et suivi quotidien des dépendances, mise en places d’actions, éliminant un frein majeur à la livraison.",
+          "<strong>Lancement de 3 communautés (Agile, PO, Lead Tech).</strong> <br/><u>Résultat:</u> partage de la culture d’amélioration continue, aide à la mise en place de focus time et enquêtes régulières pour adapter l’organisation.",
+          "<strong>Diffusion de l’importance de la qualité et de l’amélioration continue.</strong> <br/><u>Résultat:</u> incidents critiques réduits de 3 par semaine à 3 par mois, adoption d’une DoD commune à la Tech, montée en compétence et certification d’un Scrum Master junior à la PSM-II en 6 mois."
+        ]
+      },
+      {
+        "company": "ManoMano",
+        "logo": "https://img.logo.dev/manomano.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Senior Scrum Master",
+        "details": [
+          "<strong>Participation à l’élaboration d’un framework d’agilité à l’échelle dans un contexte de croissance accélérée.</strong> <br/><u>Résultat:</u> Équipes synchronisées, réduction de l’impact des dépendances, autonomisation et sens de participer à la stratégie de l’entreprise."
+        ]
+      },
+      {
+        "company": "ECV Digital (+ SantéVet + ManoMano)",
+        "logo": "https://img.logo.dev/ecv.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Formateur",
+        "details": [
+          "<strong>Montage et animation de formations et conférences</strong> (<i class=\"fab fa-youtube\"></i> <a href=\"https://www.youtube.com/watch?v=jpjbt-E1EtU\" target=\"_blank\">Si à 40 ans on est pas manager c'est qu'on a raté sa vie</a>, <i class=\"fab fa-youtube\"></i> <a href=\"https://www.youtube.com/watch?v=zLlPzEvXjZA\" target=\"_blank\">Fake Agile</a>) : principalement autour de sujets agiles auprès de collègues plus ou moins sachants, mais à destination d’étudiants en L3 pour les aider à construire des backends Node.js/TypeScript solides."
+        ]
+      }
+    ],
+    "experiences": [
+      {
+        "company": "Dougs",
+        "logo": "https://img.logo.dev/dougs.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Engineering Manager",
+        "period": "sept. 2023 - auj.",
+        "description": [
+          {
+            "N/A": [
+              {
+                "category": "Management d'un Domaine",
+                "tasks": [
+                  "Accompagnement à la définition des plans de carrières individuels (entretiens annuels, entretien RH, etc.) de SE, Lead SE, PM, PDS",
+                  "Recrutement des membres de l'équipe",
+                  "Management de proximité (1:1 et discussions quotidiennes pour conserver le lien)"
+                ]
+              },
+              {
+                "category": "Coach d'équipe",
+                "tasks": [
+                  "Accompagnement à la compréhension et la bonne application du framework (ShapeUp)",
+                  "Facilitation des ateliers et événements d'équipe",
+                  "Coaching individuel pour certains SE et Lead SE"
+                ]
+              },
+              {
+                "category": "Responsable du delivery",
+                "tasks": [
+                  "Mise en place d'OKRs de domaine",
+                  "Co-construction des roadmaps en fonction des OKRs stratégiques",
+                  "Mise à disposition des Squads des moyens nécessaires à l'atteinte des objectifs",
+                  "Coordination avec les autres Squads (avec les autres EM) et avec les autres pôles hors Tech",
+                  "Suivi de production des équipes et optimisation des processus"
+                ]
+              }
+            ]
+          }
+        ],
+        "skills": [
+          "Agilité",
+          "ShapeUp",
+          "Roadmap",
+          "Stratégie",
+          "OKRs",
+          "Optimisation des flux",
+          "Management 3.0",
+          "Autonomisation",
+          "Délégation",
+          "Multi-équipes"
+        ]
+      },
+      {
+        "company": "SantéVet",
+        "logo": "https://img.logo.dev/santevet.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Lead Scrum Master",
+        "period": "fév. 2023 - juil. 2023",
+        "description": [
+          {
+            "N/A": [
+              {
+                "category": "Mener la transformation de culture agile",
+                "tasks": [
+                  "Expliquer et promouvoir l’approche Agile",
+                  "Travailler avec les responsables Produit et Ingénierie pour définir les modes de fonctionnement de la Technologie et du Produit, de manière à ce que :",
+                  "Les équipes livrent régulièrement des logiciels de qualité et de valeur (de 1 à 2 livraisons par mois en 3 mois d’action)",
+                  "Les équipes soient plus prévisibles (+30 % en 3 mois d’action)",
+                  "Les équipes conçoivent et communiquent des plans trimestriels et itératifs (1 plan trimestriel établi et 1 plan par iteration communiqué à toute la société)",
+                  "Les équipes inspectent et adaptent leurs plans",
+                  "Définir et appliquer l'organisation des équipes pour la mise à l'échelle (inspiré de SAFe, unFIX, etc.)",
+                  "Impliquer et collaborer avec le COMEX"
+                ]
+              },
+              {
+                "category": "Encadrer et mentorer les Scrum Masters",
+                "tasks": [
+                  "Co-définition de leur plans de carrière",
+                  "Encadrer les SM pour qu'ils s'améliorent et puissent participer davantage à l'initiative Agile@Scale",
+                  "Favoriser un esprit communautaire parmi les SM afin qu'ils s'entraident et progressent ensemble",
+                  "Orienter et soutenir les SM, qu'ils puissent coacher leurs équipes conformément à l'initiative Agile@Scale"
+                ]
+              }
+            ]
+          }
+        ],
+        "skills": [
+          "Agilité",
+          "Less",
+          "unFIX",
+          "Roadmap",
+          "Stratégie",
+          "OKRs",
+          "Optimisation des flux",
+          "Management 3.0",
+          "Autonomisation",
+          "Délégation",
+          "Multi-équipes",
+          "Facilitation",
+          "Animation d'événements",
+          "Mentor",
+          "Formations",
+          "Jira",
+          "Anglais"
+        ]
+      },
+      {
+        "company": "ManoMano",
+        "logo": "https://img.logo.dev/manomano.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Senior Scrum Master (Coach Agile / RTE)",
+        "period": "fév. 2021 - fév. 2023",
+        "description": [
+          {
+            "N/A": [
+              {
+                "category": "Accompagner l’hyper-croissance et le passage de l’Agilité à l’échelle",
+                "tasks": [
+                  "Accompagnement d’équipes et d’équipes d’équipes (trains)",
+                  "Coaching, mentorat, formations, conseil auprès des équipes et des individus (techniques, produits, management, etc.) dans les trains Money et Operations",
+                  "Établissement de contrat de coaching avec les équipes afin de suivre les effets du coaching et les progrès des équipes",
+                  "Participer à la définition, à l'alignement et à la communication de ce qu'est l'Agilité chez ManoMano",
+                  "Participer à la conception et à la mise en œuvre du framework d’Agilité à l’échelle: MACS",
+                  "Faciliter les événements impliquant de grandes équipes (de 30 à 80 personnes) pour favoriser l'alignement et créer des objectifs communs"
+                ]
+              }
+            ]
+          }
+        ],
+        "skills": [
+          "Agilité",
+          "MACS (SAFe)",
+          "Roadmap",
+          "Coaching",
+          "OKRs",
+          "Optimisation des flux",
+          "Autonomisation",
+          "Multi-équipes",
+          "Facilitation",
+          "Animation d'événements",
+          "Formations",
+          "Anglais"
+        ]
+      },
+      {
+        "company": "onepoint",
+        "logo": "https://img.logo.dev/onepoint.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Ingénieur d'étude",
+        "period": "nov. 2015 - fév. 2021",
+        "description": [
+          {
+            "Lead Scrum Master - CRÉDIT MUTUEL ARKEA": [
+              {
+                "category": "Accompagner une à deux équipes pour la migration d’application mobile",
+                "tasks": [
+                  "Mise en place d'une organisation (inspirée de LeSS) pour faciliter le travail collaboratif de 4 équipes (environ 30 collaborateurs) travaillant conjointement sur 2 produits mobile natifs.",
+                  "Accompagnement de deux équipes (env. 15 personnes)"
+                ]
+              },
+              {
+                "category": "Aider le Responsable du Changement à la conception du framework à l’échelle",
+                "tasks": [
+                  "Atelier de conception du mode de communication du framework au sein d’Arkéa",
+                  "Feedback et conseils sur la documentation établie"
+                ]
+              }
+            ]
+          },
+          {
+            "Développeur TypeScript / Product Specialist / Expert Agile - BOUGE TA BOÎTE": [
+              {
+                "category": "Création de la plateforme web d’un réseau social (start-up) d’entrepreneuses. ",
+                "tasks": [
+                  "Création d'une plateforme web d'un réseau social (start-up) d'entrepreneuses.",
+                  "Accompagner la cliente dans ses choix stratégiques applicatifs (intégration plus que développement from scratch)",
+                  "Recueillir et reformuler le besoin et le rédiger sous forme de tâches pour l'équipe de développement",
+                  "Proposer une organisation permettant d'optimiser les résultats (livraison, qualité, etc.)"
+                ]
+              }
+            ]
+          },
+          {
+            "Scrum Master - CAISSE DES DÉPÔTS ET CONSIGNATIONS": [
+              {
+                "category": "Meneur de l’équipe de développement de la 3ème version du Compte Personnel de Formation.",
+                "tasks": [
+                  "Scrum Master au seine d'une équipe de 15 ingénieurs",
+                  "Facilitaction des Daily Scrum, Sprint Planning, Sprint Reviews, Sprint Retrospectives",
+                  "Mise en place et suivi des méthodes et actions de rétrospectives"
+                ]
+              }
+            ]
+          }
+        ],
+        "skills": [
+          "Agilité",
+          "Scrum",
+          "Roadmap",
+          "Optimisation des flux",
+          "Autonomisation",
+          "Délégation",
+          "Multi-équipes",
+          "Facilitation",
+          "Animation d'événements",
+          "Mentor",
+          "Jira",
+          "TypeScript",
+          "PostgreSQL",
+          "Docker"
+        ]
+      },
+      {
+        "company": "capgemini",
+        "logo": "https://img.logo.dev/capgemini.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Chef de projet",
+        "period": "fév. 2015 - août 2021",
+        "description": [
+          {
+            "Chef de projet - CDISCOUNT": [
+              {
+                "category": "Accompagner le projet stratégique de refonte du système de gestion de produit de Cdiscount (modèle offre v1).",
+                "tasks": [
+                  "Élaboration d’un plan détaillé des différents projets, définition des objectifs, respect des délais établis",
+                  "Identification les risques potentiels liés au projet et mise en place des stratégies pour les minimiser ou les gérer en cas de besoin",
+                  "Surveillance de l'avancement du projet alloué à un prestataire, identification des écarts par rapport au plan initial et mettre en place des mesures correctives",
+                  "Gestion des budgets, suivi des dépenses afin que les projets restent dans les limites budgétaires",
+                  "Communication entre les parties prenantes du projet (membres de l'équipe, utilisateurs sponsors, autres équipes techniques…)"
+                ]
+              }
+            ]
+          }
+        ],
+        "skills": [
+          "Roadmap",
+          "Multi-équipes"
+        ]
+      },
+      {
+        "company": "galilée",
+        "logo": "https://img.logo.dev/galilee.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
+        "position": "Développeur & “Scrum Master”",
+        "period": "oct. 2011 - fév. 2015",
+        "description": [
+          {
+            "“N/A”": [
+              {
+                "category": "Scrum Master",
+                "tasks": [
+                  "Conduite de projet",
+                  "Leader d'une équipe de 3 à 8 développeurs",
+                  "Facilitation des Daily Scrum, Estimations, Sprint Planning, Sprint Reviews, Sprint Retrospectives",
+                  "Relationnel client (Président, Directeur Général et CTO)",
+                  "Avant-vente",
+                  "Facturation"
+                ]
+              },
+              {
+                "category": "Développeur Web PHP",
+                "tasks": [
+                  "Intégration WEB xHTML / CSS",
+                  "Développement PHP5 (Zend Framework) + S.O.A",
+                  "Autres technos : JavaScript (jQuery), MSSQL",
+                  "Relationnel avec service marketing du client"
+                ]
+              }
+            ]
+          }
+        ],
+        "skills": [
+          "Agilité",
+          "Scrum",
+          "Roadmap",
+          "Facilitation",
+          "Animation d'événements",
+          "PHP (Zend 1)",
+          "MSSQL"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Chef de projet informatique",
+        "school": "Esarc Évolution (Bordeaux - 33)",
+        "year": "2011"
+      },
+      {
+        "degree": "Bac STG CGRH",
+        "school": "Lycée Jean Monnet (Cognac - 16)",
+        "year": "2007"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Agilité",
+        "icon": "fa-sync-alt",
+        "skills": [
+          "Lean",
+          "SAFe",
+          "LeSS",
+          "Nexus",
+          "unFIX",
+          "ShapeUp"
+        ]
+      },
+      {
+        "name": "Delivery",
+        "icon": "fa-shipping-fast",
+        "skills": [
+          "Stratégie",
+          "Roadmap",
+          "OKRs",
+          "Optimisation des flux"
+        ]
+      },
+      {
+        "name": "Management",
+        "icon": "fa-user-tie",
+        "skills": [
+          "Autonomisation",
+          "Management 3.0",
+          "Délégation",
+          "Multi-équipes"
+        ]
+      },
+      {
+        "name": "Communication",
+        "icon": "fa-comments",
+        "skills": [
+          "Écoute active",
+          "Animation d'événements",
+          "Formateur"
+        ]
+      },
+      {
+        "name": "Technos",
+        "icon": "fa-code",
+        "skills": [
+          "Node.js",
+          "TypeScript",
+          "Nest.js",
+          "PostgreSQL",
+          "Docker"
+        ]
+      },
+      {
+        "name": "Langues",
+        "icon": "fa-language",
+        "skills": [
+          "Français",
+          "Anglais"
+        ]
+      }
+    ],
+    "certifications": [
+      {
+        "name": "PSM II",
+        "year": "2021"
+      },
+      {
+        "name": "SAFe Agilist",
+        "year": "2020"
+      },
+      {
+        "name": "PSM I",
+        "year": "2020"
+      },
+      {
+        "name": "PSPO I",
+        "year": "2020"
+      }
+    ],
+    "hobbies": [
+      {
+        "name": "Kaamelott",
+        "icon": "fa-tv"
+      },
+      {
+        "name": "Bricolage",
+        "icon": "fa-hammer"
+      },
+      {
+        "name": "Jardinage",
+        "icon": "fa-seedling"
+      },
+      {
+        "name": "TFT",
+        "icon": "fa-gamepad"
+      },
+      {
+        "name": "Tatouage",
+        "icon": "fa-palette"
+      },
+      {
+        "name": "Cinéma",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Séries",
+        "icon": "fa-desktop"
+      }
+    ]
+  }
 }
