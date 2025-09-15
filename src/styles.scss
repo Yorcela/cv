@@ -39,6 +39,19 @@ body {
   padding: 0;
   background: $bg-primary;
   min-height: auto;
+  
+  // Mobile: prendre tout le viewport
+  @media (max-width: 390px) {
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+/* Mobile: padding pour éviter que le contenu soit caché par la navbar */
+@media (max-width: 390px) {
+  body {
+    padding-bottom: 80px; // Espace pour la navbar fixée en bas
+  }
 }
 
 /* Appbar styles */
@@ -59,10 +72,11 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: $appbar-border;
   
-  // Mobile: appbar en bas
+  // Mobile: appbar en bas, toujours visible
   @media (max-width: 390px) {
     top: auto;
     bottom: 0;
+    width: 100vw;
     border-bottom: none;
     border-top: $appbar-border;
   }

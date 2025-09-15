@@ -1303,24 +1303,51 @@
 @media (max-width: 390px) {
   .cv-container {
     flex-direction: column;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .cv-content {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
   }
 
   .app-sidebar {
-    width: 100%;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
     order: 1;
+    flex: none;
+    box-sizing: border-box;
   }
 
   .cv-sidebar {
-    width: 100%;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
     min-height: auto;
+    margin: 0;
+    padding: 2rem;
+    box-sizing: border-box;
   }
 
   .cv-main {
-    width: 100%;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
     padding: 1.5rem;
     order: 2;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   .content-section {

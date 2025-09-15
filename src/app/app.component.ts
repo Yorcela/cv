@@ -22,16 +22,14 @@ import { MainPageComponent } from './pages/main-page.component';
               [class.active]="lang() === 'fr'"
               (click)="setLang('fr')"
               title="Français">
-              <i class="fad fa-language"></i>
-               <strong>FR</strong>
+              🇫🇷
             </button>
             <button 
               class="segmented-button" 
               [class.active]="lang() === 'en'"
               (click)="setLang('en')"
               title="English">
-              <i class="fal fa-globe"></i>
-               <strong>EN</strong>
+              🇬🇧
             </button>
           </div>
 
