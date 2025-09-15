@@ -40,14 +40,14 @@ import { MainPageComponent } from './pages/main-page.component';
               [class.active]="variant() === 'full'"
               (click)="setVariant('full')"
               title="Version complète">
-              <i class="fal fa-file-invoice"></i>
+              <i class="fal fa-plus"></i>
             </button>
             <button 
               class="segmented-button" 
               [class.active]="variant() === 'short'"
               (click)="setVariant('short')"
               title="Version courte">
-              <i class="fal fa-file-alt"></i>
+              <i class="fal fa-minus"></i>
             </button>
           </div>
 
