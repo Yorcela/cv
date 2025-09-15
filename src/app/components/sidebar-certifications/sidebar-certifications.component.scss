@@ -1,4 +1,5 @@
 /* Styles génériques pour le composant Certifications */
+@import '../sidebar/sidebar.component.scss';
 @import '../../../styles/_variables.scss';
 @import '../../../styles/_mixins.scss';
 
@@ -13,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-  color: $text-light;
+  color: $text-white;
   padding: $spacing-sm $spacing-md;
   border-radius: $border-radius-lg;
   font-size: $font-size-sm;

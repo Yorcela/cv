@@ -12,7 +12,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       <div class="hobbies-list">
         <div class="hobby-item" *ngFor="let hobby of hobbies">
           <i class="fad" [ngClass]="hobby.icon"></i>
-          {{ hobby.name }}
+          <span>{{ hobby.name }}</span>
         </div>
       </div>
     </div>
