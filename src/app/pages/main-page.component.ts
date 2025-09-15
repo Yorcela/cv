@@ -120,25 +120,33 @@ interface SkillCategory {
             <app-sidebar></app-sidebar>
           </div>
           <div class="cv-main">
-            <app-about-me 
-              [variant]="variant" 
-              [data]="data" 
-              [isExpanded]="isSectionExpanded('about')"
-              (toggleSection)="toggleSection('about')"></app-about-me>
-            <app-accomplishments 
-              [variant]="variant" 
-              [data]="data" 
-              [isExpanded]="isSectionExpanded('accomplishments')"
-              (toggleSection)="toggleSection('accomplishments')"></app-accomplishments>
-            <app-experiences 
-              [variant]="variant" 
-              [data]="data" 
-              [isExpanded]="isSectionExpanded('experiences')"
-              (toggleSection)="toggleSection('experiences')"></app-experiences>
-            <app-recommendations 
-              [data]="data" 
-              [isExpanded]="isSectionExpanded('recommendations')"
-              (toggleSection)="toggleSection('recommendations')"></app-recommendations>
+            <div class="content-section about-section">
+              <app-about-me 
+                [variant]="variant" 
+                [data]="data" 
+                [isExpanded]="isSectionExpanded('about')"
+                (toggleSection)="toggleSection('about')"></app-about-me>
+            </div>
+            <div class="content-section accomplishments-section">
+              <app-accomplishments 
+                [variant]="variant" 
+                [data]="data" 
+                [isExpanded]="isSectionExpanded('accomplishments')"
+                (toggleSection)="toggleSection('accomplishments')"></app-accomplishments>
+            </div>
+            <div class="content-section experiences-section">
+              <app-experiences 
+                [variant]="variant" 
+                [data]="data" 
+                [isExpanded]="isSectionExpanded('experiences')"
+                (toggleSection)="toggleSection('experiences')"></app-experiences>
+            </div>
+            <div class="content-section recommendations-section">
+              <app-recommendations 
+                [data]="data" 
+                [isExpanded]="isSectionExpanded('recommendations')"
+                (toggleSection)="toggleSection('recommendations')"></app-recommendations>
+            </div>
           </div>
         </div>
       </div>

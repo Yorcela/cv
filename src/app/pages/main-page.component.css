@@ -1300,9 +1300,14 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 390px) {
   .cv-container {
     flex-direction: column;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    order: 1;
   }
 
   .cv-sidebar {
@@ -1313,6 +1318,29 @@
   .cv-main {
     width: 100%;
     padding: 1.5rem;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-section {
+    width: 100%;
+  }
+
+  .about-section {
+    order: 1;
+  }
+
+  .accomplishments-section {
+    order: 2;
+  }
+
+  .experiences-section {
+    order: 3;
+  }
+
+  .recommendations-section {
+    order: 4;
   }
 
   .accomplishments-grid {

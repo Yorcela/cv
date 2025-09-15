@@ -10,6 +10,12 @@ body {
   color: $text-primary;
   line-height: $line-height-relaxed;
   padding-top: $appbar-height;
+  
+  // Mobile: appbar en bas
+  @media (max-width: 390px) {
+    padding-top: 0;
+    padding-bottom: $appbar-height;
+  }
 }
 
 .container {
@@ -52,6 +58,14 @@ body {
   z-index: $z-fixed;
   backdrop-filter: blur(10px);
   border-bottom: $appbar-border;
+  
+  // Mobile: appbar en bas
+  @media (max-width: 390px) {
+    top: auto;
+    bottom: 0;
+    border-bottom: none;
+    border-top: $appbar-border;
+  }
 }
 
 
@@ -130,6 +144,20 @@ body {
   gap: 6px;
   font-size: 14px;
   opacity: 0.8;
+  
+  // Mobile: masquer le texte, garder seulement l'icône
+  @media (max-width: 390px) {
+    padding: 8px;
+    gap: 0;
+    
+    span {
+      display: none;
+    }
+    
+    .dropdown-arrow {
+      margin-left: 4px;
+    }
+  }
 }
 
 .download-btn:hover {
