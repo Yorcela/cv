@@ -1,0 +1,142 @@
+@import '../../../styles/variables';
+
+/* Desktop Styles for Recommendations Component */
+
+.main-section {
+  margin-bottom: $spacing-3xl;
+}
+
+.main-section-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
+  margin-bottom: $spacing-xl;
+  cursor: pointer;
+  transition: $transition-normal;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  &:hover {
+    color: $primary;
+  }
+
+  i {
+    color: $primary;
+    transition: $transition-normal;
+  }
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $spacing-xl;
+  margin-top: $spacing-xl;
+}
+
+.recommendation-card {
+  background: $bg-primary;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+  transition: $transition-normal;
+  border: 1px solid $border-light;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.author-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+.author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: $border-radius-full;
+  object-fit: cover;
+  border: 3px solid $border-light;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.author-name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
+  margin: 0;
+}
+
+.author-title {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  margin: 0;
+  font-weight: $font-weight-medium;
+}
+
+.author-company {
+  font-size: $font-size-xs;
+  color: $primary;
+  margin: 0;
+  font-weight: $font-weight-medium;
+}
+
+.recommendation-text {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $text-primary;
+  position: relative;
+  padding-left: $spacing-lg;
+}
+
+/* Mobile Styles */
+@media (max-width: $breakpoint-md) {
+  .main-section-title {
+    font-size: $font-size-lg;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+
+  .recommendation-card {
+    padding: $spacing-lg;
+  }
+
+  .author-header {
+    flex-direction: column;
+    text-align: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  .author-avatar {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+  }
+
+  .author-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .recommendation-text {
+    text-align: left;
+    font-size: $font-size-sm;
+    margin-top: $spacing-xs;
+    padding-left: $spacing-md;
+  }
+}

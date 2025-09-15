@@ -12,7 +12,7 @@
 }
 
 .sidebar-block {
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .sidebar-title {
@@ -26,10 +26,13 @@
   letter-spacing: 0.5px;
 }
 
-.sidebar-title i {
+.sidebar-title i,
+.sidebar-title svg {
   margin-right: 0.75rem;
   color: #ffffff;
   font-size: 1.2rem;
+  display: inline-block;
+  width: 25px;
 }
 
 .sidebar-skills,

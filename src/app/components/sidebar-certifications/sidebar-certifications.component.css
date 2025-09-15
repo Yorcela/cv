@@ -1,0 +1,4 @@
+/* Main CSS file - imports sidebar styles and SCSS styles */
+@import '../sidebar/sidebar.component.css';
+@import './sidebar-certifications.component.scss';
+@import './sidebar-certifications.component.mobile.scss';

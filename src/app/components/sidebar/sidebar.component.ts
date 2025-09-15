@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { WhoamiComponent } from '../whoami/whoami.component';
-import { ContactInfoComponent } from '../contact-info/contact-info.component';
-import { PersonnaliteComponent } from '../personnality/personnalite.component';
-import { SkillsComponent } from '../skills/skills.component';
-import { EducationComponent } from '../education/education.component';
-import { CertificationsComponent } from '../certifications/certifications.component';
-import { HobbiesComponent } from '../hobbies/hobbies.component';
+import { SidebarWhoamiComponent } from '../sidebar-whoami/sidebar-whoami.component';
+import { SidebarContactInfoComponent } from '../sidebar-contact-info/sidebar-contact-info.component';
+import { SidebarPersonalityComponent } from '../sidebar-personality/sidebar-personality.component';
+import { SidebarSkillsComponent } from '../sidebar-skills/sidebar-skills.component';
+import { SidebarEducationComponent } from '../sidebar-education/sidebar-education.component';
+import { SidebarCertificationsComponent } from '../sidebar-certifications/sidebar-certifications.component';
+import { SidebarHobbiesComponent } from '../sidebar-hobbies/sidebar-hobbies.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,23 +15,23 @@ import { HobbiesComponent } from '../hobbies/hobbies.component';
   imports: [
     CommonModule,
     TranslateModule,
-    WhoamiComponent,
-    ContactInfoComponent,
-    PersonnaliteComponent,
-    SkillsComponent,
-    EducationComponent,
-    CertificationsComponent,
-    HobbiesComponent
+    SidebarWhoamiComponent,
+    SidebarContactInfoComponent,
+    SidebarPersonalityComponent,
+    SidebarSkillsComponent,
+    SidebarEducationComponent,
+    SidebarCertificationsComponent,
+    SidebarHobbiesComponent
   ],
   template: `
     <div class="cv-sidebar">
-      <app-whoami></app-whoami>
-      <app-contact-info></app-contact-info>
-      <app-personnalite></app-personnalite>
-      <app-skills></app-skills>
-      <app-education></app-education>
-      <app-certifications></app-certifications>
-      <app-hobbies></app-hobbies>
+      <app-sidebar-whoami></app-sidebar-whoami>
+      <app-sidebar-contact-info></app-sidebar-contact-info>
+      <app-sidebar-personality></app-sidebar-personality>
+      <app-sidebar-skills></app-sidebar-skills>
+      <app-sidebar-education></app-sidebar-education>
+      <app-sidebar-certifications></app-sidebar-certifications>
+      <app-sidebar-hobbies></app-sidebar-hobbies>
     </div>
   `,
   styleUrls: ['./sidebar.component.css']

@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../pipes/markdown.pipe';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
-import { AboutMeComponent } from '../components/aboute-me/about-me.component';
-import { AccomplishmentsComponent } from '../components/accomplishments/accomplishments.component';
-import { ExperiencesComponent } from '../components/experiences/experiences.component';
-import { RecommendationsComponent } from '../components/recommendations/recommendations.component';
+import { ContentAboutMeComponent } from '../components/content-about-me/content-about-me.component';
+import { ContentAccomplishmentsComponent } from '../components/content-accomplishments/content-accomplishments.component';
+import { ContentExperiencesComponent } from '../components/content-experiences/content-experiences.component';
+import { ContentRecommendationsComponent } from '../components/content-recommendations/content-recommendations.component';
 
 interface ExperienceDetailed {
   title: string;
@@ -96,7 +96,7 @@ interface SkillCategory {
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, AboutMeComponent, AccomplishmentsComponent, ExperiencesComponent, RecommendationsComponent],
+  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, ContentAboutMeComponent, ContentAccomplishmentsComponent, ContentExperiencesComponent, ContentRecommendationsComponent],
   template: `
     <div class="page-background">
       <div class="cv-container">
@@ -121,31 +121,31 @@ interface SkillCategory {
           </div>
           <div class="cv-main">
             <div class="content-section about-section">
-              <app-about-me 
+              <app-content-about-me 
                 [variant]="variant" 
                 [data]="data" 
                 [isExpanded]="isSectionExpanded('about')"
-                (toggleSection)="toggleSection('about')"></app-about-me>
+                (toggleSection)="toggleSection('about')"></app-content-about-me>
             </div>
             <div class="content-section accomplishments-section">
-              <app-accomplishments 
+              <app-content-accomplishments 
                 [variant]="variant" 
                 [data]="data" 
                 [isExpanded]="isSectionExpanded('accomplishments')"
-                (toggleSection)="toggleSection('accomplishments')"></app-accomplishments>
+                (toggleSection)="toggleSection('accomplishments')"></app-content-accomplishments>
             </div>
             <div class="content-section experiences-section">
-              <app-experiences 
+              <app-content-experiences 
                 [variant]="variant" 
                 [data]="data" 
                 [isExpanded]="isSectionExpanded('experiences')"
-                (toggleSection)="toggleSection('experiences')"></app-experiences>
+                (toggleSection)="toggleSection('experiences')"></app-content-experiences>
             </div>
             <div class="content-section recommendations-section">
-              <app-recommendations 
+              <app-content-recommendations 
                 [data]="data" 
                 [isExpanded]="isSectionExpanded('recommendations')"
-                (toggleSection)="toggleSection('recommendations')"></app-recommendations>
+                (toggleSection)="toggleSection('recommendations')"></app-content-recommendations>
             </div>
           </div>
         </div>

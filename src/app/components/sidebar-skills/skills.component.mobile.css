@@ -1,0 +1,52 @@
+/* Mobile Styles for Skills Component */
+
+@media (max-width: 768px) {
+  .skill-category {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon-chip {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-chip i {
+    font-size: 0.7rem;
+  }
+
+  .skill-item {
+    font-size: 0.8rem;
+  }
+
+  /* Disable tooltips on mobile */
+  .icon-chip::after,
+  .icon-chip::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-chips-container {
+    gap: 0.4rem;
+  }
+
+  .skill-category {
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .icon-chip {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon-chip i {
+    font-size: 0.65rem;
+  }
+
+  .skill-item {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}

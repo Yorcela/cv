@@ -1,0 +1,33 @@
+/* Desktop Styles for Skills Component */
+
+.skills-chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-category {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Styles spécifiques au composant skills */
+.skill-category .category-header {
+  display: flex;
+  align-items: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skill-item {
+  font-size: 0.85rem;
+  color: #e8f4fd;
+  line-height: 1.4;
+}

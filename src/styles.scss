@@ -1,5 +1,4 @@
 /* Styles pour le CV d'Alec Roy */
-@import 'assets/fontawesome/css/all.css';
 @import 'styles/_variables.scss';
 @import 'styles/_mixins.scss';
 
@@ -350,20 +349,20 @@ footer {
 }
 
 /* Espacement entre les sections de composants */
-app-about-me,
-app-experiences,
-app-accomplishments,
-app-skills,
-app-education,
-app-certifications,
-app-hobbies,
-app-contact-info {
+app-content-about-me,
+app-content-experiences,
+app-content-accomplishments,
+app-sidebar-skills,
+app-sidebar-education,
+app-sidebar-certifications,
+app-sidebar-hobbies,
+app-sidebar-contact-info {
   display: block;
   margin-bottom: $spacing-lg;
 }
 
 /* Dernière section sans marge en bas */
-app-contact-info {
+app-sidebar-contact-info {
   margin-bottom: 0;
 }
 
@@ -371,4 +370,127 @@ app-contact-info {
 .cv-variant-short .accomplishment-item-unified {
   margin-bottom: 0 !important;
   font-weight: 200 !important;
+}
+
+/* Styles génériques pour les titres cliquables */
+.clickable-title {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.clickable-title:hover {
+  color: #608abf;
+  transform: translateY(-1px);
+}
+
+.clickable-title .fa-chevron-down,
+.clickable-title .fa-chevron-right {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.clickable-title:hover .fa-chevron-down,
+.clickable-title:hover .fa-chevron-right {
+  transform: scale(1.1);
+}
+
+/* Styles génériques pour les chips d'icônes avec tooltips */
+.icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(232, 244, 253, 0.2);
+  border: 1px solid rgba(232, 244, 253, 0.3);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-chip:hover {
+  background: rgba(232, 244, 253, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-chip i,
+.icon-chip svg {
+  color: #e8f4fd;
+  font-size: 0.8rem;
+  display: inline-block;
+  width: 16px;
+}
+
+/* Tooltip styles pour les icon-chip */
+.icon-chip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.icon-chip::before {
+  content: '';
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.icon-chip:hover::after,
+.icon-chip:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles génériques pour les badges de chips */
+.chip-badge {
+  background: rgba(232, 244, 253, 0.9);
+  color: #608abf;
+  padding: 0.25rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(96, 138, 191, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles globaux pour les icônes FontAwesome SVG */
+svg[data-icon] {
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Assurer que les SVG FontAwesome héritent de la couleur du parent */
+i svg,
+.fa svg,
+.fas svg,
+.far svg,
+.fad svg,
+.fab svg {
+  fill: currentColor;
+  color: inherit;
 }

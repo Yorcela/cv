@@ -1,0 +1,63 @@
+/* Styles génériques pour le composant Certifications */
+@import '../sidebar/sidebar.component.css';
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+
+.certifications-chips {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.certification-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  color: $text-light;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all $transition-normal;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #e8f4fd, #ffffff);
+    border-radius: 2px 0 0 2px;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.chip-text {
+  flex: 1;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+}
+
+.chip-badge {
+  background: rgba(232, 244, 253, 0.9);
+  color: $primary;
+  padding: 0.25rem 0.6rem;
+  border-radius: 15px;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(96, 138, 191, 0.2);
+  box-shadow: $shadow-sm;
+}
