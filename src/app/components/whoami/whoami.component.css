@@ -5,6 +5,12 @@
   margin-bottom: 1rem;
 }
 
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .profile-photo {
   width: 200px;
   height: 240px;
@@ -19,7 +25,7 @@
   font-size: 3rem;
   font-weight: 100;
   color: #ffffff;
-  margin: 0;
+  margin: 1rem 0 0 0;
 }
 
 .title {
