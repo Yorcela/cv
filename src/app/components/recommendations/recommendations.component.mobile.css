@@ -47,12 +47,6 @@
     margin-top: 8px;
   }
 
-  /* Customisation mobile pour .main-section-title */
-  .main-section-title {
-    padding: 0.75rem 0.9rem;
-    font-size: 1.2rem;
-  }
-
   /* Mobile animations */
   .recommendation-card.left-column,
   .recommendation-card.right-column {
@@ -115,8 +109,4 @@
     font-size: 0.85em;
   }
 
-  .main-section-title {
-    font-size: 1.1rem;
-    padding: 0.5rem 0.75rem;
-  }
 }
