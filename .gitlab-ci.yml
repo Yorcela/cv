@@ -37,10 +37,12 @@ deploy_production:
     - apk add --no-cache lftp
   script:
     - |
+      # Décoder le mot de passe Base64
+      export DECODED_PASSWORD=$(echo $FTP_PASSWORD_BASE64 | base64 -d)
       lftp -c "
         set ftp:ssl-allow no;
         set ftp:passive-mode on;
-        open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST;
+        open -u $FTP_USERNAME,$DECODED_PASSWORD $FTP_HOST;
         lcd ${DIST_FOLDER};
         cd $FTP_REMOTE_PATH;
         mirror --reverse --delete --verbose --exclude-glob .git* --exclude-glob .DS_Store;

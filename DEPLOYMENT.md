@@ -1,82 +1,94 @@
-# Configuration du Déploiement Automatique
+# Guide de Déploiement GitLab CI/CD
 
-Ce projet utilise GitLab CI/CD pour automatiser le déploiement sur votre serveur FTP.
+Ce guide explique comment configurer et utiliser le pipeline CI/CD pour déployer automatiquement votre application Angular sur un serveur FTP/SFTP.
 
 ## Configuration des Variables d'Environnement
 
-Pour que le déploiement fonctionne, vous devez configurer les variables suivantes dans GitLab :
+### Variables Requises dans GitLab
 
-### Dans GitLab : Settings > CI/CD > Variables
+Allez dans **Settings > CI/CD > Variables** de votre projet GitLab et ajoutez :
 
-Ajoutez les variables suivantes (cochez "Masked" pour les données sensibles) :
+| Variable | Description | Exemple |
+|----------|-------------|----------|
+| `FTP_HOST` | Adresse du serveur FTP/SFTP | `ftp.example.com` |
+| `FTP_USERNAME` | Nom d'utilisateur FTP | `myuser` |
+| `FTP_PASSWORD_BASE64` | Mot de passe FTP encodé en Base64 | `bXlwYXNzd29yZA==` |
+| `FTP_REMOTE_PATH` | Chemin distant sur le serveur | `/public_html` |
 
-| Variable | Description | Exemple | Masked |
-|----------|-------------|---------|--------|
-| `FTP_HOST` | Adresse du serveur FTP | `ftp.mondomaine.com` | Non |
-| `FTP_USERNAME` | Nom d'utilisateur FTP | `monuser` | Oui |
-| `FTP_PASSWORD` | Mot de passe FTP | `monmotdepasse` | Oui |
-| `FTP_REMOTE_PATH` | Chemin distant sur le serveur | `/public_html` ou `/www` | Non |
+### Encodage du Mot de Passe en Base64
+
+Pour éviter les problèmes avec les caractères spéciaux, encodez votre mot de passe :
+
+```bash
+# Encoder votre mot de passe
+echo -n "votre_mot_de_passe" | base64
+```
+
+Utilisez le résultat comme valeur pour `FTP_PASSWORD_BASE64`.
+
+### Configuration de Sécurité
+
+- ✅ Marquez `FTP_USERNAME` et `FTP_PASSWORD_BASE64` comme **"Masked"**
+- ✅ Marquez toutes les variables comme **"Protected"** si vous voulez les limiter aux branches protégées
 
 ## Fonctionnement du Pipeline
 
-### Étapes du Pipeline
+### Stages
 
 1. **Build** : Compilation de l'application Angular en mode production
-2. **Deploy** : Upload des fichiers sur le serveur FTP (uniquement pour la branche `main`)
+2. **Deploy** : Déploiement des fichiers sur le serveur FTP/SFTP
 
-### Déclenchement
+### Déploiement Manuel (Par Défaut)
 
-- **Automatique** : Le build se déclenche à chaque push sur `main` ou `develop`
-- **Manuel** : Le déploiement est configuré en mode manuel par défaut pour plus de sécurité
-- **Automatique** : Décommentez la section `deploy_auto` dans `.gitlab-ci.yml` pour un déploiement automatique
+Par défaut, le déploiement est **manuel** pour des raisons de sécurité :
+- Le build se lance automatiquement à chaque push sur `main`
+- Le déploiement doit être déclenché manuellement depuis l'interface GitLab
 
-### Sécurité
+### Activation du Déploiement Automatique
 
-- Le déploiement ne se fait que sur la branche `main`
-- Les variables sensibles sont masquées dans GitLab
-- Le déploiement est en mode manuel par défaut
+Pour activer le déploiement automatique, modifiez `.gitlab-ci.yml` :
 
-## Activation du Déploiement Automatique
-
-Si vous souhaitez un déploiement automatique à chaque push sur `main` :
-
-1. Ouvrez `.gitlab-ci.yml`
-2. Décommentez la section `deploy_auto` (lignes 47-62)
-3. Commentez ou supprimez la section `deploy_production`
+```yaml
+deploy:
+  stage: deploy
+  # Supprimez ou commentez cette ligne :
+  # when: manual
+```
 
 ## Structure des Fichiers
 
-```
-├── .gitlab-ci.yml          # Configuration du pipeline CI/CD
-├── DEPLOYMENT.md           # Ce fichier d'instructions
-└── dist/alec-cv-site/     # Dossier généré contenant l'application buildée
-```
+Après le build, les fichiers sont générés dans :
+- **Dossier local** : `dist/alec-cv-site/`
+- **Dossier distant** : Défini par `$FTP_REMOTE_PATH`
 
 ## Dépannage
 
 ### Erreurs Communes
 
-1. **Erreur de connexion FTP** : Vérifiez les variables `FTP_HOST`, `FTP_USERNAME`, `FTP_PASSWORD`
-2. **Erreur de chemin** : Vérifiez la variable `FTP_REMOTE_PATH`
-3. **Build échoue** : Vérifiez que `npm run build` fonctionne localement
+1. **Erreur d'authentification**
+   - Vérifiez `FTP_USERNAME` et `FTP_PASSWORD_BASE64`
+   - Testez la connexion manuellement
 
-### Logs
+2. **Erreur de chemin**
+   - Vérifiez `FTP_REMOTE_PATH`
+   - Assurez-vous que le dossier existe sur le serveur
 
-Consultez les logs du pipeline dans GitLab : `CI/CD > Pipelines > [Votre Pipeline] > Jobs`
+3. **Problème SSL/TLS**
+   - Le pipeline désactive SSL par défaut (`set ftp:ssl-allow no`)
+   - Modifiez si votre serveur requiert SSL
 
-## Commandes Utiles
+### Commandes de Test
 
 ```bash
-# Test local du build
-npm run build
+# Tester la connexion FTP
+lftp -u username,password ftp.example.com
 
-# Test de connexion FTP (remplacez par vos valeurs)
-lftp -u username,password ftp.mondomaine.com
+# Décoder un mot de passe Base64
+echo "SnNhZEpkZjIwMTYh" | base64 -d
 ```
 
 ## Support
 
-En cas de problème, vérifiez :
-1. Les variables d'environnement dans GitLab
-2. Les permissions sur votre serveur FTP
-3. Les logs du pipeline GitLab CI/CD
+Pour plus d'informations :
+- [Documentation GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
+- [Documentation LFTP](https://lftp.yar.ru/lftp-man.html)
