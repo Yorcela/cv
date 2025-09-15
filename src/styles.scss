@@ -10,7 +10,7 @@ body {
   color: $text-primary;
   line-height: $line-height-relaxed;
   padding-top: $appbar-height;
-  
+
   // Mobile: appbar en bas
   @media (max-width: 390px) {
     padding-top: 0;
@@ -39,7 +39,7 @@ body {
   padding: 0;
   background: $bg-primary;
   min-height: auto;
-  
+
   // Mobile: prendre tout le viewport
   @media (max-width: 390px) {
     width: 100vw;
@@ -58,7 +58,7 @@ body {
 .appbar {
   background: $appbar-bg;
   color: $text-light;
-  padding: $spacing-sm $spacing-md;
+  padding: $spacing-sm 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +72,7 @@ body {
   z-index: $z-fixed;
   backdrop-filter: blur(10px);
   border-bottom: $appbar-border;
-  
+
   // Mobile: appbar en bas, toujours visible
   @media (max-width: 390px) {
     top: auto;
@@ -105,7 +105,7 @@ body {
 
 .segmented-button {
   @include segmented-button;
-  font-size: $font-size-xs;
+  font-size: 1.5em;
   font-weight: $font-weight-medium;
   display: flex;
   align-items: center;
@@ -115,8 +115,13 @@ body {
   position: relative;
   // Styles définis dans le mixin segmented-button
 }
+
 .segmented-button i {
-  font-size: $font-size-xs;
+  font-size: 1.5em;
+}
+
+.segmented-button.variant i {
+  font-size: .6em;
 }
 
 .icon-button {
@@ -160,12 +165,12 @@ body {
   @include flex-container(row, center, center, $spacing-xs);
   backdrop-filter: blur(10px);
   height: 32px;
-  
+
   @media (max-width: 390px) {
     span {
       display: none;
     }
-    
+
     .dropdown-arrow {
       margin-left: 4px;
     }
@@ -211,7 +216,8 @@ body {
   }
 }
 
-select, button {
+select,
+button {
   padding: 8px 12px;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -236,7 +242,7 @@ button.primary:hover {
   border-radius: 8px;
   padding: 24px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card h1 {
@@ -265,7 +271,7 @@ button.primary:hover {
   align-items: center;
 }
 
-.kv > div:nth-child(odd) {
+.kv>div:nth-child(odd) {
   font-weight: 600;
   color: #495057;
 }

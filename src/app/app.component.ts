@@ -36,14 +36,14 @@ import { MainPageComponent } from './pages/main-page.component';
           <!-- Variant Toggle -->
           <div class="tool-group segmented-group">
             <button 
-              class="segmented-button" 
+              class="segmented-button variant" 
               [class.active]="variant() === 'full'"
               (click)="setVariant('full')"
               title="Version complète">
               <i class="fal fa-plus"></i>
             </button>
             <button 
-              class="segmented-button" 
+              class="segmented-button variant" 
               [class.active]="variant() === 'short'"
               (click)="setVariant('short')"
               title="Version courte">
