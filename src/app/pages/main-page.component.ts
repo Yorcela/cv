@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -154,7 +154,7 @@ interface SkillCategory {
    `,
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnChanges {
+export class MainPageComponent implements OnChanges, OnInit {
   @Input() lang: 'fr' | 'en' = 'fr';
   @Input() variant: 'full' | 'short' = 'full';
   data: CVData | null = null;
@@ -167,9 +167,16 @@ export class MainPageComponent implements OnChanges {
   sectionStates: { [key: string]: boolean } = {
     about: true,
     experiences: true,
-    accomplishments: false,
+    accomplishments: true,
     recommendations: false
   };
+
+  ngOnInit(): void {
+    // Ouvrir les recommandations par défaut en version longue
+    if (this.variant === 'full') {
+      this.sectionStates['recommendations'] = true;
+    }
+  }
 
   constructor(private http: HttpClient, private router: Router) {}
 

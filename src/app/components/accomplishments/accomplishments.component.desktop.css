@@ -92,9 +92,16 @@
   background: #f8fafc;
   border-radius: 0 8px 8px 0;
   transition: all 0.2s ease;
-  margin-bottom: 0.5rem;
   position: relative;
   counter-increment: accomplishment-counter;
+}
+
+.cv-variant-full .accomplishment-item-unified {
+  margin-bottom: 0.5rem;
+}
+
+.cv-variant-short .accomplishment-item-unified {
+  margin-bottom: 0rem;
 }
 
 .accomplishment-item-unified:hover {

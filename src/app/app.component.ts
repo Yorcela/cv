@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -100,6 +100,13 @@ export class AppComponent {
     translate.addLangs(['en','fr']);
     translate.setDefaultLang('fr');
     translate.use('fr');
+    
+    // Ajouter une classe dynamique sur le body selon la variante
+    effect(() => {
+      const currentVariant = this.variant();
+      document.body.classList.remove('cv-variant-full', 'cv-variant-short');
+      document.body.classList.add(`cv-variant-${currentVariant}`);
+    });
   }
 
   setLang(l: string) {

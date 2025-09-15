@@ -366,3 +366,9 @@ app-contact-info {
 app-contact-info {
   margin-bottom: 0;
 }
+
+/* Styles globaux pour la version courte */
+.cv-variant-short .accomplishment-item-unified {
+  margin-bottom: 0 !important;
+  font-weight: 200 !important;
+}

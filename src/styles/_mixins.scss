@@ -280,6 +280,17 @@
   transition: all $transition-fast;
   min-width: 200px;
 
+  // Mobile: ouvrir vers le haut car appbar en bas
+  @media (max-width: 390px) {
+    top: auto;
+    bottom: 100%;
+    transform: translateY(10px);
+    
+    &.show {
+      transform: translateY(0);
+    }
+  }
+
   &.show {
     opacity: 1;
     visibility: visible;
