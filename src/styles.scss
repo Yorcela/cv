@@ -3,6 +3,11 @@
 @import 'styles/_variables.scss';
 @import 'styles/_mixins.scss';
 
+/* Classe commune pour tous les titres de section */
+.main-section-title {
+  @include main-section-title;
+}
+
 body {
   margin: 0;
   font-family: $font-family-primary;

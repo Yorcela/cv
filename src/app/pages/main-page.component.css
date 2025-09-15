@@ -386,23 +386,11 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Section title styles - utilise maintenant la classe commune avec customisation */
 .main-section-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2c3e50;
   margin-bottom: 0;
   padding: 1.5rem;
-  border-bottom: 2px solid #608abf;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: space-between;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-}
-
-.main-section-title i {
-  color: #608abf;
-  font-size: 1.2rem;
 }
 
 .clickable-title {

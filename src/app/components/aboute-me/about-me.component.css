@@ -1,21 +1,4 @@
-/* Section title styles */
-.main-section-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #608abf;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: space-between;
-}
-
-.main-section-title i {
-  color: #608abf;
-  font-size: 1.2rem;
-}
+/* Section title styles - utilise maintenant la classe commune */
 
 .clickable-title {
   cursor: pointer;

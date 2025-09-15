@@ -25,6 +25,7 @@
     align-items: flex-start;
   }
   
+  /* Customisation mobile pour .main-section-title */
   .main-section-title {
     font-size: 1.2rem;
   }
