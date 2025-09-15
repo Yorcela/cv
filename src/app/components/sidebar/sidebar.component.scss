@@ -41,12 +41,5 @@
   margin-bottom: 2rem;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .cv-sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-}
+/* Import mobile styles */
+@import './sidebar.component.mobile.scss';

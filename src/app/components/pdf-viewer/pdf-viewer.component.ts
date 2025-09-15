@@ -26,7 +26,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
       </div>
     </div>
   `,
-  styleUrls: ['./pdf-viewer.component.css']
+  styleUrls: ['./pdf-viewer.component.scss']
 })
 export class PdfViewerComponent {
   @Input() isVisible: boolean = false;

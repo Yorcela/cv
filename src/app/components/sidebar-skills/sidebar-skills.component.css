@@ -1,4 +1,0 @@
-/* Main CSS file - imports sidebar styles and component styles */
-@import '../sidebar/sidebar.component.css';
-@import './skills.component.desktop.css';
-@import './skills.component.mobile.css';

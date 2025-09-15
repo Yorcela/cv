@@ -17,7 +17,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       </div>
     </div>
   `,
-  styleUrls: ['./sidebar-hobbies.component.css']
+  styleUrls: ['./sidebar-hobbies.component.scss']
 })
 export class SidebarHobbiesComponent {
   hobbies: { name: string; icon: string }[] = [];

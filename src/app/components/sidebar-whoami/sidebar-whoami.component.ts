@@ -19,7 +19,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       </div>
     </div>
   `,
-  styleUrls: ['./sidebar-whoami.component.css', './sidebar-whoami.component.mobile.css']
+  styleUrls: ['./sidebar-whoami.component.scss']
 })
 export class SidebarWhoamiComponent {
   personalInfo: any = {};

@@ -98,15 +98,15 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-}
 
-.pdf-viewer-close:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
 
-.pdf-viewer-close i {
-  font-size: 1rem;
+  i {
+    font-size: 1rem;
+  }
 }
 
 /* Responsive Design */

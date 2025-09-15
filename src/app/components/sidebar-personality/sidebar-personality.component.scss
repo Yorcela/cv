@@ -1,4 +1,52 @@
+/* Main SCSS file - imports sidebar styles */
+@import '../sidebar/sidebar.component.scss';
+
 /* Common styles for all screen sizes */
+.sidebar-personality {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.personality-chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.personality-category {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Styles spécifiques au composant personality */
+.personality-category .category-header {
+  display: flex;
+}
+
+.personality-action {
+  display: flex;
+  align-items: center;
+}
+
+.personality-link {
+  font-size: 0.85rem;
+  color: #e8f4fd;
+  line-height: 1.4;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.personality-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
 
 .personality-items {
   display: flex;
@@ -79,3 +127,5 @@
     font-size: 1.1rem;
   }
 }
+
+@import './sidebar-personality.component.mobile.scss';

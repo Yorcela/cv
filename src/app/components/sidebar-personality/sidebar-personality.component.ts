@@ -36,7 +36,7 @@ import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
       (closeViewer)="closePdfViewer()">
     </app-pdf-viewer>
   `,
-  styleUrls: ['./sidebar-personality.component.css']
+  styleUrls: ['./sidebar-personality.component.scss']
 })
 export class SidebarPersonalityComponent {
   personality: any = {};

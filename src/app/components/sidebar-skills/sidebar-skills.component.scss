@@ -1,3 +1,6 @@
+/* Main SCSS file - imports sidebar styles */
+@import '../sidebar/sidebar.component.scss';
+
 /* Desktop Styles for Skills Component */
 
 .skills-chips-container {
@@ -31,3 +34,5 @@
   color: #e8f4fd;
   line-height: 1.4;
 }
+
+@import './sidebar-skills.component.mobile.scss';

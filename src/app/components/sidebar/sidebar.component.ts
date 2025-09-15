@@ -34,7 +34,7 @@ import { SidebarHobbiesComponent } from '../sidebar-hobbies/sidebar-hobbies.comp
       <app-sidebar-hobbies></app-sidebar-hobbies>
     </div>
   `,
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
 }
