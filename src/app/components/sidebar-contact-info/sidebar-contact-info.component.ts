@@ -10,23 +10,33 @@ import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
   template: `
     <div class="sidebar-block sidebar-contact">
       <div class="contact-item">
-        <i class="fad fa-phone"></i>
+        <span class="icon-chip" [attr.data-tooltip]="'i18n.ui.phone' | translate">
+          <i class="fad fa-phone"></i>
+        </span>
         <span>{{ personalInfo?.phone }}</span>
       </div>
       <div class="contact-item">
-        <i class="fad fa-envelope"></i>
+        <span class="icon-chip" [attr.data-tooltip]="'i18n.ui.email' | translate">
+          <i class="fad fa-envelope"></i>
+        </span>
         <a [href]="'mailto:' + personalInfo?.email">{{personalInfo?.email }}</a>
       </div>
       <div class="contact-item">
-        <i class="fad fa-map-marker-alt"></i>
+        <span class="icon-chip" [attr.data-tooltip]="'i18n.ui.location' | translate">
+          <i class="fad fa-map-marker-alt"></i>
+        </span>
         <span>{{ personalInfo?.location }}</span>
       </div>
       <div class="contact-item">
-        <i class="fab fa-linkedin"></i>
+        <span class="icon-chip" data-tooltip="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </span>
         <a [href]="personalInfo?.linkedin" target="_blank">{{ 'i18n.ui.linkedin' | translate }}</a>
       </div>
       <div class="contact-item">
-        <i class="fab fa-youtube"></i>
+        <span class="icon-chip" data-tooltip="YouTube">
+          <i class="fab fa-youtube"></i>
+        </span>
         <a [href]="personalInfo?.youtube" target="_blank">{{ 'i18n.ui.youtube' | translate }}</a>
       </div>
     </div>

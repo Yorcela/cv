@@ -4,7 +4,9 @@
 @import '../../../styles/_mixins.scss';
 
 .contact-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
   align-items: center;
   margin-bottom: $spacing-md;
   font-size: $font-size-sm;
@@ -13,15 +15,8 @@
     margin-bottom: 0;
   }
 
-  i {
-    width: 20px;
-    margin-right: $spacing-md;
-    color: #e8f4fd;
-    text-align: center;
-  }
-
   a {
-    color: $text-light;
+    color: $text-white;
     text-decoration: none;
     transition: color $transition-fast;
 
@@ -30,8 +25,8 @@
     }
   }
 
-  span {
-    color: $text-light;
+  span:not(.icon-chip) {
+    color: $text-white;
   }
 }
 
@@ -57,3 +52,5 @@
     border-radius: $border-radius-xs;
   }
 }
+
+@import './sidebar-contact-info.component.mobile.scss';

@@ -1,0 +1,40 @@
+/* Mobile Styles for Contact Info Component */
+
+@media (max-width: 768px) {
+  .contact-item {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon-chip {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-chip i {
+    font-size: 0.7rem;
+  }
+
+  /* Disable tooltips on mobile */
+  .icon-chip::after,
+  .icon-chip::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item {
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .icon-chip {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon-chip i {
+    font-size: 0.65rem;
+  }
+}
