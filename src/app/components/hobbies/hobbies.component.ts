@@ -7,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   template: `
-    <div class="sidebar-hobbies">
+    <div class="sidebar-block sidebar-hobbies">
       <h3 class="sidebar-title"><i class="fad fa-heart"></i> {{ 'i18n.ui.sections.hobbies' | translate }}</h3>
       <div class="hobbies-list">
         <div class="hobby-item" *ngFor="let hobby of hobbies">

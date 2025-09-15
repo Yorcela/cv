@@ -132,13 +132,6 @@
   text-decoration: underline;
 }
 
-.sidebar-skills,
-.sidebar-education,
-.sidebar-certifications,
-.sidebar-hobbies {
-  margin-bottom: 2rem;
-}
-
 .certifications-chips {
   display: flex;
   flex-direction: column;

@@ -8,7 +8,7 @@ import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
   standalone: true,
   imports: [CommonModule, TranslateModule, PdfViewerComponent],
   template: `
-    <div class="sidebar-personnalite">
+    <div class="sidebar-block sidebar-personnalite">
       <h3 class="sidebar-title">
         <i class="fad fa-theater-masks"></i> 
         {{ 'i18n.ui.sections.personnalite' | translate }}

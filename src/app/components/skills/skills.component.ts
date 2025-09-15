@@ -7,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   template: `
-    <div class="sidebar-skills">
+    <div class="sidebar-block sidebar-skills">
       <h3 class="sidebar-title"><i class="fad fa-cogs"></i> {{ 'i18n.ui.sections.skills' | translate }}</h3>
       <div class="skills-chips-container">
         <div class="skill-category" *ngFor="let skillCategory of getSkillCategories()">

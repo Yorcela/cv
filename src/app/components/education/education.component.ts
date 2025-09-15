@@ -7,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   template: `
-    <div class="sidebar-education">
+    <div class="sidebar-block sidebar-education">
       <h3 class="sidebar-title"><i class="fad fa-university"></i> {{ 'i18n.ui.sections.education' | translate }}</h3>
       <div class="education-content">
         <div class="education-item" *ngFor="let edu of education">

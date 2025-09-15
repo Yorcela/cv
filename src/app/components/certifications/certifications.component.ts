@@ -7,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   template: `
-    <div class="sidebar-certifications">
+    <div class="sidebar-block sidebar-certifications">
       <h3 class="sidebar-title"><i class="fad fa-certificate"></i> {{ 'i18n.ui.sections.certifications' | translate }}</h3>
       <div class="certifications-chips">
         <div class="certification-chip" *ngFor="let cert of certifications">
