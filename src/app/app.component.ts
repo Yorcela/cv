@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TuiRootModule } from '@taiga-ui/core';
-import { MainPageComponent } from './pages/main-page.component';
+import { MainPageComponent } from './pages/main.page.component';
 import { AppbarComponent } from './components/appbar/appbar.component';
 import { CVVariant, CVLanguage, VariantType, LanguageType } from './types/common.types';
 
