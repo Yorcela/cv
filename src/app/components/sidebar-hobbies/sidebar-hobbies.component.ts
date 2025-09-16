@@ -6,17 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   selector: 'app-sidebar-hobbies',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  template: `
-    <div class="sidebar-block sidebar-hobbies">
-      <h3 class="sidebar-title"><i class="fad fa-heart"></i> {{ 'i18n.ui.sections.hobbies' | translate }}</h3>
-      <div class="hobbies-list">
-        <div class="hobby-item" *ngFor="let hobby of hobbies">
-          <i class="fad" [ngClass]="hobby.icon"></i>
-          <span>{{ hobby.name }}</span>
-        </div>
-      </div>
-    </div>
-  `,
+  templateUrl: './sidebar-hobbies.component.html',
   styleUrls: ['./sidebar-hobbies.component.scss']
 })
 export class SidebarHobbiesComponent {

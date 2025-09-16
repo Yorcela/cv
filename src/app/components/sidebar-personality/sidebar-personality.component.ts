@@ -7,35 +7,7 @@ import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
   selector: 'app-sidebar-personality',
   standalone: true,
   imports: [CommonModule, TranslateModule, PdfViewerComponent],
-  template: `
-    <div class="sidebar-block sidebar-personality">
-      <h3 class="sidebar-title">
-        <i class="fad fa-theater-masks"></i> 
-        {{ 'i18n.ui.sections.personnalite' | translate }}
-      </h3>
-      <div class="personality-chips-container">
-        <div class="personality-category" *ngFor="let personalityItem of getPersonalityItems()">
-          <div class="category-header">
-            <span class="icon-chip" [attr.data-tooltip]="personalityItem.tooltip">
-              <i class="fad {{ personalityItem.icon }}"></i>
-            </span>
-          </div>
-          <div class="personality-action">
-            <span class="personality-item" (click)="handlePersonalityClick(personalityItem)">
-              {{ personalityItem.label }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <app-pdf-viewer
-      [isVisible]="showPdfViewer"
-      [pdfSrc]="currentPdfSrc"
-      [title]="currentPdfTitle"
-      (closeViewer)="closePdfViewer()">
-    </app-pdf-viewer>
-  `,
+  templateUrl: './sidebar-personality.component.html',
   styleUrls: ['./sidebar-personality.component.scss']
 })
 export class SidebarPersonalityComponent {

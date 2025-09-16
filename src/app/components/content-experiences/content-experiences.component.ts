@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
+import { CVVariant, VariantType } from '../../types/common.types';
 
 interface ExperienceTask {
   category: string;
@@ -25,65 +26,17 @@ interface Experience {
   selector: 'app-content-experiences',
   standalone: true,
   imports: [CommonModule, TranslateModule, MarkdownPipe],
-  template: `
-        <section class="main-section">
-          <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
-            <i class="fad fa-briefcase"></i>
-            {{ variant === 'short' ? ('i18n.ui.sections.experiences_short' | translate) : ('i18n.ui.sections.experiences_long' | translate) }}
-            <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
-          </h2>
-        <div *ngIf="isExpanded">
-      
-      <div class="experiences-container">
-        <div *ngFor="let experience of displayedExperiences" class="experience-item">
-          <div class="experience-header">
-            <div class="experience-company-info">
-              <img 
-                [src]="experience.logo" 
-                [alt]="experience.company + ' logo'"
-                class="company-logo"
-                (error)="onImageError($event)"
-              />
-              <div class="experience-info">
-                <h3 class="experience-company">{{ experience.company }}</h3>
-                <div class="experience-period">{{ experience.period }}</div>
-              </div>
-            </div>
-            <span class="experience-position">{{ experience.position }}</span>
-          </div>
-          
-          <div class="experience-description">
-            <div *ngFor="let descriptionGroup of experience.description" class="description-group">
-              <div *ngFor="let clientEntry of getClientEntries(descriptionGroup)" class="client-section">
-                <h4 *ngIf="clientEntry.clientName !== 'N/A'" class="client-name">{{ clientEntry.clientName }}</h4>
-                
-                <div *ngFor="let task of clientEntry.tasks" class="task-category">
-                  <h5 class="category-title">{{ task.category }}</h5>
-                  <ul class="task-list-simple">
-                    <li *ngFor="let taskItem of task.tasks" [innerHTML]="formatTask(taskItem)"></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="experience-skills">
-            <div class="skills-tags">
-              <span *ngFor="let skill of experience.skills" class="skill-tag-small">{{ skill }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-  `,
+  templateUrl: './content-experiences.component.html',
   styleUrls: ['./content-experiences.component.scss']
 })
 export class ContentExperiencesComponent {
-  @Input() variant: 'short' | 'full' = 'short';
+  @Input() variant: VariantType = CVVariant.SHORT;
   @Input() data: any = null;
   @Input() isExpanded: boolean = true;
   @Output() toggleSection = new EventEmitter<void>();
+
+  // Expose enum to template
+  CVVariant = CVVariant;
 
   private translateService = inject(TranslateService);
   experiences: Experience[] = [];
@@ -97,7 +50,7 @@ export class ContentExperiencesComponent {
   }
   
   get displayedExperiences(): Experience[] {
-    if (this.variant === 'short') {
+    if (this.variant === CVVariant.SHORT) {
       return this.experiences.slice(0, 3);
     }
     return this.experiences;

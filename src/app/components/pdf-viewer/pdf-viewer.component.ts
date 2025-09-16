@@ -7,25 +7,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   selector: 'app-pdf-viewer',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  template: `
-    <div class="pdf-viewer-overlay" *ngIf="isVisible" (click)="onOverlayClick($event)">
-      <div class="pdf-viewer-container" (click)="$event.stopPropagation()">
-        <div class="pdf-viewer-header">
-          <h3 class="pdf-viewer-title">{{ title }}</h3>
-          <button class="pdf-viewer-close" type="button" (click)="close()">
-            <i class="fal fa-times"></i>
-          </button>
-        </div>
-        <div class="pdf-viewer-content">
-          <iframe
-            [src]="sanitizedPdfUrl"
-            class="pdf-iframe"
-            frameborder="0">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  `,
+  templateUrl: './pdf-viewer.component.html',
   styleUrls: ['./pdf-viewer.component.scss']
 })
 export class PdfViewerComponent {

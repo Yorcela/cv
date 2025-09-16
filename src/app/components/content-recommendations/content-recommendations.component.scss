@@ -1,3 +1,4 @@
+@import 'content-recommendations.component.mobile.scss';
 @import '../../../styles/variables';
 
 /* Desktop Styles for Recommendations Component */
@@ -97,8 +98,4 @@
   line-height: $line-height-relaxed;
   color: $text-primary;
   position: relative;
-  padding-left: $spacing-lg;
 }
-
-// Import des styles mobiles
-@import 'content-recommendations.component.mobile.scss';

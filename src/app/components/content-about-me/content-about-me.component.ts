@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CVVariant, VariantType } from '../../types/common.types';
 
 @Component({
   selector: 'app-content-about-me',
@@ -9,7 +10,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './content-about-me.component.html',
 })
 export class ContentAboutMeComponent {
-  @Input() variant: 'full' | 'short' = 'full';
+  @Input() variant: VariantType = CVVariant.FULL;
   @Input() isExpanded: boolean = true;
   @Output() toggleSection = new EventEmitter<void>();
   about: any = {};
@@ -23,7 +24,7 @@ export class ContentAboutMeComponent {
 
   getFormattedAbout(): string {
     if (!this.about) return '';
-    const aboutText = this.variant === 'full' ? this.about.long : this.about.short;
+    const aboutText = this.variant === CVVariant.FULL ? this.about.long : this.about.short;
     return aboutText || '';
   }
 

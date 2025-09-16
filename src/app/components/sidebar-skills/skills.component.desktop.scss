@@ -1,0 +1,36 @@
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+
+/* Desktop Styles for Skills Component */
+
+.skills-chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-category {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $spacing-md;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+/* Styles spécifiques au composant skills */
+.skill-category .category-header {
+  display: flex;
+  align-items: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skill-item {
+  font-size: $font-size-sm;
+  color: #e8f4fd;
+  line-height: 1.4;
+}

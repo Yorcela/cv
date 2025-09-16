@@ -1,0 +1,17 @@
+<div class="pdf-viewer-overlay" *ngIf="isVisible" (click)="onOverlayClick($event)">
+  <div class="pdf-viewer-container" (click)="$event.stopPropagation()">
+    <div class="pdf-viewer-header">
+      <h3 class="pdf-viewer-title">{{ title }}</h3>
+      <button class="pdf-viewer-close" type="button" (click)="close()">
+        <i class="fal fa-times"></i>
+      </button>
+    </div>
+    <div class="pdf-viewer-content">
+      <iframe
+        [src]="sanitizedPdfUrl"
+        class="pdf-iframe"
+        frameborder="0">
+      </iframe>
+    </div>
+  </div>
+</div>

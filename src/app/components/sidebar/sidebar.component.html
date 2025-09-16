@@ -1,0 +1,19 @@
+<div class="cv-sidebar" [class.sidebar-collapsed]="isMobile && isContactInfoCollapsed">
+  <app-sidebar-whoami></app-sidebar-whoami>
+  
+  <!-- Titre pliable pour les informations de contact (mobile uniquement) -->
+  <h2 class="sidebar-collapsible-title" *ngIf="isMobile" (click)="toggleContactInfo()">
+    <i class="fas fa-address-card"></i>
+    {{ 'i18n.ui.sections.informations' | translate }}
+    <i class="fas" [class.fa-chevron-down]="!isContactInfoCollapsed" [class.fa-chevron-up]="isContactInfoCollapsed"></i>
+  </h2>
+  
+  <div class="sidebar-collapsible-content" [class.collapsed]="isMobile && isContactInfoCollapsed">
+    <app-sidebar-contact-info></app-sidebar-contact-info>
+    <app-sidebar-personality></app-sidebar-personality>
+    <app-sidebar-skills></app-sidebar-skills>
+    <app-sidebar-education></app-sidebar-education>
+    <app-sidebar-certifications></app-sidebar-certifications>
+    <app-sidebar-hobbies></app-sidebar-hobbies>
+  </div>
+</div>

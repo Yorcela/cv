@@ -8,7 +8,7 @@
         <div class="accomplishments-container">
             <ol class="accomplishments-list">
                 <ng-container *ngFor="let accomplishment of accomplishments; let companyIndex = index">
-                    <li *ngIf="variant === 'full'" class="accomplishment-company-header">
+                    <li *ngIf="variant === CVVariant.FULL" class="accomplishment-company-header">
                         <div class="accomplishment-header-content">
                             <div class="accomplishment-company-info">
                                 <img [src]="accomplishment.logo" [alt]="accomplishment.company + ' logo'"

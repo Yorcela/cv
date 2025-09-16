@@ -6,17 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   selector: 'app-sidebar-certifications',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  template: `
-    <div class="sidebar-block sidebar-certifications">
-      <h3 class="sidebar-title"><i class="fad fa-file-certificate"></i> {{ 'i18n.ui.sections.certifications' | translate }}</h3>
-      <div class="certifications-chips">
-        <div class="certification-chip" *ngFor="let cert of certifications">
-          <span class="chip-text">{{ cert.name }}</span>
-          <span class="chip-badge">{{ cert.year }}</span>
-        </div>
-      </div>
-    </div>
-  `,
+  templateUrl: './sidebar-certifications.component.html',
   styleUrls: ['./sidebar-certifications.component.scss']
 })
 export class SidebarCertificationsComponent {

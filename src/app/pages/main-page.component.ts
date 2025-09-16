@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { ContentAboutMeComponent } from '../components/content-about-me/content-
 import { ContentAccomplishmentsComponent } from '../components/content-accomplishments/content-accomplishments.component';
 import { ContentExperiencesComponent } from '../components/content-experiences/content-experiences.component';
 import { ContentRecommendationsComponent } from '../components/content-recommendations/content-recommendations.component';
+import { CVVariant, VariantType, CVLanguage, LanguageType } from '../types/common.types';
 
 interface ExperienceDetailed {
   title: string;
@@ -155,8 +156,8 @@ interface SkillCategory {
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnChanges, OnInit {
-  @Input() lang: 'fr' | 'en' = 'fr';
-  @Input() variant: 'full' | 'short' = 'full';
+  @Input() lang: LanguageType = CVLanguage.FR;
+  @Input() variant: VariantType = CVVariant.FULL;
   data: CVData | null = null;
   loading = true;
   error: string | null = null;
@@ -173,7 +174,7 @@ export class MainPageComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     // Ouvrir les recommandations par défaut en version longue
-    if (this.variant === 'full') {
+    if (this.variant === CVVariant.FULL) {
       this.sectionStates['recommendations'] = true;
     }
   }
@@ -236,14 +237,14 @@ export class MainPageComponent implements OnChanges, OnInit {
 
   getAboutText(): string {
     if (!this.data) return '';
-    return this.variant === 'short' 
+    return this.variant === CVVariant.SHORT 
       ? this.data.aboutShort?.description || ''
       : this.data.aboutLong?.description || '';
   }
 
   getExperiences(): Experience[] {
     if (!this.data) return [];
-    return this.variant === 'short'
+    return this.variant === CVVariant.SHORT
       ? this.data.experiencesShort || []
       : this.data.experiencesLong || [];
   }

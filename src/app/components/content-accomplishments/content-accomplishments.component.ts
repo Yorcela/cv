@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
+import { CVVariant, VariantType } from '../../types/common.types';
 
 interface Accomplishment {
   company: string;
@@ -16,11 +17,14 @@ interface Accomplishment {
   templateUrl: './content-accomplishments.component.html',
   styleUrls: ['./content-accomplishments.component.scss']
 })
-export class ContentAccomplishmentsComponent implements OnInit {
-  @Input() variant: 'full' | 'short' = 'full';
+export class ContentAccomplishmentsComponent {
+  @Input() variant: VariantType = CVVariant.FULL;
   @Input() data: any = null;
   @Input() isExpanded: boolean = true;
   @Output() toggleSection = new EventEmitter<void>();
+
+  // Expose enum to template
+  CVVariant = CVVariant;
   accomplishments: Accomplishment[] = [];
 
   constructor(private translate: TranslateService) {
@@ -32,7 +36,7 @@ export class ContentAccomplishmentsComponent implements OnInit {
   ngOnInit(): void {
     // Set default expanded state based on variant
     if (!this.isExpanded) {
-      this.isExpanded = this.variant === 'full';
+      this.isExpanded = this.variant === CVVariant.FULL;
     }
   }
 
@@ -56,7 +60,7 @@ export class ContentAccomplishmentsComponent implements OnInit {
     let formattedDetail = detail;
 
     // For short variant, remove everything after "Résultat:" or "Result:"
-    if (this.variant === 'short') {
+    if (this.variant === CVVariant.SHORT) {
       const resultIndexFr = detail.indexOf('<br/><u>Résultat:</u>');
       const resultIndexEn = detail.indexOf('<br/><u>Result:</u>');
       const resultIndex = resultIndexFr !== -1 ? resultIndexFr : resultIndexEn;

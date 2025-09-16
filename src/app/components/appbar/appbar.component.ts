@@ -1,6 +1,7 @@
 import { Component, computed, signal, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CVVariant, CVLanguage, VariantType, LanguageType } from '../../types/common.types';
 
 @Component({
   selector: 'app-appbar',
@@ -10,30 +11,32 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./appbar.component.scss', './appbar.component.mobile.scss']
 })
 export class AppbarComponent {
-  private langSig = signal<'fr'|'en'>('fr');
-  private variantSig = signal<'full'|'short'>('full');
+  private langSig = signal<LanguageType>(CVLanguage.FR);
+  private variantSig = signal<VariantType>(CVVariant.FULL);
   private dropdownSig = signal<boolean>(false);
+
+  // Expose enums to template
+  CVLanguage = CVLanguage;
+  CVVariant = CVVariant;
 
   lang = computed(() => this.langSig());
   variant = computed(() => this.variantSig());
   showDropdown = computed(() => this.dropdownSig());
 
-  @Output() langChange = new EventEmitter<'fr'|'en'>();
-  @Output() variantChange = new EventEmitter<'full'|'short'>();
+  @Output() langChange = new EventEmitter<LanguageType>();
+  @Output() variantChange = new EventEmitter<VariantType>();
 
   constructor(private translate: TranslateService) {}
 
-  setLang(l: string) {
-    const val = (l === 'en' ? 'en' : 'fr');
-    this.langSig.set(val);
-    this.translate.use(val);
-    this.langChange.emit(val);
+  setLang(l: LanguageType) {
+    this.langSig.set(l);
+    this.translate.use(l);
+    this.langChange.emit(l);
   }
 
-  setVariant(v: string) {
-    const val = (v === 'short' ? 'short' : 'full');
-    this.variantSig.set(val);
-    this.variantChange.emit(val);
+  setVariant(v: VariantType) {
+    this.variantSig.set(v);
+    this.variantChange.emit(v);
   }
 
   toggleDropdown() {

@@ -5,6 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TuiRootModule } from '@taiga-ui/core';
 import { MainPageComponent } from './pages/main-page.component';
 import { AppbarComponent } from './components/appbar/appbar.component';
+import { CVVariant, CVLanguage, VariantType, LanguageType } from './types/common.types';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,8 @@ import { AppbarComponent } from './components/appbar/appbar.component';
 })
 export class AppComponent {
   year = new Date().getFullYear();
-  private langSig = signal<'fr'|'en'>('fr');
-  private variantSig = signal<'full'|'short'>('full');
+  private langSig = signal<LanguageType>(CVLanguage.FR);
+  private variantSig = signal<VariantType>(CVVariant.FULL);
 
   lang = computed(() => this.langSig());
   variant = computed(() => this.variantSig());
@@ -48,12 +49,12 @@ export class AppComponent {
     });
   }
 
-  onLangChange(lang: 'fr' | 'en') {
+  onLangChange(lang: LanguageType) {
     this.langSig.set(lang);
     this.translate.use(lang);
   }
 
-  onVariantChange(variant: 'full' | 'short') {
+  onVariantChange(variant: VariantType) {
     this.variantSig.set(variant);
   }
 }

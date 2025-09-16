@@ -2,21 +2,21 @@
   <div class="tools">
     <!-- Language Toggle -->
     <div class="tool-group segmented-group">
-      <button class="segmented-button" [class.active]="lang() === 'fr'" (click)="setLang('fr')" title="Français">
+      <button class="segmented-button" [class.active]="lang() === CVLanguage.FR" (click)="setLang(CVLanguage.FR)" title="Français">
         🇫🇷
       </button>
-      <button class="segmented-button" [class.active]="lang() === 'en'" (click)="setLang('en')" title="English">
+      <button class="segmented-button" [class.active]="lang() === CVLanguage.EN" (click)="setLang(CVLanguage.EN)" title="English">
         🇬🇧
       </button>
     </div>
 
     <!-- Variant Toggle -->
     <div class="tool-group segmented-group">
-      <button class="segmented-button variant" [class.active]="variant() === 'full'" (click)="setVariant('full')"
+      <button class="segmented-button variant" [class.active]="variant() === CVVariant.FULL" (click)="setVariant(CVVariant.FULL)"
         title="Version complète">
         <i class="fal fa-plus"></i>
       </button>
-      <button class="segmented-button variant" [class.active]="variant() === 'short'" (click)="setVariant('short')"
+      <button class="segmented-button variant" [class.active]="variant() === CVVariant.SHORT" (click)="setVariant(CVVariant.SHORT)"
         title="Version courte">
         <i class="fal fa-minus"></i>
       </button>
