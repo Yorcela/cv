@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
+import { SidebarPersonalityService, PersonalityItem, PdfViewerData } from './sidebar-personality.service';
 
 @Component({
   selector: 'app-sidebar-personality',
@@ -18,74 +19,49 @@ export class SidebarPersonalityComponent {
   currentPdfTitle: string = '';
   isMobile: boolean = false;
 
-  constructor(private translate: TranslateService) {
-    this.translate.get('cv.personnality').subscribe((data: any) => {
+  private translate = inject(TranslateService);
+  private personalityService = inject(SidebarPersonalityService);
+
+  constructor() {
+    this.personalityService.getPersonalityData().subscribe((data: any) => {
       this.personality = data || {};
     });
     
-
     this.currentLang = this.translate.currentLang || 'fr';
     this.translate.onLangChange.subscribe((event) => {
       this.currentLang = event.lang;
     });
     
-
     this.checkIfMobile();
     window.addEventListener('resize', () => this.checkIfMobile());
   }
 
   checkIfMobile() {
-    this.isMobile = window.innerWidth <= 430;
+    this.isMobile = this.personalityService.checkIfMobile();
   }
 
   getPersonalityData() {
     return this.personality;
   }
 
-  getPersonalityItems(): any[] {
-    const personalityData = this.getPersonalityData();
-    const items: any[] = [];
-
-    Object.keys(personalityData).forEach(key => {
-      const item = personalityData[key];
-      if (item && (item.pdf || item.url)) {
-        
-        const hasValidAction = this.isMobile ? item.url : (item.pdf || item.url);
-        
-        if (hasValidAction) {
-          items.push({
-            key,
-            label: item.label,
-            icon: item.icon,
-            tooltip: item.tooltip,
-            pdf: this.isMobile ? null : item.pdf,
-            url: item.url
-          });
-        }
-      }
-    });
-
-    return items;
+  getPersonalityItems(): PersonalityItem[] {
+    return this.personalityService.getPersonalityItems(this.personality, this.isMobile);
   }
 
-  handlePersonalityClick(item: any) {
-
-    if (this.isMobile && item.url) {
-      window.open(item.url, '_blank');
-    }
-
-    else if (!this.isMobile && item.pdf) {
-      this.currentPdfSrc = item.pdf;
-      this.currentPdfTitle = item.label;
+  handlePersonalityClick(item: PersonalityItem) {
+    const pdfViewerData = this.personalityService.handlePersonalityClick(item, this.isMobile);
+    
+    if (pdfViewerData) {
+      this.currentPdfSrc = pdfViewerData.src;
+      this.currentPdfTitle = pdfViewerData.title;
       this.showPdfViewer = true;
-    } else if (item.url) {
-      window.open(item.url, '_blank');
     }
   }
 
   closePdfViewer() {
     this.showPdfViewer = false;
-    this.currentPdfSrc = '';
-    this.currentPdfTitle = '';
+    const resetData = this.personalityService.resetPdfViewerData();
+    this.currentPdfSrc = resetData.src;
+    this.currentPdfTitle = resetData.title;
   }
 }

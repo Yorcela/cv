@@ -30,10 +30,3 @@
     <a [href]="personalInfo?.youtube" target="_blank">{{ 'i18n.ui.youtube' | translate }}</a>
   </div>
 </div>
-
-<app-pdf-viewer
-  [isVisible]="showPdfViewer"
-  [pdfSrc]="currentPdfSrc"
-  [title]="currentPdfTitle"
-  (closeViewer)="closePdfViewer()">
-</app-pdf-viewer>
