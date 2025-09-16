@@ -3,14 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 import { CVVariant, VariantType } from '../../types/common.types';
-
-interface Recommendation {
-  name: string;
-  role: string; 
-  company: string;
-  picture?: string;
-  message: string;
-}
+import { RecommendationDetailed } from './content-recommendations.component.interface';
 
 @Component({
   selector: 'app-content-recommendations',
@@ -24,10 +17,10 @@ export class ContentRecommendationsComponent {
   @Input() data: any = null;
   @Input() isExpanded: boolean = true;
   @Output() toggleSection = new EventEmitter<void>();
-  recommendations: Recommendation[] = [];
+  recommendations: RecommendationDetailed[] = [];
 
   constructor(private translate: TranslateService) {
-    this.translate.get('cv.recommandations').subscribe((data: Recommendation[]) => {
+    this.translate.get('cv.recommandations').subscribe((data: RecommendationDetailed[]) => {
       this.recommendations = data || [];
     });
   }
@@ -41,7 +34,7 @@ export class ContentRecommendationsComponent {
     this.toggleSection.emit();
   }
 
-  getRecommendations(): Recommendation[] {
+  getRecommendations(): RecommendationDetailed[] {
     return this.recommendations;
   }
 }

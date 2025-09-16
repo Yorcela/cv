@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Education } from './sidebar-education.component.interface';
 
 @Component({
   selector: 'app-sidebar-education',

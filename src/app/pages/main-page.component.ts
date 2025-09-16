@@ -10,149 +10,15 @@ import { ContentAccomplishmentsComponent } from '../components/content-accomplis
 import { ContentExperiencesComponent } from '../components/content-experiences/content-experiences.component';
 import { ContentRecommendationsComponent } from '../components/content-recommendations/content-recommendations.component';
 import { CVVariant, VariantType, CVLanguage, LanguageType } from '../types/common.types';
-
-interface ExperienceDetailed {
-  title: string;
-  details?: string[];
-  isSubheading?: boolean;
-}
-
-interface CVData {
-  personalInfo: {
-    name: string;
-    title: string;
-    email: string;
-    phone: string;
-    location: string;
-    linkedin: string;
-  };
-  aboutShort?: { description: string };
-  aboutLong?: { description: string };
-  experiencesShort?: Experience[];
-  experiencesLong?: Experience[];
-  experiencesDetailed?: {
-    title: string;
-    content: ExperienceDetailed[];
-  };
-  skills: {
-    agile: string;
-    coaching: string;
-    leadership: string;
-    delivery: string;
-    communication: string;
-    tech: string;
-    languages: string;
-  };
-  accomplishments: Accomplishment[];
-  recommendations: Recommendation[];
-  education: Education[];
-  languages: Language[];
-  hobbies?: string[];
-}
-
-interface Experience {
-  company: string;
-  position: string;
-  period: string;
-  description: string;
-  achievements?: string[];
-  technologies: string[];
-}
-
-interface Accomplishment {
-  title: string;
-  description: string;
-  year: string;
-}
-
-interface Recommendation {
-  name: string;
-  position: string;
-  company?: string;
-  text: string;
-  relationship?: string;
-  date: string;
-  linkedinUrl?: string;
-  photo?: string;
-}
-
-interface Education {
-  degree: string;
-  school: string;
-  year: string;
-  specialization?: string;
-}
-
-interface Language {
-  language: string;
-  level: string;
-}
-
-interface SkillCategory {
-  title: string;
-  icon: string;
-  skills: string[];
-}
+import { CVData } from './main-page.component.interface';
+import { SkillCategory } from '../components/sidebar-skills/sidebar-skills.component.interface';
+import { Experience } from '../components/content-experiences/content-experiences.component.interface';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
   imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, ContentAboutMeComponent, ContentAccomplishmentsComponent, ContentExperiencesComponent, ContentRecommendationsComponent],
-  template: `
-    <div class="page-background">
-      <div class="cv-container">
-        <div *ngIf="loading" class="loading-state">
-          <div class="loading-card">
-            <i class="fad fa-spinner fa-spin"></i>
-            <span>{{ 'i18n.ui.loading' | translate }}</span>
-          </div>
-        </div>
-    
-        <div *ngIf="error" class="error-state">
-          <div class="error-card">
-            <i class="fad fa-exclamation-triangle"></i>
-            <h3>{{ 'i18n.ui.error_loading' | translate }}</h3>
-            <p>{{ error }}</p>
-          </div>
-        </div>
-      
-        <div *ngIf="!loading && !error && data" class="cv-content">
-          <div class="app-sidebar">
-            <app-sidebar></app-sidebar>
-          </div>
-          <div class="cv-main">
-            <div class="content-section about-section">
-              <app-content-about-me 
-                [variant]="variant" 
-                [data]="data" 
-                [isExpanded]="isSectionExpanded('about')"
-                (toggleSection)="toggleSection('about')"></app-content-about-me>
-            </div>
-            <div class="content-section accomplishments-section">
-              <app-content-accomplishments 
-                [variant]="variant" 
-                [data]="data" 
-                [isExpanded]="isSectionExpanded('accomplishments')"
-                (toggleSection)="toggleSection('accomplishments')"></app-content-accomplishments>
-            </div>
-            <div class="content-section experiences-section">
-              <app-content-experiences 
-                [variant]="variant" 
-                [data]="data" 
-                [isExpanded]="isSectionExpanded('experiences')"
-                (toggleSection)="toggleSection('experiences')"></app-content-experiences>
-            </div>
-            <div class="content-section recommendations-section">
-              <app-content-recommendations 
-                [data]="data" 
-                [isExpanded]="isSectionExpanded('recommendations')"
-                (toggleSection)="toggleSection('recommendations')"></app-content-recommendations>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   `,
+  templateUrl: `./main-page.component.html`,
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnChanges, OnInit {
@@ -177,7 +43,7 @@ export class MainPageComponent implements OnChanges, OnInit {
     }
   }
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   toggleSection(section: 'about' | 'experiences' | 'accomplishments' | 'recommendations'): void {
     this.sectionStates[section] = !this.sectionStates[section];
@@ -194,8 +60,6 @@ export class MainPageComponent implements OnChanges, OnInit {
   toggleRecommendations(): void {
     this.recommendationsExpanded = !this.recommendationsExpanded;
   }
-
-
 
   formatAchievement(achievement: string): string {
     const markdownPipe = new MarkdownPipe();
@@ -235,7 +99,7 @@ export class MainPageComponent implements OnChanges, OnInit {
 
   getAboutText(): string {
     if (!this.data) return '';
-    return this.variant === CVVariant.SHORT 
+    return this.variant === CVVariant.SHORT
       ? this.data.aboutShort?.description || ''
       : this.data.aboutLong?.description || '';
   }
@@ -256,19 +120,19 @@ export class MainPageComponent implements OnChanges, OnInit {
 
   getAccomplishmentsByCategory(category: string) {
     if (!this.data?.accomplishments) return [];
-    
+
     const categoryMap: { [key: string]: string[] } = {
       'transformation': ['transformation', 'change', 'agile', 'lean', 'process'],
       'leadership': ['leadership', 'team', 'management', 'coaching', 'mentor'],
       'innovation': ['innovation', 'product', 'development', 'creation', 'launch'],
       'performance': ['performance', 'improvement', 'optimization', 'efficiency', 'results']
     };
-    
+
     const keywords = categoryMap[category] || [];
-    
-    return this.data.accomplishments.filter(acc => 
-      keywords.some(keyword => 
-        acc.title.toLowerCase().includes(keyword) || 
+
+    return this.data.accomplishments.filter(acc =>
+      keywords.some(keyword =>
+        acc.title.toLowerCase().includes(keyword) ||
         acc.description.toLowerCase().includes(keyword)
       )
     ).slice(0, this.accomplishmentsExpanded ? undefined : 3);
@@ -282,23 +146,23 @@ export class MainPageComponent implements OnChanges, OnInit {
       'MeteoNews': 'assets/images/logos/meteonews.png',
       'Talan': 'assets/images/logos/talan.png'
     };
-    
+
     return logoMap[companyName] || null;
   }
 
   getSkillCategories(): SkillCategory[] {
     if (!this.data?.skills) return [];
-    
+
     const categories: SkillCategory[] = [];
-    
+
     // Parcourir toutes les catégories de compétences dans les données
     Object.keys(this.data.skills).forEach(key => {
       const skills = (this.data!.skills as any)[key];
       if (Array.isArray(skills) && skills.length > 0) {
         let title = '';
         let icon = '';
-        
-        switch(key) {
+
+        switch (key) {
           case 'Agilité':
             title = 'Agilité';
             icon = 'fad fa-sync-alt';
@@ -331,7 +195,7 @@ export class MainPageComponent implements OnChanges, OnInit {
             title = key;
             icon = 'fad fa-star';
         }
-        
+
         categories.push({
           title,
           icon,
@@ -339,7 +203,7 @@ export class MainPageComponent implements OnChanges, OnInit {
         });
       }
     });
-    
+
     return categories;
   }
 }

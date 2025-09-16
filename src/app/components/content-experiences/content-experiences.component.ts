@@ -3,24 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 import { CVVariant, VariantType } from '../../types/common.types';
-
-interface ExperienceTask {
-  category: string;
-  tasks: string[];
-}
-
-interface ExperienceDescription {
-  [clientName: string]: ExperienceTask[];
-}
-
-interface Experience {
-  company: string;
-  logo: string;
-  position: string;
-  period: string;
-  description: ExperienceDescription[];
-  skills: string[];
-}
+import { ExperienceTask, ExperienceDescription, ExperienceWithDescription } from './content-experiences.component.interface';
 
 @Component({
   selector: 'app-content-experiences',
@@ -39,7 +22,7 @@ export class ContentExperiencesComponent {
   CVVariant = CVVariant;
 
   private translateService = inject(TranslateService);
-  experiences: Experience[] = [];
+  experiences: ExperienceWithDescription[] = [];
   
   ngOnInit() {
     this.loadExperiences();
@@ -49,7 +32,7 @@ export class ContentExperiencesComponent {
     this.loadExperiences();
   }
   
-  get displayedExperiences(): Experience[] {
+  get displayedExperiences(): ExperienceWithDescription[] {
     if (this.variant === CVVariant.SHORT) {
       return this.experiences.slice(0, 3);
     }

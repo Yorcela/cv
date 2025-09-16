@@ -1,87 +1,90 @@
-import { Component, computed, signal, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject, model, output, signal, effect } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CVVariant, CVLanguage, VariantType, LanguageType } from '../../types/common.types';
+
+const PDF_PATHS = {
+  long_fr: 'assets/pdfs/CV_AlecRoy_AgileLeader_DirectorsCut_FR.pdf',
+  long_en: 'assets/pdfs/CV_AlecRoy_AgileLeader_DirectorsCut_EN.pdf',
+  short_bilingual: 'assets/pdfs/CV_AlecRoy_AgileLeader_short.pdf'
+} as const;
 
 @Component({
   selector: 'app-appbar',
   standalone: true,
   imports: [CommonModule, TranslateModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './appbar.component.html',
   styleUrls: ['./appbar.component.scss', './appbar.component.mobile.scss']
 })
 export class AppbarComponent {
-  private langSig = signal<LanguageType>(CVLanguage.FR);
-  private variantSig = signal<VariantType>(CVVariant.FULL);
-  private dropdownSig = signal<boolean>(false);
+  readonly CVLanguage = CVLanguage;
+  readonly CVVariant = CVVariant;
 
+  lang = model<LanguageType>(CVLanguage.FR);       // parent can [(lang)]
+  variant = model<VariantType>(CVVariant.FULL);    // parent can [(variant)]
 
-  CVLanguage = CVLanguage;
-  CVVariant = CVVariant;
+  // Local UI state
+  private _dropdown = signal(false);
+  showDropdown = this._dropdown.asReadonly();
 
-  lang = computed(() => this.langSig());
-  variant = computed(() => this.variantSig());
-  showDropdown = computed(() => this.dropdownSig());
+  // Legacy outputs (if you need explicit events in addition to [(...)]):
+  langChange = output<LanguageType>();
+  variantChange = output<VariantType>();
 
-  @Output() langChange = new EventEmitter<LanguageType>();
-  @Output() variantChange = new EventEmitter<VariantType>();
+  private readonly translate = inject(TranslateService);
+  private readonly document = inject(DOCUMENT);
 
-  constructor(private translate: TranslateService) {}
+  constructor() {
+    // keep ngx-translate in sync with current lang
+    effect(() => {
+      const l = this.lang();
+      this.translate.use(l);
+      this.langChange.emit(l); // optional: only if you still want the event
+    });
+
+    effect(() => {
+      this.variantChange.emit(this.variant());
+    });
+  }
 
   setLang(l: LanguageType) {
-    this.langSig.set(l);
-    this.translate.use(l);
-    this.langChange.emit(l);
+    this.lang.set(l); // effect will handle translate + emit
   }
 
   setVariant(v: VariantType) {
-    this.variantSig.set(v);
-    this.variantChange.emit(v);
+    this.variant.set(v); // effect will emit
   }
 
   toggleDropdown() {
-    this.dropdownSig.set(!this.dropdownSig());
+    this._dropdown.update(v => !v);
   }
 
-  downloadSpecific(type: 'long_fr' | 'long_en' | 'short_bilingual') {
-    this.dropdownSig.set(false);
-    let path = '';
-    
-    switch (type) {
-      case 'long_fr':
-        path = 'assets/pdfs/CV_AlecRoy_AgileLeader_DirectorsCut_FR.pdf';
-        break;
-      case 'long_en':
-        path = 'assets/pdfs/CV_AlecRoy_AgileLeader_DirectorsCut_EN.pdf';
-        break;
-      case 'short_bilingual':
-        path = 'assets/pdfs/CV_AlecRoy_AgileLeader_short.pdf';
-        break;
-    }
-    
-    this.downloadFile(path);
+  downloadSpecific(type: keyof typeof PDF_PATHS) {
+    this._dropdown.set(false);
+    this.downloadFile(PDF_PATHS[type]);
   }
 
   downloadCurrent() {
     const l = this.lang();
     const v = this.variant();
-    let path = '';
-    if (v === 'short') {
-      path = 'assets/pdfs/CV_AlecRoy_AgileLeader_short.pdf';
-    } else {
-      path = l === 'en'
-        ? 'assets/pdfs/CV_AlecRoy_AgileLeader_DirectorsCut_EN.pdf'
-        : 'assets/pdfs/CV_AlecRoy_AgileLeader_DirectorsCut_FR.pdf';
-    }
+    const path =
+      v === CVVariant.SHORT
+        ? PDF_PATHS.short_bilingual
+        : l === CVLanguage.EN
+          ? PDF_PATHS.long_en
+          : PDF_PATHS.long_fr;
+
     this.downloadFile(path);
   }
 
   private downloadFile(path: string) {
-    const a = document.createElement('a');
+    // SSR-safe anchor creation via injected DOCUMENT
+    const a = this.document.createElement('a');
     a.href = path;
     a.download = path.split('/').pop() || 'alec-roy-cv.pdf';
-    document.body.appendChild(a);
+    this.document.body.appendChild(a);
     a.click();
-    document.body.removeChild(a);
+    this.document.body.removeChild(a);
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { SkillCategory } from './sidebar-skills.component.interface';
 
 @Component({
   selector: 'app-sidebar-skills',
@@ -10,7 +11,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./sidebar-skills.component.scss']
 })
 export class SidebarSkillsComponent {
-  skills: any[] = [];
+  skills: SkillCategory[] = [];
 
   constructor(private translate: TranslateService) {
     this.translate.get('cv.skills').subscribe((data: any) => {
@@ -18,11 +19,11 @@ export class SidebarSkillsComponent {
     });
   }
 
-  getSkillCategories(): any[] {
+  getSkillCategories(): SkillCategory[] {
     return this.skills;
   }
 
-  getCategoryTitle(skillCategory: any): string {
-    return skillCategory.name;
+  getCategoryTitle(skillCategory: SkillCategory): string {
+    return skillCategory.title;
   }
 }

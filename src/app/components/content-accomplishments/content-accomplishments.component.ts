@@ -3,12 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 import { CVVariant, VariantType } from '../../types/common.types';
-
-interface Accomplishment {
-  company: string;
-  position: string;
-  details: string[];
-}
+import { AccomplishmentDetailed } from './content-accomplishments.component.interface';
 
 @Component({
   selector: 'app-content-accomplishments',
@@ -25,7 +20,7 @@ export class ContentAccomplishmentsComponent {
 
 
   CVVariant = CVVariant;
-  accomplishments: Accomplishment[] = [];
+  accomplishments: AccomplishmentDetailed[] = [];
 
   constructor(private translate: TranslateService) {
     this.translate.get('cv.accomplishments').subscribe((data: any) => {

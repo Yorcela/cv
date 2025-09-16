@@ -1,3 +1,33 @@
+// Variables SCSS pour le CV d'Alec Roy
+// =====================================
+
+// Couleurs principales
+$primary: #608abf;
+$primary-blue: #608abf;
+$primary-dark: #2c3e50;
+$primary-light: #3b82f6;
+$secondary-blue: #2563eb;
+$accent-blue: #64748b;
+
+// Couleurs de fond
+$bg-primary: #ffffff;
+$bg-secondary: #f8fafc;
+$bg-tertiary: #f1f5f9;
+$bg-light: #f8f9fa;
+$bg-hover: #e8f4fd;
+$bg-gray-light: #e2e8f0;
+$bg-gray: #e0e1e1;
+$bg-dark: #2d3748;
+
+// Couleurs de texte
+$text-primary: #212529;
+$text-secondary: #495057;
+$text-medium: #495057;
+$text-dark: #2d3748;
+$text-light: #64748b;
+$text-white: #ffffff;
+$text-muted: #6c757d;
+
 // Couleurs d'état
 $success: #28a745;
 $warning: #ffc107;
@@ -19,9 +49,35 @@ $shadow-medium: rgba(0, 0, 0, 0.15);
 $blue-alpha-light: rgba(232, 244, 253, 0.2);
 $blue-alpha-medium: rgba(232, 244, 253, 0.3);
 
+// Typographie
+$font-family-primary: 'Inter', system-ui, -apple-system, sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
 
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
 
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.6;
 
+// Espacements
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 0.75rem;
+$spacing-lg: 1rem;
+$spacing-xl: 1.25rem;
+$spacing-2xl: 1.5rem;
+$spacing-3xl: 2rem;
+$spacing-4xl: 2.5rem;
+$spacing-5xl: 3rem;
 
 // Border radius
 $border-radius-xs: 2px;
@@ -31,24 +87,47 @@ $border-radius-lg: 8px;
 $border-radius-xl: 12px;
 $border-radius-full: 50%;
 
-
+// Ombres
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 0 20px rgba(0, 0, 0, 0.1);
 
 // Transitions
 $transition-fast: 0.2s ease;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.5s ease;
 
+// Z-index
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
 
-
-
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
 
 // Container
 $container-max-width: 1280px;
 $container-padding: 20px;
 
+// Appbar
+$appbar-height: 60px;
+$appbar-bg: rgba(255, 255, 255, 0.95);
+$appbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+$appbar-border: 1px solid rgba(0, 0, 0, 0.05);
 
-
-
+// Sidebar (pour les composants comme skills)
+$sidebar-bg: $bg-dark;
+$sidebar-text: $text-white;
+$sidebar-border: rgba(255, 255, 255, 0.1);
 
 // Cards
 $card-bg: $bg-primary;

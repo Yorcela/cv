@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
+import { PersonalInfo } from './sidebar-contact-info.component.interface';
 
 @Component({
   selector: 'app-sidebar-contact-info',
@@ -11,7 +12,7 @@ import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
   styleUrls: ['./sidebar-contact-info.component.scss']
 })
 export class SidebarContactInfoComponent {
-  personalInfo: any = {};
+  personalInfo: PersonalInfo = {} as PersonalInfo;
   personality: any = {};
   ui: any = {};
   currentLang: string = 'fr';

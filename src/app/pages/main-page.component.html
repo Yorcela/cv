@@ -1,0 +1,44 @@
+<div class="page-background">
+    <div class="cv-container">
+        <div *ngIf="loading" class="loading-state">
+            <div class="loading-card">
+                <i class="fad fa-spinner fa-spin"></i>
+                <span>{{ 'i18n.ui.loading' | translate }}</span>
+            </div>
+        </div>
+
+        <div *ngIf="error" class="error-state">
+            <div class="error-card">
+                <i class="fad fa-exclamation-triangle"></i>
+                <h3>{{ 'i18n.ui.error_loading' | translate }}</h3>
+                <p>{{ error }}</p>
+            </div>
+        </div>
+
+        <div *ngIf="!loading && !error && data" class="cv-content">
+            <div class="app-sidebar">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="cv-main">
+                <div class="content-section about-section">
+                    <app-content-about-me [variant]="variant" [data]="data" [isExpanded]="isSectionExpanded('about')"
+                        (toggleSection)="toggleSection('about')"></app-content-about-me>
+                </div>
+                <div class="content-section accomplishments-section">
+                    <app-content-accomplishments [variant]="variant" [data]="data"
+                        [isExpanded]="isSectionExpanded('accomplishments')"
+                        (toggleSection)="toggleSection('accomplishments')"></app-content-accomplishments>
+                </div>
+                <div class="content-section experiences-section">
+                    <app-content-experiences [variant]="variant" [data]="data"
+                        [isExpanded]="isSectionExpanded('experiences')"
+                        (toggleSection)="toggleSection('experiences')"></app-content-experiences>
+                </div>
+                <div class="content-section recommendations-section">
+                    <app-content-recommendations [data]="data" [isExpanded]="isSectionExpanded('recommendations')"
+                        (toggleSection)="toggleSection('recommendations')"></app-content-recommendations>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
