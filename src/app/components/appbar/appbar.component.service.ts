@@ -51,10 +51,7 @@ export class AppbarComponentService {
     const path = this.getCurrentPdfPath(lang, variant);
     this.downloadFile(path);
   }
-
-  /**
-   * Télécharge un PDF spécifique
-   */
+  
   downloadSpecific(type: keyof typeof PDF_PATHS): void {
     const path = this.getSpecificPdfPath(type);
     this.downloadFile(path);

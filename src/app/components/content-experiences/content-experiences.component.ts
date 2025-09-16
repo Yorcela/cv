@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, input, output, signal, effect, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
@@ -9,41 +9,38 @@ import { ExperienceTask, ExperienceDescription, ExperienceWithDescription } from
   selector: 'app-content-experiences',
   standalone: true,
   imports: [CommonModule, TranslateModule, MarkdownPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './content-experiences.component.html',
   styleUrls: ['./content-experiences.component.scss']
 })
 export class ContentExperiencesComponent {
-  @Input() variant: VariantType = CVVariant.SHORT;
-  @Input() data: any = null;
-  @Input() isExpanded: boolean = true;
-  @Output() toggleSection = new EventEmitter<void>();
-
-
-  CVVariant = CVVariant;
-
-  private translateService = inject(TranslateService);
-  experiences: ExperienceWithDescription[] = [];
+  readonly CVVariant = CVVariant;
   
-  ngOnInit() {
-    this.loadExperiences();
+  variant = input<VariantType>(CVVariant.SHORT);
+  data = input<any>(null);
+  isExpanded = input<boolean>(true);
+  toggleSection = output<void>();
+  
+  private _experiences = signal<ExperienceWithDescription[]>([]);
+  experiences = this._experiences.asReadonly();
+  
+  private readonly translateService = inject(TranslateService);
+  
+  constructor() {
+    effect(() => {
+      this.translateService.get('cv').subscribe((data: any) => {
+        this._experiences.set(data?.experiences || []);
+      });
+    }, { allowSignalWrites: true });
   }
   
-  ngOnChanges() {
-    this.loadExperiences();
-  }
-  
-  get displayedExperiences(): ExperienceWithDescription[] {
-    if (this.variant === CVVariant.SHORT) {
-      return this.experiences.slice(0, 3);
+  displayedExperiences = computed(() => {
+    const experiences = this.experiences();
+    if (this.variant() === CVVariant.SHORT) {
+      return experiences.slice(0, 3);
     }
-    return this.experiences;
-  }
-  
-  private loadExperiences() {
-    this.translateService.get('cv').subscribe((data: any) => {
-      this.experiences = data?.experiences || [];
-    });
-  }
+    return experiences;
+  });
   
   getClientEntries(descriptionGroup: ExperienceDescription): { clientName: string, tasks: ExperienceTask[] }[] {
     return Object.entries(descriptionGroup).map(([clientName, tasks]) => ({

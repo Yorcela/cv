@@ -48,7 +48,6 @@ export class ContentAccomplishmentsComponent {
     return this.accomplishmentsService.formatDetailForVariant(detail, this.variant());
   }
 
-
   onImageError(event: any): void {
     event.target.style.display = 'none';
   }

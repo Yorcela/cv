@@ -1,6 +1,5 @@
 <header class="appbar">
   <div class="tools">
-    <!-- Language Toggle -->
     <div class="tool-group segmented-group">
       <button class="segmented-button" [class.active]="lang() === CVLanguage.FR" (click)="setLang(CVLanguage.FR)" title="Français">
         🇫🇷
@@ -10,7 +9,6 @@
       </button>
     </div>
 
-    <!-- Variant Toggle -->
     <div class="tool-group segmented-group">
       <button class="segmented-button variant" [class.active]="variant() === CVVariant.FULL" (click)="setVariant(CVVariant.FULL)"
         title="Version complète">
@@ -22,7 +20,6 @@
       </button>
     </div>
 
-    <!-- Download Dropdown -->
     <div class="tool-group">
       <div class="dropdown-container">
         <button class="download-btn modern-dropdown" (click)="toggleDropdown()">

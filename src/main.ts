@@ -1,5 +1,6 @@
 import 'zone.js';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter, withHashLocation } from '@angular/router';
 import { importProvidersFrom } from '@angular/core';
@@ -19,6 +20,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(),
     provideRouter(routes, withHashLocation()),
     importProvidersFrom(
+      BrowserAnimationsModule,
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,

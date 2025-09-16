@@ -22,11 +22,9 @@ import { MainPageService, SectionStates } from './main.page.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPageComponent {
-  // Inputs
   lang = input<LanguageType>(CVLanguage.FR);
   variant = input<VariantType>(CVVariant.FULL);
   
-  // Signals
   data = signal<CVData | null>(null);
   loading = signal(true);
   error = signal<string | null>(null);
@@ -38,20 +36,17 @@ export class MainPageComponent {
     recommendations: false
   });
   
-  // Computed
   accomplishmentsExpanded = computed(() => this.sectionStates()['accomplishments']);
   recommendationsExpanded = computed(() => this.sectionStates()['recommendations']);
 
   private mainPageService = inject(MainPageService);
 
   constructor() {
-    // Effect pour initialiser les sections selon le variant
     effect(() => {
       const variant = this.variant();
       this.sectionStates.set(this.mainPageService.initializeSectionStates(variant));
     }, { allowSignalWrites: true });
 
-    // Effect pour charger les données quand la langue change
     effect(() => {
       const currentLang = this.lang();
       this.loadData();

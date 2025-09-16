@@ -2,9 +2,9 @@
   <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
     <i class="fad fa-quote-left"></i>
     {{ 'i18n.ui.sections.recommendations' | translate }}
-    <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
+    <i class="fad" [class.fa-chevron-down]="isExpanded()" [class.fa-chevron-right]="!isExpanded()"></i>
   </h2>
-  <div *ngIf="isExpanded" class="recommendations-grid">
+  <div *ngIf="isExpanded()" class="recommendations-grid">
     <div class="recommendation-card" *ngFor="let rec of getRecommendations()">
       <div class="author-header">
         <img *ngIf="rec.picture" [src]="rec.picture" [alt]="rec.name" class="author-avatar">

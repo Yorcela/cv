@@ -16,14 +16,10 @@ export class AppbarComponent {
   readonly CVLanguage = CVLanguage;
   readonly CVVariant = CVVariant;
 
-  lang = model<LanguageType>(CVLanguage.FR);       // parent can [(lang)]
-  variant = model<VariantType>(CVVariant.FULL);    // parent can [(variant)]
-
-  // Local UI state
+  lang = model<LanguageType>(CVLanguage.FR);
+  variant = model<VariantType>(CVVariant.FULL);
   private _dropdown = signal(false);
   showDropdown = this._dropdown.asReadonly();
-
-  // Legacy outputs (if you need explicit events in addition to [(...)]):
   langChange = output<LanguageType>();
   variantChange = output<VariantType>();
 
@@ -31,11 +27,10 @@ export class AppbarComponent {
   private readonly appbarService = inject(AppbarComponentService);
 
   constructor() {
-    // keep ngx-translate in sync with current lang
     effect(() => {
       const l = this.lang();
       this.translate.use(l);
-      this.langChange.emit(l); // optional: only if you still want the event
+      this.langChange.emit(l);
     });
 
     effect(() => {
@@ -44,11 +39,11 @@ export class AppbarComponent {
   }
 
   setLang(l: LanguageType) {
-    this.lang.set(l); // effect will handle translate + emit
+    this.lang.set(l);
   }
 
   setVariant(v: VariantType) {
-    this.variant.set(v); // effect will emit
+    this.variant.set(v); 
   }
 
   toggleDropdown() {

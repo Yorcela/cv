@@ -22,7 +22,6 @@ export class ContentAccomplishmentsService {
   formatDetailForVariant(detail: string, variant: VariantType): string {
     let formattedDetail = detail;
 
-    // Pour la variante courte, supprimer tout après "Résultat:" ou "Result:"
     if (variant === CVVariant.SHORT) {
       const resultIndexFr = detail.indexOf('<br/><u>Résultat:</u>');
       const resultIndexEn = detail.indexOf('<br/><u>Result:</u>');

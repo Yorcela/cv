@@ -29,23 +29,16 @@ export class SidebarPersonalityService {
     return this.translateService.get('cv.personnality');
   }
 
-  /**
-   * Vérifie si l'appareil est mobile
-   */
   checkIfMobile(): boolean {
     return window.innerWidth <= 430;
   }
 
-  /**
-   * Filtre et formate les items de personnalité selon le contexte (mobile/desktop)
-   */
   getPersonalityItems(personalityData: any, isMobile: boolean): PersonalityItem[] {
     const items: PersonalityItem[] = [];
 
     Object.keys(personalityData).forEach(key => {
       const item = personalityData[key];
       if (item && (item.pdf || item.url)) {
-        // Vérifie si l'item a une action valide selon le contexte
         const hasValidAction = isMobile ? item.url : (item.pdf || item.url);
         
         if (hasValidAction) {
@@ -64,17 +57,12 @@ export class SidebarPersonalityService {
     return items;
   }
 
-  /**
-   * Gère la logique de clic sur un item de personnalité
-   */
   handlePersonalityClick(item: PersonalityItem, isMobile: boolean): PdfViewerData | null {
-    // Mobile : ouvre toujours l'URL
     if (isMobile && item.url) {
       window.open(item.url, '_blank');
       return null;
     }
 
-    // Desktop : priorité au PDF, sinon URL
     if (!isMobile && item.pdf) {
       return {
         src: item.pdf,

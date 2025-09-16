@@ -1,7 +1,6 @@
 <div class="cv-sidebar" [class.sidebar-collapsed]="isMobile && isContactInfoCollapsed">
   <app-sidebar-whoami></app-sidebar-whoami>
   
-  <!-- Titre pliable pour les informations de contact (mobile uniquement) -->
   <h2 class="sidebar-collapsible-title" *ngIf="isMobile" (click)="toggleContactInfo()">
     <i class="fas fa-address-card"></i>
     {{ 'i18n.ui.sections.informations' | translate }}

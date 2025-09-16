@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, input, output, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
@@ -9,20 +9,29 @@ import { RecommendationDetailed } from './content-recommendations.component.inte
   selector: 'app-content-recommendations',
   standalone: true,
   imports: [CommonModule, TranslateModule, MarkdownPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './content-recommendations.component.html',
   styleUrls: ['./content-recommendations.component.scss']
 })
 export class ContentRecommendationsComponent {
-  @Input() variant: VariantType = CVVariant.FULL;
-  @Input() data: any = null;
-  @Input() isExpanded: boolean = true;
-  @Output() toggleSection = new EventEmitter<void>();
-  recommendations: RecommendationDetailed[] = [];
+  readonly CVVariant = CVVariant;
+  
+  variant = input<VariantType>(CVVariant.FULL);
+  data = input<any>(null);
+  isExpanded = input<boolean>(true);
+  toggleSection = output<void>();
+  
+  private _recommendations = signal<RecommendationDetailed[]>([]);
+  recommendations = this._recommendations.asReadonly();
+  
+  private readonly translate = inject(TranslateService);
 
-  constructor(private translate: TranslateService) {
-    this.translate.get('cv.recommandations').subscribe((data: RecommendationDetailed[]) => {
-      this.recommendations = data || [];
-    });
+  constructor() {
+    effect(() => {
+      this.translate.get('cv.recommandations').subscribe((data: RecommendationDetailed[]) => {
+        this._recommendations.set(data || []);
+      });
+    }, { allowSignalWrites: true });
   }
 
   formatTestimonial(testimonial: string): string {
@@ -35,6 +44,6 @@ export class ContentRecommendationsComponent {
   }
 
   getRecommendations(): RecommendationDetailed[] {
-    return this.recommendations;
+    return this.recommendations();
   }
 }
