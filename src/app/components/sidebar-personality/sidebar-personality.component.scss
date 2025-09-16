@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-/* Styles spécifiques au composant personality */
+
 .personality-category .category-header {
   display: flex;
 }
@@ -91,7 +91,7 @@
   text-overflow: ellipsis;
 }
 
-/* Desktop styles for personality component */
+
 @media (min-width: 769px) {
   .sidebar-personality {
     margin-bottom: 2.5rem;

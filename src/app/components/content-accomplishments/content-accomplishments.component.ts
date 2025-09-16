@@ -23,7 +23,7 @@ export class ContentAccomplishmentsComponent {
   @Input() isExpanded: boolean = true;
   @Output() toggleSection = new EventEmitter<void>();
 
-  // Expose enum to template
+
   CVVariant = CVVariant;
   accomplishments: Accomplishment[] = [];
 

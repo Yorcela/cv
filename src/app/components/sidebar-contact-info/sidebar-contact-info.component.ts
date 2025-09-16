@@ -28,14 +28,14 @@ export class SidebarContactInfoComponent {
       this.personality = data || {};
     });
     
-    // Get current language
+
     this.currentLang = this.translate.currentLang || 'fr';
     this.translate.onLangChange.subscribe((event) => {
       this.currentLang = event.lang;
     });
   }
 
-  // AssessFirst methods
+
   hasAssessFirstPdf(): boolean {
     return this.currentLang === 'fr' && this.personality?.assessfirst_pdf;
   }
@@ -48,7 +48,7 @@ export class SidebarContactInfoComponent {
     return this.personality?.assessfirst_url || '';
   }
 
-  // Insight Discovery methods
+
   shouldShowInsightDiscovery(): boolean {
     return this.currentLang === 'fr' || (this.currentLang === 'en' && this.personality?.insightDiscovery_url);
   }
@@ -65,7 +65,7 @@ export class SidebarContactInfoComponent {
     return this.personality?.insightDiscovery_url || '';
   }
 
-  // MBTI methods
+
   shouldShowMbti(): boolean {
     return this.personality?.mbti_url;
   }

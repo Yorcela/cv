@@ -23,13 +23,13 @@ export class SidebarPersonalityComponent {
       this.personality = data || {};
     });
     
-    // Get current language
+
     this.currentLang = this.translate.currentLang || 'fr';
     this.translate.onLangChange.subscribe((event) => {
       this.currentLang = event.lang;
     });
     
-    // Detect mobile
+
     this.checkIfMobile();
     window.addEventListener('resize', () => this.checkIfMobile());
   }
@@ -49,8 +49,7 @@ export class SidebarPersonalityComponent {
     Object.keys(personalityData).forEach(key => {
       const item = personalityData[key];
       if (item && (item.pdf || item.url)) {
-        // Sur mobile : privilégier les URLs, masquer les PDF
-        // Sur desktop : privilégier les PDF
+        
         const hasValidAction = this.isMobile ? item.url : (item.pdf || item.url);
         
         if (hasValidAction) {
@@ -59,7 +58,7 @@ export class SidebarPersonalityComponent {
             label: item.label,
             icon: item.icon,
             tooltip: item.tooltip,
-            pdf: this.isMobile ? null : item.pdf, // Masquer PDF sur mobile
+            pdf: this.isMobile ? null : item.pdf,
             url: item.url
           });
         }
@@ -70,11 +69,11 @@ export class SidebarPersonalityComponent {
   }
 
   handlePersonalityClick(item: any) {
-    // Sur mobile : toujours privilégier les URLs
+
     if (this.isMobile && item.url) {
       window.open(item.url, '_blank');
     }
-    // Sur desktop : privilégier les PDF, puis les URLs
+
     else if (!this.isMobile && item.pdf) {
       this.currentPdfSrc = item.pdf;
       this.currentPdfTitle = item.label;

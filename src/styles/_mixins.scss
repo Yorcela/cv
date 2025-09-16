@@ -1,9 +1,6 @@
-// Mixins SCSS pour le CV d'Alec Roy
-// =================================
-
 @import 'variables';
 
-// Mixin pour les titres de section principaux
+
 @mixin main-section-title {
   font-size: $font-size-xl;
   font-weight: $font-weight-semibold;
@@ -22,7 +19,7 @@
   }
 }
 
-// Mixin pour les titres cliquables
+
 @mixin clickable-title {
   cursor: pointer;
   transition: all $transition-normal;
@@ -46,7 +43,7 @@
   }
 }
 
-// Mixin pour les cartes/items d'expérience
+
 @mixin experience-card {
   padding: $spacing-2xl;
   border-left: 4px solid $primary-light;
@@ -61,7 +58,7 @@
   }
 }
 
-// Mixin pour les logos d'entreprise
+
 @mixin company-logo($size: 40px) {
   width: $size;
   height: $size;
@@ -72,7 +69,7 @@
   box-shadow: $shadow-md;
 }
 
-// Mixin pour les en-têtes d'entreprise
+
 @mixin company-header {
   background: $bg-gray-light;
   border-radius: $border-radius-lg;
@@ -81,14 +78,14 @@
   border-left: 4px solid $accent-blue;
 }
 
-// Mixin pour les informations d'entreprise
+
 @mixin company-info {
   display: flex;
   align-items: center;
   gap: $spacing-md;
 }
 
-// Mixin pour les noms d'entreprise
+
 @mixin company-name {
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
@@ -96,7 +93,7 @@
   margin: 0;
 }
 
-// Mixin pour les badges de position
+
 @mixin position-badge {
   background: $accent-blue;
   color: $text-white;
@@ -107,14 +104,14 @@
   white-space: nowrap;
 }
 
-// Mixin pour les périodes
+
 @mixin period-text {
   font-size: $font-size-sm;
   color: $text-light;
   font-weight: $font-weight-medium;
 }
 
-// Mixin pour les conteneurs de chips
+
 @mixin chips-container {
   display: flex;
   flex-wrap: wrap;
@@ -122,7 +119,7 @@
   margin-top: $spacing-lg;
 }
 
-// Mixin pour les chips/tags de compétences
+
 @mixin skill-chip {
   background: $chip-bg;
   color: $chip-text;
@@ -139,7 +136,7 @@
   }
 }
 
-// Mixin pour les chips d'icônes (sidebar)
+
 @mixin icon-chip {
   display: inline-flex;
   align-items: center;
@@ -165,7 +162,7 @@
   }
 }
 
-// Mixin pour les tooltips
+
 @mixin tooltip {
   &::after {
     content: attr(data-tooltip);
@@ -206,7 +203,7 @@
   }
 }
 
-// Mixin pour les titres de sidebar
+
 @mixin sidebar-title {
   font-size: $font-size-lg;
   font-weight: $font-weight-bold;
@@ -226,14 +223,14 @@
   }
 }
 
-// Mixin pour les sections de sidebar
+
 @mixin sidebar-section {
   padding: $spacing-2xl;
   border-bottom: 1px solid $sidebar-border;
   margin-bottom: $spacing-lg;
 }
 
-// Mixin pour les boutons segmentés
+
 @mixin segmented-button {
   background: transparent;
   border: none;
@@ -257,7 +254,7 @@
   }
 }
 
-// Mixin pour les groupes segmentés
+
 @mixin segmented-group {
   background: #f1f5f9;
   border-radius: $border-radius-lg;
@@ -266,7 +263,7 @@
   border: 1px solid $border-gray;
 }
 
-// Mixin pour les dropdowns modernes
+
 @mixin modern-dropdown {
   position: absolute;
   top: 100%;
@@ -282,7 +279,7 @@
   transition: all $transition-fast;
   min-width: 200px;
 
-  // Mobile: ouvrir vers le haut car appbar en bas
+
   @media (max-width: 430px) {
     top: auto;
     bottom: 100%;
@@ -300,7 +297,7 @@
   }
 }
 
-// Mixin pour les items de dropdown
+
 @mixin dropdown-item {
   display: flex;
   align-items: center;
@@ -334,7 +331,7 @@
   }
 }
 
-// Mixin pour les animations de fade-in
+
 @mixin fade-in-animation {
   opacity: 0;
   transform: translateY(20px);
@@ -348,7 +345,7 @@
   }
 }
 
-// Mixin pour les grilles responsives
+
 @mixin responsive-grid($columns: 1, $gap: $spacing-lg) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
@@ -359,7 +356,7 @@
   }
 }
 
-// Mixin pour les conteneurs flexibles
+
 @mixin flex-container($direction: row, $align: center, $justify: flex-start, $gap: $spacing-sm) {
   display: flex;
   flex-direction: $direction;
@@ -368,14 +365,14 @@
   gap: $gap;
 }
 
-// Mixin pour les textes tronqués
+
 @mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// Mixin pour les textes multi-lignes tronqués
+
 @mixin text-truncate-multiline($lines: 3) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;
@@ -383,7 +380,7 @@
   overflow: hidden;
 }
 
-// Mixin pour les focus states accessibles
+
 @mixin focus-ring {
   &:focus {
     outline: 2px solid $primary-light;
@@ -395,7 +392,7 @@
   }
 }
 
-// Mixin pour les états de chargement
+
 @mixin loading-skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;

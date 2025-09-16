@@ -41,7 +41,7 @@ export class AppComponent {
     translate.setDefaultLang('fr');
     translate.use('fr');
     
-    // Ajouter une classe dynamique sur le body selon la variante
+
     effect(() => {
       const currentVariant = this.variant();
       document.body.classList.remove('cv-variant-full', 'cv-variant-short');

@@ -1,8 +1,7 @@
-/* Styles pour le CV d'Alec Roy */
 @import 'styles/_variables.scss';
 @import 'styles/_mixins.scss';
 
-/* Classe commune pour tous les titres de section */
+
 .main-section-title {
   @include main-section-title;
 }
@@ -15,7 +14,7 @@ body {
   line-height: $line-height-relaxed;
   padding-top: $appbar-height;
 
-  // Mobile: appbar en bas
+
   @media (max-width: 430px) {
     padding-top: 0;
     padding-bottom: $appbar-height;
@@ -44,21 +43,21 @@ body {
   background: $bg-primary;
   min-height: auto;
 
-  // Mobile: prendre tout le viewport
+
   @media (max-width: 430px) {
     width: 100vw;
     margin: 0;
   }
 }
 
-/* Mobile: padding pour éviter que le contenu soit caché par la navbar */
+
 @media (max-width: 430px) {
   body {
-    padding-bottom: 80px; // Espace pour la navbar fixée en bas
+    padding-bottom: 80px;
   }
 }
 
-/* Appbar styles */
+
 .appbar {
   background: $appbar-bg;
   color: $text-light;
@@ -77,7 +76,7 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: $appbar-border;
 
-  // Mobile: appbar en bas, toujours visible
+
   @media (max-width: 430px) {
     top: auto;
     bottom: 0;
@@ -103,7 +102,7 @@ body {
   gap: $spacing-sm;
 }
 
-/* Segmented button styles */
+
 .segmented-group {
   @include segmented-group;
 }
@@ -118,7 +117,7 @@ body {
   min-width: 40px;
   height: 32px;
   position: relative;
-  // Styles définis dans le mixin segmented-button
+
 }
 
 .segmented-button i {
@@ -193,7 +192,7 @@ body {
   margin-right: $spacing-xs;
 }
 
-/* Dropdown styles */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -297,7 +296,7 @@ footer {
   margin-top: 30px;
 }
 
-/* Dropdown Styles */
+
 .dropdown-container {
   position: relative;
   display: inline-block;
@@ -350,13 +349,13 @@ footer {
 }
 
 
-/* Styles globaux pour la version courte */
+
 .cv-variant-short .accomplishment-item-unified {
   margin-bottom: 0 !important;
   font-weight: 200 !important;
 }
 
-/* Styles génériques pour les titres cliquables */
+
 .clickable-title {
   cursor: pointer;
   transition: all 0.3s ease;
@@ -380,7 +379,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* Styles génériques pour les chips d'icônes avec tooltips */
+
 .icon-chip {
   display: inline-flex;
   align-items: center;
@@ -409,7 +408,7 @@ footer {
   width: 16px;
 }
 
-/* Tooltip styles pour les icon-chip */
+
 .icon-chip::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -447,7 +446,7 @@ footer {
   visibility: visible;
 }
 
-/* Styles génériques pour les badges de chips */
+
 .chip-badge {
   background: rgba(232, 244, 253, 0.9);
   color: #608abf;
@@ -461,14 +460,14 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles globaux pour les icônes FontAwesome SVG */
+
 svg[data-icon] {
   fill: currentColor;
   display: inline-block;
   vertical-align: middle;
 }
 
-/* Assurer que les SVG FontAwesome héritent de la couleur du parent */
+
 i svg,
 .fa svg,
 .fas svg,

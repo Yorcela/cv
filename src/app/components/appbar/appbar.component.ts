@@ -15,7 +15,7 @@ export class AppbarComponent {
   private variantSig = signal<VariantType>(CVVariant.FULL);
   private dropdownSig = signal<boolean>(false);
 
-  // Expose enums to template
+
   CVLanguage = CVLanguage;
   CVVariant = CVVariant;
 
@@ -44,7 +44,7 @@ export class AppbarComponent {
   }
 
   downloadSpecific(type: 'long_fr' | 'long_en' | 'short_bilingual') {
-    this.dropdownSig.set(false); // Close dropdown
+    this.dropdownSig.set(false);
     let path = '';
     
     switch (type) {

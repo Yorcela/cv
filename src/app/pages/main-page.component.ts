@@ -164,7 +164,6 @@ export class MainPageComponent implements OnChanges, OnInit {
   accomplishmentsExpanded = false;
   recommendationsExpanded = false;
 
-  // Section expansion states - multiple sections can be open
   sectionStates: { [key: string]: boolean } = {
     about: true,
     experiences: true,
@@ -173,7 +172,6 @@ export class MainPageComponent implements OnChanges, OnInit {
   };
 
   ngOnInit(): void {
-    // Ouvrir les recommandations par défaut en version longue
     if (this.variant === CVVariant.FULL) {
       this.sectionStates['recommendations'] = true;
     }
