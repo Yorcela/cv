@@ -1,0 +1,104 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.appbar {
+  background: $appbar-bg;
+  color: $text-light;
+  padding: $spacing-sm 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-lg;
+  box-shadow: $appbar-shadow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: $z-fixed;
+  backdrop-filter: blur(10px);
+  border-bottom: $appbar-border;
+}
+
+.tools {
+  @include flex-container(row, center, flex-start, $spacing-2xl);
+}
+
+.tool-group {
+  display: flex;
+  background: transparent;
+  border-radius: $border-radius-lg;
+  padding: 4px;
+  gap: $spacing-sm;
+}
+
+.segmented-group {
+  @include segmented-group;
+}
+
+.segmented-button {
+  @include segmented-button;
+  font-size: 1em;
+  font-weight: $font-weight-medium;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 40px;
+  height: 32px;
+  position: relative;
+}
+
+.download-btn {
+  background: #007bff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: $text-white;
+  padding: $spacing-md $spacing-md;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  @include flex-container(row, center, center, $spacing-xs);
+  backdrop-filter: blur(10px);
+  height: 32px;
+
+  &:hover {
+    opacity: 1;
+    border-color: #3b82f6;
+    color: $text-white;
+    transform: translateY(-1px);
+  }
+
+    i {
+      margin-right: $spacing-xs;
+    }
+  
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-arrow {
+  font-size: $font-size-xs;
+  transition: transform 0.3s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown-menu {
+  @include modern-dropdown;
+
+  &.modern-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  @include dropdown-item;
+}

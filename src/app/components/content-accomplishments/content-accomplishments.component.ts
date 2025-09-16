@@ -13,41 +13,7 @@ interface Accomplishment {
   selector: 'app-content-accomplishments',
   standalone: true,
   imports: [CommonModule, TranslateModule, MarkdownPipe],
-  template: `
-    <section class="main-section">
-      <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
-        <i class="fad fa-trophy"></i>
-        {{ 'i18n.ui.sections.accomplishments' | translate }}
-        <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
-      </h2>
-      <div *ngIf="isExpanded">
-        <div class="accomplishments-container">
-          <ol class="accomplishments-list">
-            <ng-container *ngFor="let accomplishment of accomplishments; let companyIndex = index">
-              <li *ngIf="variant === 'full'" class="accomplishment-company-header">
-                <div class="accomplishment-header-content">
-                  <div class="accomplishment-company-info">
-                    <img 
-                      [src]="accomplishment.logo" 
-                      [alt]="accomplishment.company + ' logo'"
-                      class="company-logo"
-                      (error)="onImageError($event)"
-                    />
-                    <h3 class="accomplishment-company">{{ accomplishment.company }}</h3>
-                  </div>
-                  <span class="accomplishment-position">{{ accomplishment.position }}</span>
-                </div>
-              </li>
-              <li *ngFor="let detail of accomplishment.details; let detailIndex = index" 
-                  class="accomplishment-item-unified" 
-                  [innerHTML]="formatDetailForVariant(detail)">
-              </li>
-            </ng-container>
-          </ol>
-        </div>
-      </div>
-    </section>
-  `,
+  templateUrl: './content-accomplishments.component.html',
   styleUrls: ['./content-accomplishments.component.scss']
 })
 export class ContentAccomplishmentsComponent implements OnInit {

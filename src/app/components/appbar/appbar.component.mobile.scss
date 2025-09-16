@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+// Mobile: appbar en bas, toujours visible
+@media (max-width: 430px) {
+  .appbar {
+    top: auto;
+    bottom: 0;
+    width: 100vw;
+    border-bottom: none;
+    border-top: $appbar-border;
+    gap: $spacing-md;
+    padding-bottom: 15px;
+  }
+
+  .download-btn {
+    span {
+      display: none;
+    }
+
+    .dropdown-arrow {
+      margin-left: 4px;
+    }
+  }
+}

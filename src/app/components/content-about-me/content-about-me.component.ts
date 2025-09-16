@@ -6,20 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   selector: 'app-content-about-me',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  template: `
-    <section class="main-section">
-      <h2 class="main-section-title clickable-title" (click)="onToggleSection()">
-        <i class="fad fa-user"></i>
-        {{ 'i18n.ui.sections.about_me' | translate }}
-        <i class="fad" [class.fa-chevron-down]="isExpanded" [class.fa-chevron-right]="!isExpanded"></i>
-      </h2>
-      <div *ngIf="isExpanded">
-        <div class="section-content">
-          <div [innerHTML]="getFormattedAbout()"></div>
-        </div>
-      </div>
-    </section>
-  `
+  templateUrl: './content-about-me.component.html',
 })
 export class ContentAboutMeComponent {
   @Input() variant: 'full' | 'short' = 'full';

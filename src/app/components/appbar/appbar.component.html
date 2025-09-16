@@ -1,0 +1,50 @@
+<header class="appbar">
+  <div class="tools">
+    <!-- Language Toggle -->
+    <div class="tool-group segmented-group">
+      <button class="segmented-button" [class.active]="lang() === 'fr'" (click)="setLang('fr')" title="Français">
+        🇫🇷
+      </button>
+      <button class="segmented-button" [class.active]="lang() === 'en'" (click)="setLang('en')" title="English">
+        🇬🇧
+      </button>
+    </div>
+
+    <!-- Variant Toggle -->
+    <div class="tool-group segmented-group">
+      <button class="segmented-button variant" [class.active]="variant() === 'full'" (click)="setVariant('full')"
+        title="Version complète">
+        <i class="fal fa-plus"></i>
+      </button>
+      <button class="segmented-button variant" [class.active]="variant() === 'short'" (click)="setVariant('short')"
+        title="Version courte">
+        <i class="fal fa-minus"></i>
+      </button>
+    </div>
+
+    <!-- Download Dropdown -->
+    <div class="tool-group">
+      <div class="dropdown-container">
+        <button class="download-btn modern-dropdown" (click)="toggleDropdown()">
+          <i class="fad fa-download"></i>
+          <span>{{ 'i18n.ui.download_options.download_pdf' | translate }}</span>
+          <i class="fad fa-chevron-down dropdown-arrow" [class.rotated]="showDropdown()"></i>
+        </button>
+        <div class="dropdown-menu modern-menu" [class.show]="showDropdown()">
+          <button class="dropdown-item" (click)="downloadSpecific('long_fr')">
+            <i class="fal fa-file-pdf"></i>
+            <span>{{ 'i18n.ui.download_options.long_fr' | translate }}</span>
+          </button>
+          <button class="dropdown-item" (click)="downloadSpecific('long_en')">
+            <i class="fal fa-file-pdf"></i>
+            <span>{{ 'i18n.ui.download_options.long_en' | translate }}</span>
+          </button>
+          <button class="dropdown-item" (click)="downloadSpecific('short_bilingual')">
+            <i class="fal fa-file-pdf"></i>
+            <span>{{ 'i18n.ui.download_options.short_bilingual' | translate }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
