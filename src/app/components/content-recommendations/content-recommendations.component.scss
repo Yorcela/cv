@@ -100,43 +100,5 @@
   padding-left: $spacing-lg;
 }
 
-/* Mobile Styles */
-@media (max-width: $breakpoint-md) {
-  .main-section-title {
-    font-size: $font-size-lg;
-  }
-
-  .recommendations-grid {
-    grid-template-columns: 1fr;
-    gap: $spacing-lg;
-  }
-
-  .recommendation-card {
-    padding: $spacing-lg;
-  }
-
-  .author-header {
-    flex-direction: column;
-    text-align: center;
-    gap: $spacing-md;
-    margin-bottom: $spacing-md;
-  }
-
-  .author-avatar {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto;
-  }
-
-  .author-info {
-    align-items: center;
-    text-align: center;
-  }
-
-  .recommendation-text {
-    text-align: left;
-    font-size: $font-size-sm;
-    margin-top: $spacing-xs;
-    padding-left: $spacing-md;
-  }
-}
+// Import des styles mobiles
+@import 'content-recommendations.component.mobile.scss';

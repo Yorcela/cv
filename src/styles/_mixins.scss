@@ -283,7 +283,7 @@
   min-width: 200px;
 
   // Mobile: ouvrir vers le haut car appbar en bas
-  @media (max-width: 390px) {
+  @media (max-width: 430px) {
     top: auto;
     bottom: 100%;
     transform: translateY(10px);

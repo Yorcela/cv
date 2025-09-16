@@ -1,3 +1,5 @@
+@import './sidebar.component.mobile.scss';
+
 .cv-sidebar {
   width: 100%;
   background: linear-gradient(to right, #495d7c, #608abf);
@@ -13,6 +15,7 @@
 
 .sidebar-block {
   padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .sidebar-title {
@@ -34,12 +37,3 @@
   display: inline-block;
   width: 25px;
 }
-
-.sidebar-skills,
-.sidebar-education,
-.sidebar-certifications {
-  margin-bottom: 2rem;
-}
-
-/* Import mobile styles */
-@import './sidebar.component.mobile.scss';

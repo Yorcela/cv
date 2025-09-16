@@ -1281,7 +1281,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 390px) {
+@media (max-width: 430px) {
   .cv-container {
     flex-direction: column;
     width: 100vw !important;
@@ -1409,7 +1409,7 @@
   .cv-sidebar {
     background: #608abf !important;
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+  print-color-adjust: exact;
   }
 
   .page-background {

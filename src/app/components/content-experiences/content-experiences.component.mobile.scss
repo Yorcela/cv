@@ -24,11 +24,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
-  /* Customisation mobile pour .main-section-title */
-  .main-section-title {
-    font-size: 1.2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -89,7 +84,6 @@
   }
   
   .main-section-title {
-    font-size: 1.1rem;
     padding: 0.5rem 0;
   }
 }

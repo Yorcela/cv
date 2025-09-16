@@ -1,13 +1,6 @@
 /* Main SCSS file - imports sidebar styles */
 @import '../sidebar/sidebar.component.scss';
 
-/* Common styles for all screen sizes */
-.sidebar-personality {
-  padding: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1rem;
-}
-
 .personality-chips-container {
   display: flex;
   flex-direction: column;

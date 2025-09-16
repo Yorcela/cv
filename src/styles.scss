@@ -16,7 +16,7 @@ body {
   padding-top: $appbar-height;
 
   // Mobile: appbar en bas
-  @media (max-width: 390px) {
+  @media (max-width: 430px) {
     padding-top: 0;
     padding-bottom: $appbar-height;
   }
@@ -45,14 +45,14 @@ body {
   min-height: auto;
 
   // Mobile: prendre tout le viewport
-  @media (max-width: 390px) {
+  @media (max-width: 430px) {
     width: 100vw;
     margin: 0;
   }
 }
 
 /* Mobile: padding pour éviter que le contenu soit caché par la navbar */
-@media (max-width: 390px) {
+@media (max-width: 430px) {
   body {
     padding-bottom: 80px; // Espace pour la navbar fixée en bas
   }
@@ -78,13 +78,14 @@ body {
   border-bottom: $appbar-border;
 
   // Mobile: appbar en bas, toujours visible
-  @media (max-width: 390px) {
+  @media (max-width: 430px) {
     top: auto;
     bottom: 0;
     width: 100vw;
     border-bottom: none;
     border-top: $appbar-border;
     gap: $spacing-md;
+    padding-bottom: 15px;
   }
 }
 
@@ -170,7 +171,7 @@ body {
   backdrop-filter: blur(10px);
   height: 32px;
 
-  @media (max-width: 390px) {
+  @media (max-width: 430px) {
     span {
       display: none;
     }
@@ -348,23 +349,6 @@ footer {
   margin-left: $spacing-md;
 }
 
-/* Espacement entre les sections de composants */
-app-content-about-me,
-app-content-experiences,
-app-content-accomplishments,
-app-sidebar-skills,
-app-sidebar-education,
-app-sidebar-certifications,
-app-sidebar-hobbies,
-app-sidebar-contact-info {
-  display: block;
-  margin-bottom: $spacing-lg;
-}
-
-/* Dernière section sans marge en bas */
-app-sidebar-contact-info {
-  margin-bottom: 0;
-}
 
 /* Styles globaux pour la version courte */
 .cv-variant-short .accomplishment-item-unified {

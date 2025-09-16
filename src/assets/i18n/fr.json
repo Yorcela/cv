@@ -28,6 +28,7 @@
         "hobbies": "Loisirs",
         "education": "Diplômes",
         "certifications": "Certifications",
+        "informations": "Informations",
         "recommendations": "Recommandations",
         "experiences_short": "3 dernières expériences",
         "experiences_long": "Expériences détaillées",
@@ -56,7 +57,7 @@
         "icon": "fa-trophy-alt",
         "tooltip":"AssessFirst",
         "pdf":"assets/pdfs/20250726-AssessFirst.pdf",
-        "url": null,
+        "url": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=fr-FR",
         "label":"Profil A-Player"
       },
       "insightDiscovery": {
