@@ -1,6 +1,6 @@
 import { Component, input, signal, computed, effect, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MarkdownPipe } from '../pipes/markdown.pipe';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { ContentAboutMeComponent } from '../components/content-about-me/content-about-me.component';
@@ -40,6 +40,7 @@ export class MainPageComponent {
   recommendationsExpanded = computed(() => this.sectionStates()['recommendations']);
 
   private mainPageService = inject(MainPageService);
+  private translate = inject(TranslateService);
 
   constructor() {
     effect(() => {
@@ -70,27 +71,22 @@ export class MainPageComponent {
     this.toggleSection('recommendations');
   }
 
-
-
-
-
   private loadData(): void {
     this.loading.set(true);
     this.error.set(null);
     
-    this.mainPageService.loadData(this.lang()).subscribe(result => {
-      this.data.set(result.data);
-      this.error.set(result.error);
-      this.loading.set(false);
+    this.translate.get('cv').subscribe({
+      next: (data: any) => {
+        this.data.set(data || null);
+        this.error.set(null);
+        this.loading.set(false);
+      },
+      error: (err) => {
+        this.data.set(null);
+        this.error.set(err.message || 'Erreur lors du chargement des données');
+        this.loading.set(false);
+      }
     });
-  }
-
-  getAboutText(): string {
-    return this.mainPageService.getAboutText(this.data(), this.variant());
-  }
-
-  getExperiences(): Experience[] {
-    return this.mainPageService.getExperiences(this.data(), this.variant());
   }
 
   getRecommendations() {
