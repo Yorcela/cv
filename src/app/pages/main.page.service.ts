@@ -164,20 +164,7 @@ export class MainPageService {
     return expanded ? filtered : filtered.slice(0, 3);
   }
 
-  /**
-   * Récupère le logo d'une entreprise
-   */
-  getCompanyLogo(companyName: string): string | null {
-    const logoMap: { [key: string]: string } = {
-      'Deezer': 'assets/images/logos/deezer.png',
-      'Onepoint': 'assets/images/logos/onepoint.png',
-      'Santeclair': 'assets/images/logos/santeclair.png',
-      'MeteoNews': 'assets/images/logos/meteonews.png',
-      'Talan': 'assets/images/logos/talan.png'
-    };
 
-    return logoMap[companyName] || null;
-  }
 
   /**
    * Récupère les catégories de compétences formatées

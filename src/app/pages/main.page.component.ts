@@ -114,9 +114,7 @@ export class MainPageComponent {
     return this.mainPageService.getAccomplishmentsByCategory(this.data(), category, this.accomplishmentsExpanded());
   }
 
-  getCompanyLogo(companyName: string): string | null {
-    return this.mainPageService.getCompanyLogo(companyName);
-  }
+
 
   getSkillCategories(): SkillCategory[] {
     return this.mainPageService.getSkillCategories(this.data());
