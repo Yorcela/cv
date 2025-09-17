@@ -8,7 +8,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { TuiRootModule, TuiDialogModule, TuiAlertModule } from '@taiga-ui/core';
-import { AppComponent } from './app/app.component';
+import { AppComponent } from './app/app';
 import { routes } from './app/app.routes';
 
 export function HttpLoaderFactory(http: HttpClient) {
