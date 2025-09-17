@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
-import { SidebarPersonalityService, PersonalityItem, PdfViewerData } from './sidebar-personality.service';
+import { SidebarPersonalityService, PersonalityItem } from './sidebar-personality.service';
 
 @Component({
   selector: 'app-sidebar-personality',

@@ -1,7 +1,6 @@
 import { Component, input, signal, computed, effect, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { MarkdownPipe } from '../pipes/markdown.pipe';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { ContentAboutMeComponent } from '../components/content-about-me/content-about-me.component';
 import { ContentAccomplishmentsComponent } from '../components/content-accomplishments/content-accomplishments.component';
@@ -14,7 +13,7 @@ import { MainPageService } from './main.page.service';
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MarkdownPipe, SidebarComponent, ContentAboutMeComponent, ContentAccomplishmentsComponent, ContentExperiencesComponent, ContentRecommendationsComponent],
+  imports: [CommonModule, TranslateModule, SidebarComponent, ContentAboutMeComponent, ContentAccomplishmentsComponent, ContentExperiencesComponent, ContentRecommendationsComponent],
   templateUrl: `./main.page.component.html`,
   styleUrl: './main.page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
