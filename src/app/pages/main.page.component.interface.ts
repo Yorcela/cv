@@ -45,3 +45,10 @@ export interface Language {
   name: string;
   level: string;
 }
+
+export interface SectionStates {
+  about: boolean;
+  experiences: boolean;
+  accomplishments: boolean;
+  recommendations: boolean;
+}

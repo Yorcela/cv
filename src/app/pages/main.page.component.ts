@@ -8,10 +8,8 @@ import { ContentAccomplishmentsComponent } from '../components/content-accomplis
 import { ContentExperiencesComponent } from '../components/content-experiences/content-experiences.component';
 import { ContentRecommendationsComponent } from '../components/content-recommendations/content-recommendations.component';
 import { CVVariant, VariantType, CVLanguage, LanguageType } from '../types/common.types';
-import { CVData } from './main.page.component.interface';
-import { SkillCategory } from '../components/sidebar-skills/sidebar-skills.component.interface';
-import { Experience } from '../components/content-experiences/content-experiences.component.interface';
-import { MainPageService, SectionStates } from './main.page.service';
+import { CVData, SectionStates } from './main.page.component.interface';
+import { MainPageService } from './main.page.service';
 
 @Component({
   selector: 'app-main-page',
@@ -88,11 +86,4 @@ export class MainPageComponent {
       }
     });
   }
-
-  getRecommendations() {
-    const currentData = this.data();
-    if (!currentData?.recommendations) return [];
-    return this.recommendationsExpanded() ? currentData.recommendations : currentData.recommendations.slice(0, 3);
-  }
-
 }

@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CVVariant, VariantType } from '../types/common.types';
-
-export interface SectionStates {
-  about: boolean;
-  experiences: boolean;
-  accomplishments: boolean;
-  recommendations: boolean;
-}
+import { SectionStates } from './main.page.component.interface';
 
 @Injectable({
   providedIn: 'root'
