@@ -70,18 +70,9 @@ export class MainPageComponent {
     this.toggleSection('recommendations');
   }
 
-  formatAchievement(achievement: string): string {
-    const markdownPipe = new MarkdownPipe();
-    return markdownPipe.transform(achievement);
-  }
 
-  navigateToDetailedExperiences(): void {
-    this.mainPageService.navigateToDetailedExperiences();
-  }
 
-  navigateToRecommendations(): void {
-    this.mainPageService.navigateToRecommendations();
-  }
+
 
   private loadData(): void {
     this.loading.set(true);
@@ -108,15 +99,4 @@ export class MainPageComponent {
     return this.recommendationsExpanded() ? currentData.recommendations : currentData.recommendations.slice(0, 3);
   }
 
-
-
-  getAccomplishmentsByCategory(category: string) {
-    return this.mainPageService.getAccomplishmentsByCategory(this.data(), category, this.accomplishmentsExpanded());
-  }
-
-
-
-  getSkillCategories(): SkillCategory[] {
-    return this.mainPageService.getSkillCategories(this.data());
-  }
 }
