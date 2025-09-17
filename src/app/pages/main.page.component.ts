@@ -1,4 +1,4 @@
-import { Component, input, signal, computed, effect, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal, computed, effect, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
@@ -9,6 +9,8 @@ import { ContentRecommendationsComponent } from '../components/content-recommend
 import { CVVariant, VariantType, CVLanguage, LanguageType } from '../types/common.types';
 import { CVData, SectionStates } from './main.page.component.interface';
 import { MainPageService } from './main.page.service';
+import { I18nStore } from '../core/stores/i18n.store';
+import { VariantStore } from '../core/stores/variant.store';
 
 @Component({
   selector: 'app-main-page',
@@ -19,9 +21,6 @@ import { MainPageService } from './main.page.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPageComponent {
-  lang = input<LanguageType>(CVLanguage.FR);
-  variant = input<VariantType>(CVVariant.FULL);
-  
   data = signal<CVData | null>(null);
   loading = signal(true);
   error = signal<string | null>(null);
@@ -38,6 +37,11 @@ export class MainPageComponent {
 
   private mainPageService = inject(MainPageService);
   private translate = inject(TranslateService);
+  private i18nStore = inject(I18nStore);
+  private variantStore = inject(VariantStore);
+
+  lang = this.i18nStore.lang;          // readonly signal
+  variant = this.variantStore.variant; // readonly signal
 
   constructor() {
     effect(() => {

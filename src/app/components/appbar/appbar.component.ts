@@ -1,8 +1,10 @@
-import { Component, ChangeDetectionStrategy, inject, model, output, signal, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CVVariant, CVLanguage, VariantType, LanguageType } from '../../types/common.types';
 import { AppbarComponentService } from './appbar.component.service';
+import { I18nStore } from '../../core/stores/i18n.store';
+import { VariantStore } from '../../core/stores/variant.store';
 
 @Component({
   selector: 'app-appbar',
@@ -16,34 +18,22 @@ export class AppbarComponent {
   readonly CVLanguage = CVLanguage;
   readonly CVVariant = CVVariant;
 
-  lang = model<LanguageType>(CVLanguage.FR);
-  variant = model<VariantType>(CVVariant.FULL);
   private _dropdown = signal(false);
   showDropdown = this._dropdown.asReadonly();
-  langChange = output<LanguageType>();
-  variantChange = output<VariantType>();
 
-  private readonly translate = inject(TranslateService);
   private readonly appbarService = inject(AppbarComponentService);
+  private readonly i18nStore = inject(I18nStore);
+  private readonly variantStore = inject(VariantStore);
 
-  constructor() {
-    effect(() => {
-      const l = this.lang();
-      this.translate.use(l);
-      this.langChange.emit(l);
-    });
-
-    effect(() => {
-      this.variantChange.emit(this.variant());
-    });
-  }
+  lang = this.i18nStore.lang;          // readonly signal
+  variant = this.variantStore.variant; // readonly signal
 
   setLang(l: LanguageType) {
-    this.lang.set(l);
+    this.i18nStore.set(l);
   }
 
   setVariant(v: VariantType) {
-    this.variant.set(v); 
+    this.variantStore.set(v);
   }
 
   toggleDropdown() {
