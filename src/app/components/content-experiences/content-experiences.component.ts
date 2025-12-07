@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 import { CVVariant, VariantType } from '../../types/common.types';
-import { ExperienceTask, ExperienceDescription, ExperienceWithDescription, ExperienceSkill, SkillCategory } from './content-experiences.component.interface';
+import { ExperienceTask, ExperienceDescription, ExperienceWithDescription, ExperienceSkill, SkillCategory, ExperienceSkillMap, ExperienceSkills } from './content-experiences.component.interface';
 
 @Component({
   selector: 'app-content-experiences',
@@ -15,7 +15,7 @@ import { ExperienceTask, ExperienceDescription, ExperienceWithDescription, Exper
 })
 export class ContentExperiencesComponent {
   readonly CVVariant = CVVariant;
-  
+
   variant = input<VariantType>(CVVariant.SHORT);
   data = input<any>(null);
   isExpanded = input<boolean>(true);
@@ -48,16 +48,34 @@ export class ContentExperiencesComponent {
     event.target.style.display = 'none';
   }
 
-  normalizeSkills(skills: Array<string | ExperienceSkill>): ExperienceSkill[] {
-    return (skills || [])
-      .map((skill) => typeof skill === 'string'
-        ? { name: skill, category: 'Management' as SkillCategory }
-        : skill)
-      .sort((a, b) => {
-        const catDiff = this.categoryOrder.indexOf(a.category) - this.categoryOrder.indexOf(b.category);
-        if (catDiff !== 0) return catDiff;
-        return a.name.localeCompare(b.name);
+  normalizeSkills(skills: ExperienceSkills | null | undefined): ExperienceSkill[] {
+    if (!skills) {
+      return [];
+    }
+
+    if (Array.isArray(skills)) {
+      const grouped = new Map<SkillCategory, ExperienceSkill[]>();
+
+      skills.forEach((skill) => {
+        const normalized = typeof skill === 'string'
+          ? { name: skill, category: 'Management' as SkillCategory }
+          : skill;
+
+        const bucket = grouped.get(normalized.category) || [];
+        bucket.push(normalized);
+        grouped.set(normalized.category, bucket);
       });
+
+      return this.categoryOrder.flatMap((category) => grouped.get(category) || []);
+    }
+
+    const mapSkills = skills as ExperienceSkillMap;
+    return this.categoryOrder.flatMap((category) =>
+      (mapSkills[category] || []).map((name) => ({
+        name,
+        category
+      }))
+    );
   }
 
   skillClass(category: SkillCategory): string {

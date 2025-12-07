@@ -29,11 +29,14 @@ export interface ExperienceSkill {
   category: SkillCategory;
 }
 
+export type ExperienceSkillMap = Partial<Record<SkillCategory, string[]>>;
+export type ExperienceSkills = ExperienceSkillMap | Array<string | ExperienceSkill>;
+
 export interface ExperienceWithDescription {
   company: string;
   logo: string;
   position: string;
   period: string;
   description: ExperienceDescription[];
-  skills: Array<string | ExperienceSkill>;
+  skills: ExperienceSkills;
 }

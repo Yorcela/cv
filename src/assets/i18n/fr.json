@@ -152,72 +152,34 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "name": "Leadership",
-            "category": "Management"
-          },
-          {
-            "name": "Coaching",
-            "category": "Management"
-          },
-          {
-            "name": "Qualité",
-            "category": "Delivery"
-          },
-          {
-            "name": "Incidents",
-            "category": "Delivery"
-          },
-          {
-            "name": "Métriques",
-            "category": "Delivery"
-          },
-          {
-            "name": "OKRs",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Roadmaps",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Dépendances",
-            "category": "Delivery"
-          },
-          {
-            "name": "Mentorat",
-            "category": "Management"
-          },
-          {
-            "name": "Automatisation",
-            "category": "Delivery"
-          },
-          {
-            "name": "Collaboration",
-            "category": "Management"
-          },
-          {
-            "name": "Produit-Tech",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "TypeScript",
-            "category": "Tech"
-          },
-          {
-            "name": "PostgreSQL",
-            "category": "Tech"
-          },
-          {
-            "name": "GCP",
-            "category": "Tech"
-          },
-          {
-            "name": "IA",
-            "category": "Tech"
-          }
-        ]
+        "skills": {
+          "Management": [
+            "Leadership",
+            "Coaching",
+            "Management",
+            "Mentorat"
+          ],
+          "Delivery": [
+            "Qualité",
+            "Incident Management",
+            "Métriques",
+            "Dépendances",
+            "Risques",
+            "Outillage",
+            "Automatisation"
+          ],
+          "Product & strategy": [
+            "OKRs",
+            "Roadmaps"
+          ],
+          "Tech": [
+            "Hands-off",
+            "TypeScript",
+            "PostgreSQL",
+            "GCP",
+            "IA"
+          ]
+        }
       },
       {
         "company": "SantéVet",
@@ -241,60 +203,31 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "name": "Mise à l'échelle",
-            "category": "Delivery"
-          },
-          {
-            "name": "Planification",
-            "category": "Delivery"
-          },
-          {
-            "name": "DoD",
-            "category": "Delivery"
-          },
-          {
-            "name": "Dépendances",
-            "category": "Delivery"
-          },
-          {
-            "name": "Incidents",
-            "category": "Delivery"
-          },
-          {
-            "name": "Coordination",
-            "category": "Management"
-          },
-          {
-            "name": "Communautés",
-            "category": "Management"
-          },
-          {
-            "name": "Coaching",
-            "category": "Management"
-          },
-          {
-            "name": "Exécution",
-            "category": "Delivery"
-          },
-          {
-            "name": "Changement",
-            "category": "Management"
-          },
-          {
-            "name": "PHP",
-            "category": "Tech"
-          },
-          {
-            "name": "Node.js",
-            "category": "Tech"
-          },
-          {
-            "name": "PostgreSQL",
-            "category": "Tech"
-          }
-        ]
+        "skills": {
+          "Delivery": [
+            "Mise à l'échelle",
+            "Multi-équipes",
+            "Performance",
+            "Planification",
+            "Prédictibilité",
+            "DoD",
+            "Dépendances",
+            "Incidents"
+          ],
+          "Management": [
+            "Management",
+            "Coordination",
+            "Communautés",
+            "Coaching",
+            "Changement"
+          ],
+          "Tech": [
+            "Hands-off",
+            "PHP",
+            "Node.js",
+            "PostgreSQL"
+          ]
+        }
       },
       {
         "company": "ManoMano",
@@ -317,72 +250,31 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "name": "Agile@Scale",
-            "category": "Delivery"
-          },
-          {
-            "name": "Topologie",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Dépendances",
-            "category": "Delivery"
-          },
-          {
-            "name": "Flux",
-            "category": "Delivery"
-          },
-          {
-            "name": "Stratégie",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Planification",
-            "category": "Delivery"
-          },
-          {
-            "name": "Facilitation",
-            "category": "Management"
-          },
-          {
-            "name": "Coaching",
-            "category": "Management"
-          },
-          {
-            "name": "Communautés",
-            "category": "Management"
-          },
-          {
-            "name": "Priorisation",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Responsabilité",
-            "category": "Management"
-          },
-          {
-            "name": "Roadmaps",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "OKRs",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Java",
-            "category": "Tech"
-          },
-          {
-            "name": "AWS",
-            "category": "Tech"
-          },
-          {
-            "name": "RabbitMQ",
-            "category": "Tech"
-          }
-        ]
+        "skills": {
+          "Delivery": [
+            "Agile@Scale",
+            "Dépendances",
+            "Flux de production",
+            "Planification"
+          ],
+          "Product & strategy": [
+            "Stratégie",
+            "Priorisation",
+            "Roadmaps",
+            "OKRs"
+          ],
+          "Management": [
+            "Facilitation",
+            "Coaching",
+            "Communautés"
+          ],
+          "Tech": [
+            "Hands-off",
+            "Java",
+            "AWS",
+            "RabbitMQ"
+          ]
+        }
       },
       {
         "company": "onepoint",
@@ -406,80 +298,31 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "name": "Leadership",
-            "category": "Management"
-          },
-          {
-            "name": "Delivery",
-            "category": "Delivery"
-          },
-          {
-            "name": "Alignement",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Backlogs",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Workflows",
-            "category": "Delivery"
-          },
-          {
-            "name": "Hands-on",
-            "category": "Tech"
-          },
-          {
-            "name": "Guidance",
-            "category": "Management"
-          },
-          {
-            "name": "Facilitation",
-            "category": "Management"
-          },
-          {
-            "name": "Qualité",
-            "category": "Delivery"
-          },
-          {
-            "name": "Prédictibilité",
-            "category": "Delivery"
-          },
-          {
-            "name": "Responsabilité",
-            "category": "Management"
-          },
-          {
-            "name": "Communication",
-            "category": "Management"
-          },
-          {
-            "name": "JavaScript",
-            "category": "Tech"
-          },
-          {
-            "name": "TypeScript",
-            "category": "Tech"
-          },
-          {
-            "name": "Java",
-            "category": "Tech"
-          },
-          {
-            "name": "RabbitMQ",
-            "category": "Tech"
-          },
-          {
-            "name": "PostgreSQL",
-            "category": "Tech"
-          },
-          {
-            "name": "Docker",
-            "category": "Tech"
-          }
-        ]
+        "skills": {
+          "Management": [
+            "Leadership",
+            "Facilitation",
+            "Communication"
+          ],
+          "Delivery": [
+            "Delivery",
+            "Flux de production",
+            "Qualité",
+            "Prédictibilité"
+          ],
+          "Product & strategy": [
+            "Gestion de Backlogs"
+          ],
+          "Tech": [
+            "Hands-on",
+            "JavaScript",
+            "TypeScript",
+            "Java",
+            "RabbitMQ",
+            "PostgreSQL",
+            "Docker"
+          ]
+        }
       },
       {
         "company": "Capgemini",
@@ -501,65 +344,31 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "name": "Refonte",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Cross-fonctionnel",
-            "category": "Management"
-          },
-          {
-            "name": "Périmètre",
-            "category": "Delivery"
-          },
-          {
-            "name": "Risques",
-            "category": "Delivery"
-          },
-          {
-            "name": "Délais",
-            "category": "Delivery"
-          },
-          {
-            "name": "Fournisseurs",
-            "category": "Management"
-          },
-          {
-            "name": "Prédictibilité",
-            "category": "Delivery"
-          },
-          {
-            "name": "Qualité",
-            "category": "Delivery"
-          },
-          {
-            "name": "Communication",
-            "category": "Management"
-          },
-          {
-            "name": "Roadmaps",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Spécifications",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "C#",
-            "category": "Tech"
-          },
-          {
-            "name": "Java",
-            "category": "Tech"
-          }
-        ]
+        "skills": {
+          "Product & strategy": [
+            "Refonte",
+            "Roadmaps",
+            "Spécifications"
+          ],
+          "Delivery": [
+            "Risques",
+            "Budget",
+            "Qualité"
+          ],
+          "Management": [
+            "Communication"
+          ],
+          "Tech": [
+            "Hands-off",
+            "C#",
+            "Java"
+          ]
+        }
       },
       {
         "company": "Galilée",
         "logo": "https://img.logo.dev/galilee.fr?token=pk_IrBjZU0lQJeNJRZcgNP55w",
-        "position": "Développeur & Scrum Master",
+        "position": "Software Engineer & Scrum Master",
         "period": "oct. 2011 – fév. 2015 (4 ans 3 mois)",
         "description": [
           {
@@ -576,72 +385,31 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "name": "Leadership",
-            "category": "Management"
-          },
-          {
-            "name": "Hands-on",
-            "category": "Tech"
-          },
-          {
-            "name": "Impression",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Pratiques",
-            "category": "Delivery"
-          },
-          {
-            "name": "Estimation",
-            "category": "Delivery"
-          },
-          {
-            "name": "Revues",
-            "category": "Delivery"
-          },
-          {
-            "name": "Rétrospectives",
-            "category": "Delivery"
-          },
-          {
-            "name": "Qualité",
-            "category": "Delivery"
-          },
-          {
-            "name": "Alignement",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Roadmaps",
-            "category": "Product & strategy"
-          },
-          {
-            "name": "Facilitation",
-            "category": "Management"
-          },
-          {
-            "name": "PHP",
-            "category": "Tech"
-          },
-          {
-            "name": "MSSQL",
-            "category": "Tech"
-          },
-          {
-            "name": "jQuery",
-            "category": "Tech"
-          },
-          {
-            "name": "xHTML",
-            "category": "Tech"
-          },
-          {
-            "name": "CSS",
-            "category": "Tech"
-          }
-        ]
+        "skills": {
+          "Management": [
+            "Leadership",
+            "Facilitation"
+          ],
+          "Product & strategy": [
+            "Imprimerie",
+            "Alignement",
+            "Roadmaps"
+          ],
+          "Delivery": [
+            "Agilité",
+            "Rétrospectives",
+            "Qualité"
+          ],
+          "Tech": [
+            "Hands-on",
+            "Code review",
+            "PHP (Zend 1)",
+            "MSSQL",
+            "jQuery",
+            "xHTML",
+            "CSS"
+          ]
+        }
       }
     ],
     "education": [
