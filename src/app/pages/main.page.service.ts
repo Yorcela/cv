@@ -13,6 +13,7 @@ export class MainPageService {
   initializeSectionStates(variant: VariantType): SectionStates {
     return {
       about: true,
+      skills: true,
       experiences: true,
       accomplishments: true,
       recommendations: variant === CVVariant.FULL

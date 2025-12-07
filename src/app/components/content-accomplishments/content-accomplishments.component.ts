@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, input, output, signal, effect, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 import { CVVariant, VariantType } from '../../types/common.types';
 import { AccomplishmentDetailed } from './content-accomplishments.component.interface';
@@ -21,20 +21,10 @@ export class ContentAccomplishmentsComponent {
   data = input<any>(null);
   isExpanded = input<boolean>(true);
   toggleSection = output<void>();
-  
-  private _accomplishments = signal<AccomplishmentDetailed[]>([]);
-  accomplishments = this._accomplishments.asReadonly();
-  
-  private readonly translate = inject(TranslateService);
+
   private readonly accomplishmentsService = inject(ContentAccomplishmentsService);
 
-  constructor() {
-    effect(() => {
-      this.translate.get('cv.accomplishments').subscribe((data: any) => {
-        this._accomplishments.set(data || []);
-      });
-    }, { allowSignalWrites: true });
-  }
+  accomplishments = computed<AccomplishmentDetailed[]>(() => this.data()?.accomplishments || []);
 
   formatDetail(detail: string): string {
     return this.accomplishmentsService.formatDetail(detail);

@@ -178,19 +178,38 @@
 }
 
 .skill-tag-small {
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 0.15rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 12px;
   font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid #bae6fd;
+  font-weight: 600;
+  border: 1px solid transparent;
   transition: all 0.2s ease;
+  background: #e2e8f0;
+  color: #1f2937;
 }
 
-.skill-tag-small:hover {
-  background: #0369a1;
-  color: white;
+.skill-management {
+  background: #e0f2fe;
+  border-color: #bae6fd;
+  color: #0f609b;
+}
+
+.skill-delivery {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.skill-tech {
+  background: #ede9fe;
+  border-color: #ddd6fe;
+  color: #5b21b6;
+}
+
+.skill-product {
+  background: #fef9c3;
+  border-color: #fde68a;
+  color: #b45309;
 }
 
 /* Import mobile styles */

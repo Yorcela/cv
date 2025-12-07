@@ -22,11 +22,18 @@ export interface ExperienceDescription {
   [clientName: string]: ExperienceTask[];
 }
 
+export type SkillCategory = 'Management' | 'Delivery' | 'Tech' | 'Product & strategy';
+
+export interface ExperienceSkill {
+  name: string;
+  category: SkillCategory;
+}
+
 export interface ExperienceWithDescription {
   company: string;
   logo: string;
   position: string;
   period: string;
   description: ExperienceDescription[];
-  skills: string[];
+  skills: Array<string | ExperienceSkill>;
 }

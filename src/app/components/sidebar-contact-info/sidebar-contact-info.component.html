@@ -18,6 +18,12 @@
     <span>{{ personalInfo?.location }}</span>
   </div>
   <div class="contact-item">
+    <span class="icon-chip" data-tooltip="github">
+      <i class="fab fa-github"></i>
+    </span>
+    <a [href]="personalInfo?.github" target="_blank">{{ 'i18n.ui.github' | translate }}</a>
+  </div>
+  <div class="contact-item">
     <span class="icon-chip" data-tooltip="LinkedIn">
       <i class="fab fa-linkedin"></i>
     </span>

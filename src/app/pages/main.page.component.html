@@ -24,11 +24,15 @@
                     <app-content-about-me [variant]="variant()" [data]="data()" [isExpanded]="isSectionExpanded('about')"
                         (toggleSection)="toggleSection('about')"></app-content-about-me>
                 </div>
-                <div class="content-section accomplishments-section">
+                <div class="content-section skills-section">
+                    <app-content-skills [data]="data()" [isExpanded]="isSectionExpanded('skills')"
+                        (toggleSection)="toggleSection('skills')"></app-content-skills>
+                </div>
+                <!-- <div class="content-section accomplishments-section">
                     <app-content-accomplishments [variant]="variant()" [data]="data()"
                         [isExpanded]="isSectionExpanded('accomplishments')"
                         (toggleSection)="toggleSection('accomplishments')"></app-content-accomplishments>
-                </div>
+                </div> -->
                 <div class="content-section experiences-section">
                     <app-content-experiences [variant]="variant()" [data]="data()"
                         [isExpanded]="isSectionExpanded('experiences')"

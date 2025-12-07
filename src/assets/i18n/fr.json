@@ -57,24 +57,24 @@
     "personnality": {
       "assessFirst": {
         "icon": "fa-trophy-alt",
-        "tooltip":"AssessFirst",
-        "pdf":"assets/pdfs/20250726-AssessFirst.pdf",
+        "tooltip": "AssessFirst",
+        "pdf": "assets/pdfs/20250726-AssessFirst.pdf",
         "url": "https://my.assessfirst.com/public/profile/btsphlfw-alec-roy?lang=fr-FR",
-        "label":"Profil A-Player"
+        "label": "Profil A-Player"
       },
       "insightDiscovery": {
         "icon": "fa-lightbulb-on",
-        "tooltip":"Insight Discovery",
-        "pdf":"assets/pdfs/20230511 - Insight Discovery.pdf",
+        "tooltip": "Insight Discovery",
+        "pdf": "assets/pdfs/20230511 - Insight Discovery.pdf",
         "url": null,
-        "label":"Conseiller / Inspirateur"
+        "label": "Conseiller / Inspirateur"
       },
       "mbti": {
         "icon": "fa-helmet-battle",
-        "tooltip":"MBTI",
-        "pdf":null,
+        "tooltip": "MBTI",
+        "pdf": null,
         "url": "https://www.16personalities.com/fr/la-personnalite-enfj",
-        "label":"Protagoniste (ENFJ)"
+        "label": "Protagoniste (ENFJ)"
       },
       "perso": {
         "icon": "fa-brain",
@@ -153,22 +153,70 @@
           }
         ],
         "skills": [
-          { "name": "Leadership", "category": "Management" },
-          { "name": "Coaching", "category": "Management" },
-          { "name": "Qualité", "category": "Delivery" },
-          { "name": "Incidents", "category": "Delivery" },
-          { "name": "Métriques", "category": "Delivery" },
-          { "name": "OKRs", "category": "Product & strategy" },
-          { "name": "Roadmaps", "category": "Product & strategy" },
-          { "name": "Dépendances", "category": "Delivery" },
-          { "name": "Mentorat", "category": "Management" },
-          { "name": "Automatisation", "category": "Delivery" },
-          { "name": "Collaboration", "category": "Management" },
-          { "name": "Produit-Tech", "category": "Product & strategy" },
-          { "name": "TypeScript", "category": "Tech" },
-          { "name": "PostgreSQL", "category": "Tech" },
-          { "name": "GCP", "category": "Tech" },
-          { "name": "IA", "category": "Tech" }
+          {
+            "name": "Leadership",
+            "category": "Management"
+          },
+          {
+            "name": "Coaching",
+            "category": "Management"
+          },
+          {
+            "name": "Qualité",
+            "category": "Delivery"
+          },
+          {
+            "name": "Incidents",
+            "category": "Delivery"
+          },
+          {
+            "name": "Métriques",
+            "category": "Delivery"
+          },
+          {
+            "name": "OKRs",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Roadmaps",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Dépendances",
+            "category": "Delivery"
+          },
+          {
+            "name": "Mentorat",
+            "category": "Management"
+          },
+          {
+            "name": "Automatisation",
+            "category": "Delivery"
+          },
+          {
+            "name": "Collaboration",
+            "category": "Management"
+          },
+          {
+            "name": "Produit-Tech",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "TypeScript",
+            "category": "Tech"
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Tech"
+          },
+          {
+            "name": "GCP",
+            "category": "Tech"
+          },
+          {
+            "name": "IA",
+            "category": "Tech"
+          }
         ]
       },
       {
@@ -194,19 +242,58 @@
           }
         ],
         "skills": [
-          { "name": "Mise à l'échelle", "category": "Delivery" },
-          { "name": "Planification", "category": "Delivery" },
-          { "name": "DoD", "category": "Delivery" },
-          { "name": "Dépendances", "category": "Delivery" },
-          { "name": "Incidents", "category": "Delivery" },
-          { "name": "Coordination", "category": "Management" },
-          { "name": "Communautés", "category": "Management" },
-          { "name": "Coaching", "category": "Management" },
-          { "name": "Exécution", "category": "Delivery" },
-          { "name": "Changement", "category": "Management" },
-          { "name": "PHP", "category": "Tech" },
-          { "name": "Node.js", "category": "Tech" },
-          { "name": "PostgreSQL", "category": "Tech" }
+          {
+            "name": "Mise à l'échelle",
+            "category": "Delivery"
+          },
+          {
+            "name": "Planification",
+            "category": "Delivery"
+          },
+          {
+            "name": "DoD",
+            "category": "Delivery"
+          },
+          {
+            "name": "Dépendances",
+            "category": "Delivery"
+          },
+          {
+            "name": "Incidents",
+            "category": "Delivery"
+          },
+          {
+            "name": "Coordination",
+            "category": "Management"
+          },
+          {
+            "name": "Communautés",
+            "category": "Management"
+          },
+          {
+            "name": "Coaching",
+            "category": "Management"
+          },
+          {
+            "name": "Exécution",
+            "category": "Delivery"
+          },
+          {
+            "name": "Changement",
+            "category": "Management"
+          },
+          {
+            "name": "PHP",
+            "category": "Tech"
+          },
+          {
+            "name": "Node.js",
+            "category": "Tech"
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Tech"
+          }
         ]
       },
       {
@@ -231,22 +318,70 @@
           }
         ],
         "skills": [
-          { "name": "Agile@Scale", "category": "Delivery" },
-          { "name": "Topologie", "category": "Product & strategy" },
-          { "name": "Dépendances", "category": "Delivery" },
-          { "name": "Flux", "category": "Delivery" },
-          { "name": "Stratégie", "category": "Product & strategy" },
-          { "name": "Planification", "category": "Delivery" },
-          { "name": "Facilitation", "category": "Management" },
-          { "name": "Coaching", "category": "Management" },
-          { "name": "Communautés", "category": "Management" },
-          { "name": "Priorisation", "category": "Product & strategy" },
-          { "name": "Responsabilité", "category": "Management" },
-          { "name": "Roadmaps", "category": "Product & strategy" },
-          { "name": "OKRs", "category": "Product & strategy" },
-          { "name": "Java", "category": "Tech" },
-          { "name": "AWS", "category": "Tech" },
-          { "name": "RabbitMQ", "category": "Tech" }
+          {
+            "name": "Agile@Scale",
+            "category": "Delivery"
+          },
+          {
+            "name": "Topologie",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Dépendances",
+            "category": "Delivery"
+          },
+          {
+            "name": "Flux",
+            "category": "Delivery"
+          },
+          {
+            "name": "Stratégie",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Planification",
+            "category": "Delivery"
+          },
+          {
+            "name": "Facilitation",
+            "category": "Management"
+          },
+          {
+            "name": "Coaching",
+            "category": "Management"
+          },
+          {
+            "name": "Communautés",
+            "category": "Management"
+          },
+          {
+            "name": "Priorisation",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Responsabilité",
+            "category": "Management"
+          },
+          {
+            "name": "Roadmaps",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "OKRs",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Java",
+            "category": "Tech"
+          },
+          {
+            "name": "AWS",
+            "category": "Tech"
+          },
+          {
+            "name": "RabbitMQ",
+            "category": "Tech"
+          }
         ]
       },
       {
@@ -272,24 +407,78 @@
           }
         ],
         "skills": [
-          { "name": "Leadership", "category": "Management" },
-          { "name": "Delivery", "category": "Delivery" },
-          { "name": "Alignement", "category": "Product & strategy" },
-          { "name": "Backlogs", "category": "Product & strategy" },
-          { "name": "Workflows", "category": "Delivery" },
-          { "name": "Hands-on", "category": "Tech" },
-          { "name": "Guidance", "category": "Management" },
-          { "name": "Facilitation", "category": "Management" },
-          { "name": "Qualité", "category": "Delivery" },
-          { "name": "Prédictibilité", "category": "Delivery" },
-          { "name": "Responsabilité", "category": "Management" },
-          { "name": "Communication", "category": "Management" },
-          { "name": "JavaScript", "category": "Tech" },
-          { "name": "TypeScript", "category": "Tech" },
-          { "name": "Java", "category": "Tech" },
-          { "name": "RabbitMQ", "category": "Tech" },
-          { "name": "PostgreSQL", "category": "Tech" },
-          { "name": "Docker", "category": "Tech" }
+          {
+            "name": "Leadership",
+            "category": "Management"
+          },
+          {
+            "name": "Delivery",
+            "category": "Delivery"
+          },
+          {
+            "name": "Alignement",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Backlogs",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Workflows",
+            "category": "Delivery"
+          },
+          {
+            "name": "Hands-on",
+            "category": "Tech"
+          },
+          {
+            "name": "Guidance",
+            "category": "Management"
+          },
+          {
+            "name": "Facilitation",
+            "category": "Management"
+          },
+          {
+            "name": "Qualité",
+            "category": "Delivery"
+          },
+          {
+            "name": "Prédictibilité",
+            "category": "Delivery"
+          },
+          {
+            "name": "Responsabilité",
+            "category": "Management"
+          },
+          {
+            "name": "Communication",
+            "category": "Management"
+          },
+          {
+            "name": "JavaScript",
+            "category": "Tech"
+          },
+          {
+            "name": "TypeScript",
+            "category": "Tech"
+          },
+          {
+            "name": "Java",
+            "category": "Tech"
+          },
+          {
+            "name": "RabbitMQ",
+            "category": "Tech"
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Tech"
+          },
+          {
+            "name": "Docker",
+            "category": "Tech"
+          }
         ]
       },
       {
@@ -313,19 +502,58 @@
           }
         ],
         "skills": [
-          { "name": "Refonte", "category": "Product & strategy" },
-          { "name": "Cross-fonctionnel", "category": "Management" },
-          { "name": "Périmètre", "category": "Delivery" },
-          { "name": "Risques", "category": "Delivery" },
-          { "name": "Délais", "category": "Delivery" },
-          { "name": "Fournisseurs", "category": "Management" },
-          { "name": "Prédictibilité", "category": "Delivery" },
-          { "name": "Qualité", "category": "Delivery" },
-          { "name": "Communication", "category": "Management" },
-          { "name": "Roadmaps", "category": "Product & strategy" },
-          { "name": "Spécifications", "category": "Product & strategy" },
-          { "name": "C#", "category": "Tech" },
-          { "name": "Java", "category": "Tech" }
+          {
+            "name": "Refonte",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Cross-fonctionnel",
+            "category": "Management"
+          },
+          {
+            "name": "Périmètre",
+            "category": "Delivery"
+          },
+          {
+            "name": "Risques",
+            "category": "Delivery"
+          },
+          {
+            "name": "Délais",
+            "category": "Delivery"
+          },
+          {
+            "name": "Fournisseurs",
+            "category": "Management"
+          },
+          {
+            "name": "Prédictibilité",
+            "category": "Delivery"
+          },
+          {
+            "name": "Qualité",
+            "category": "Delivery"
+          },
+          {
+            "name": "Communication",
+            "category": "Management"
+          },
+          {
+            "name": "Roadmaps",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Spécifications",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "C#",
+            "category": "Tech"
+          },
+          {
+            "name": "Java",
+            "category": "Tech"
+          }
         ]
       },
       {
@@ -349,22 +577,70 @@
           }
         ],
         "skills": [
-          { "name": "Leadership", "category": "Management" },
-          { "name": "Hands-on", "category": "Tech" },
-          { "name": "Impression", "category": "Product & strategy" },
-          { "name": "Pratiques", "category": "Delivery" },
-          { "name": "Estimation", "category": "Delivery" },
-          { "name": "Revues", "category": "Delivery" },
-          { "name": "Rétrospectives", "category": "Delivery" },
-          { "name": "Qualité", "category": "Delivery" },
-          { "name": "Alignement", "category": "Product & strategy" },
-          { "name": "Roadmaps", "category": "Product & strategy" },
-          { "name": "Facilitation", "category": "Management" },
-          { "name": "PHP", "category": "Tech" },
-          { "name": "MSSQL", "category": "Tech" },
-          { "name": "jQuery", "category": "Tech" },
-          { "name": "xHTML", "category": "Tech" },
-          { "name": "CSS", "category": "Tech" }
+          {
+            "name": "Leadership",
+            "category": "Management"
+          },
+          {
+            "name": "Hands-on",
+            "category": "Tech"
+          },
+          {
+            "name": "Impression",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Pratiques",
+            "category": "Delivery"
+          },
+          {
+            "name": "Estimation",
+            "category": "Delivery"
+          },
+          {
+            "name": "Revues",
+            "category": "Delivery"
+          },
+          {
+            "name": "Rétrospectives",
+            "category": "Delivery"
+          },
+          {
+            "name": "Qualité",
+            "category": "Delivery"
+          },
+          {
+            "name": "Alignement",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Roadmaps",
+            "category": "Product & strategy"
+          },
+          {
+            "name": "Facilitation",
+            "category": "Management"
+          },
+          {
+            "name": "PHP",
+            "category": "Tech"
+          },
+          {
+            "name": "MSSQL",
+            "category": "Tech"
+          },
+          {
+            "name": "jQuery",
+            "category": "Tech"
+          },
+          {
+            "name": "xHTML",
+            "category": "Tech"
+          },
+          {
+            "name": "CSS",
+            "category": "Tech"
+          }
         ]
       }
     ],
@@ -493,10 +769,6 @@
         "year": "2020"
       },
       {
-        "name": "PSM I",
-        "year": "2020"
-      },
-      {
         "name": "PSPO I",
         "year": "2020"
       }
@@ -511,10 +783,6 @@
         "icon": "fa-hammer"
       },
       {
-        "name": "Jardinage",
-        "icon": "fa-seedling"
-      },
-      {
         "name": "TFT",
         "icon": "fa-gamepad"
       },
@@ -523,12 +791,12 @@
         "icon": "fa-palette"
       },
       {
-        "name": "Cinéma",
-        "icon": "fa-film"
+        "name": "AI",
+        "icon": "fa-robot"
       },
       {
-        "name": "Séries",
-        "icon": "fa-desktop"
+        "name": "Psychologie",
+        "icon": "fa-brain"
       }
     ]
   }

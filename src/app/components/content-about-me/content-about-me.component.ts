@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, input, output, signal, effect, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CVVariant, VariantType } from '../../types/common.types';
 
 @Component({
@@ -14,26 +14,16 @@ export class ContentAboutMeComponent {
   readonly CVVariant = CVVariant;
   
   variant = input<VariantType>(CVVariant.FULL);
+  data = input<any>(null);
   isExpanded = input<boolean>(true);
   toggleSection = output<void>();
-  
-  private _about = signal<any>({});
-  about = this._about.asReadonly();
-  
-  private readonly translate = inject(TranslateService);
-
-  constructor() {
-    effect(() => {
-      this.translate.get('cv').subscribe((data: any) => {
-        this._about.set(data['about-me'] || {});
-      });
-    }, { allowSignalWrites: true });
-  }
 
 
   formattedAbout = computed(() => {
-    const aboutData = this.about();
-    if (!aboutData) return '';
+    const aboutData = this.data()?.['about-me'];
+    if (!aboutData) {
+      return '';
+    }
     const aboutText = this.variant() === CVVariant.FULL ? aboutData.long : aboutData.short;
     return aboutText || '';
   });

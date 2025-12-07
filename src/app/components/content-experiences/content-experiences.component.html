@@ -41,7 +41,9 @@
     
     <div class="experience-skills">
       <div class="skills-tags">
-        <span *ngFor="let skill of experience.skills" class="skill-tag-small">{{ skill }}</span>
+        <span *ngFor="let skill of normalizeSkills(experience.skills)" [ngClass]="skillClass(skill.category)">
+          {{ skill.name }}
+        </span>
       </div>
     </div>
   </div>
