@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy, inject, input, output, signal, effect, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownPipe } from '../../pipes/markdown.pipe';
 import { CVVariant, VariantType } from '../../types/common.types';
-import { ExperienceTask, ExperienceDescription, ExperienceWithDescription } from './content-experiences.component.interface';
+import { ExperienceTask, ExperienceDescription, ExperienceWithDescription, ExperienceSkill, SkillCategory } from './content-experiences.component.interface';
 
 @Component({
   selector: 'app-content-experiences',
@@ -20,19 +20,10 @@ export class ContentExperiencesComponent {
   data = input<any>(null);
   isExpanded = input<boolean>(true);
   toggleSection = output<void>();
-  
-  private _experiences = signal<ExperienceWithDescription[]>([]);
-  experiences = this._experiences.asReadonly();
-  
-  private readonly translateService = inject(TranslateService);
-  
-  constructor() {
-    effect(() => {
-      this.translateService.get('cv').subscribe((data: any) => {
-        this._experiences.set(data?.experiences || []);
-      });
-    }, { allowSignalWrites: true });
-  }
+
+  private readonly categoryOrder: SkillCategory[] = ['Management', 'Delivery', 'Tech', 'Product & strategy'];
+
+  experiences = computed<ExperienceWithDescription[]>(() => this.data()?.experiences || []);
   
   displayedExperiences = computed(() => {
     const experiences = this.experiences();
@@ -55,6 +46,33 @@ export class ContentExperiencesComponent {
   
   onImageError(event: any): void {
     event.target.style.display = 'none';
+  }
+
+  normalizeSkills(skills: Array<string | ExperienceSkill>): ExperienceSkill[] {
+    return (skills || [])
+      .map((skill) => typeof skill === 'string'
+        ? { name: skill, category: 'Management' as SkillCategory }
+        : skill)
+      .sort((a, b) => {
+        const catDiff = this.categoryOrder.indexOf(a.category) - this.categoryOrder.indexOf(b.category);
+        if (catDiff !== 0) return catDiff;
+        return a.name.localeCompare(b.name);
+      });
+  }
+
+  skillClass(category: SkillCategory): string {
+    switch (category) {
+      case 'Management':
+        return 'skill-tag-small skill-management';
+      case 'Delivery':
+        return 'skill-tag-small skill-delivery';
+      case 'Tech':
+        return 'skill-tag-small skill-tech';
+      case 'Product & strategy':
+        return 'skill-tag-small skill-product';
+      default:
+        return 'skill-tag-small';
+    }
   }
 
   onToggleSection(): void {

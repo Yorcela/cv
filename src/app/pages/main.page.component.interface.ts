@@ -48,6 +48,7 @@ export interface Language {
 
 export interface SectionStates {
   about: boolean;
+  skills: boolean;
   experiences: boolean;
   accomplishments: boolean;
   recommendations: boolean;

@@ -4,9 +4,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { ContentAboutMeComponent } from '../components/content-about-me/content-about-me.component';
 import { ContentAccomplishmentsComponent } from '../components/content-accomplishments/content-accomplishments.component';
+import { ContentSkillsComponent } from '../components/content-skills/content-skills.component';
 import { ContentExperiencesComponent } from '../components/content-experiences/content-experiences.component';
 import { ContentRecommendationsComponent } from '../components/content-recommendations/content-recommendations.component';
-import { CVVariant, VariantType, CVLanguage, LanguageType } from '../types/common.types';
 import { CVData, SectionStates } from './main.page.component.interface';
 import { MainPageService } from './main.page.service';
 import { I18nStore } from '../core/stores/i18n.store';
@@ -15,7 +15,7 @@ import { VariantStore } from '../core/stores/variant.store';
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, SidebarComponent, ContentAboutMeComponent, ContentAccomplishmentsComponent, ContentExperiencesComponent, ContentRecommendationsComponent],
+  imports: [CommonModule, TranslateModule, SidebarComponent, ContentAboutMeComponent, ContentSkillsComponent, ContentAccomplishmentsComponent, ContentExperiencesComponent, ContentRecommendationsComponent],
   templateUrl: `./main.page.component.html`,
   styleUrl: './main.page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -27,6 +27,7 @@ export class MainPageComponent {
   
   sectionStates = signal<SectionStates>({
     about: true,
+    skills: true,
     experiences: true,
     accomplishments: true,
     recommendations: false
@@ -60,7 +61,7 @@ export class MainPageComponent {
     this.sectionStates.set(this.mainPageService.toggleSection(currentStates, section));
   }
 
-  isSectionExpanded(section: 'about' | 'experiences' | 'accomplishments' | 'recommendations'): boolean {
+  isSectionExpanded(section: keyof SectionStates): boolean {
     return this.sectionStates()[section];
   }
 
